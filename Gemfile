@@ -7,8 +7,15 @@ gem 'rails', '3.2.13'
 
 gem 'mysql2'
 gem 'activerecord-mysql-adapter'
+
 gem 'execjs'
 gem 'therubyracer'
+
+gem 'thin'
+
+group :development do
+  gem 'pry'
+end
 
 
 # Gems used only for assets and not required

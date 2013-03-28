@@ -1,0 +1,9 @@
+<h1> Areas </h1>
+
+<section>
+	<% @areas.each do |ei| %>
+		<h3><%= ei.id.to_s %> - <%= ei["area"] %></h3>
+		<%= ei["descr"] %>
+		<br>
+	<% end %>
+</section>
