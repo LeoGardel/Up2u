@@ -38,7 +38,7 @@ class Usuario < ActiveRecord::Base
   end
 
   def send_email_with_password(password_token, provider_name)
-
+    MyMailer.password_generation(self, password_token, provider_name).deliver
   end
 
 end
