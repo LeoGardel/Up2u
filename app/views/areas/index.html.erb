@@ -2,7 +2,7 @@
 
 <section>
 	<% @areas.each do |ei| %>
-		<h3><%= ei.id.to_s %> - <%= ei["area"] %></h3>
+		<h3><%= ei.id %> - <%= ei["nome"] %></h3>
 		<%= ei["descr"] %>
 		<br>
 	<% end %>

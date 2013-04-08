@@ -1,0 +1,7 @@
+<p>Bem vindo <%= @resource.nome %> <%= @resource.sobrenome %>!</p>
+
+<p>Para confirmar o seu cadastro você deve clicar no link abaixo.</p>
+
+<p><%= link_to 'Confirmar minha conta', confirmation_url(@resource, :confirmation_token => @resource.confirmation_token) %></p>
+
+<p>Muito obrigado!</p>

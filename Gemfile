@@ -1,6 +1,9 @@
 source 'https://rubygems.org'
 
 gem 'rails', '3.2.13'
+gem 'devise', '~> 2'
+gem 'omniauth'
+gem 'omniauth-facebook'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
@@ -8,8 +11,8 @@ gem 'rails', '3.2.13'
 gem 'mysql2'
 gem 'activerecord-mysql-adapter'
 
-gem 'execjs'
-gem 'therubyracer'
+#gem 'execjs'
+#gem 'therubyracer'
 
 gem 'thin'
 

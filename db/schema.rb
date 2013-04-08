@@ -11,81 +11,57 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130326213848) do
+ActiveRecord::Schema.define(:version => 20130405230253) do
 
-  create_table "area", :force => true do |t|
-    t.string "area",  :limit => 60, :null => false
+  create_table "area_comp", :force => true do |t|
+    t.integer "area_id",                      :null => false
+    t.integer "competencia_id",               :null => false
+    t.string  "importancia",    :limit => 60, :null => false
+  end
+
+  create_table "areas", :force => true do |t|
+    t.string "nome",  :limit => 60, :null => false
     t.string "descr", :limit => 60, :null => false
   end
 
-  create_table "area_comp", :force => true do |t|
-    t.integer "id_area",                      :null => false
-    t.integer "id_comp",                      :null => false
-    t.string  "Caracteristica", :limit => 60, :null => false
-  end
-
-  create_table "caract_comp", :force => true do |t|
-    t.text "importancia", :null => false
-  end
-
-  create_table "cargo_almejado", :force => true do |t|
-    t.string  "nome_cargo",  :limit => 60, :null => false
-    t.string  "descr_cargo", :limit => 60
-    t.integer "id_area",                   :null => false
-    t.integer "id_cargo",                  :null => false
+  create_table "cargo_area", :force => true do |t|
+    t.string  "nome",     :limit => 60, :null => false
+    t.string  "descr",    :limit => 60
+    t.integer "area_id",                :null => false
+    t.integer "cargo_id",               :null => false
   end
 
   create_table "cargo_comp", :force => true do |t|
-    t.integer "id_cargo",     :null => false
-    t.integer "id_comp",      :null => false
-    t.text    "importancia",  :null => false
-    t.integer "id_area",      :null => false
-    t.float   "presenca_rel", :null => false
+    t.integer "cargo_id",       :null => false
+    t.integer "competencia_id", :null => false
+    t.text    "importancia",    :null => false
+    t.integer "area_id",        :null => false
+    t.float   "presenca_rel",   :null => false
   end
 
-  create_table "cargo_geral", :force => true do |t|
-    t.string "cargo", :limit => 60, :null => false
+  create_table "cargos", :force => true do |t|
+    t.string "nome",  :limit => 60, :null => false
     t.string "descr", :limit => 60, :null => false
   end
 
-  create_table "carreira", :force => true do |t|
-    t.string  "carreira", :limit => 60, :null => false
-    t.string  "descr",    :limit => 60, :null => false
-    t.integer "cargo_1",                :null => false
-    t.integer "cargo_2"
-    t.integer "cargo_3"
-    t.integer "cargo_4"
-    t.integer "cargo_5"
-    t.integer "cargo_6"
-  end
-
-  create_table "comp_usuarios_conh", :force => true do |t|
-    t.integer "id_usuario", :null => false
-    t.integer "id_comp",    :null => false
-    t.integer "id_exp",     :null => false
-  end
-
-  create_table "comp_usuarios_exp", :force => true do |t|
-    t.integer "id_usuario", :null => false
-    t.integer "id_comp",    :null => false
-    t.integer "id_exp",     :null => false
-  end
-
-  create_table "comp_usuarios_gosto", :force => true do |t|
-    t.integer "id_usuario", :null => false
-    t.integer "id_comp",    :null => false
-    t.integer "id_exp",     :null => false
+  create_table "comp_usuarios", :force => true do |t|
+    t.integer   "id_usuario",     :null => false
+    t.integer   "id_competencia", :null => false
+    t.integer   "experiencia",    :null => false
+    t.integer   "conhecimento",   :null => false
+    t.integer   "gosto",          :null => false
+    t.timestamp "data",           :null => false
   end
 
   create_table "competencias", :force => true do |t|
-    t.text "comp",           :limit => 2147483647, :null => false
-    t.text "descr",          :limit => 2147483647
-    t.text "caracteristica", :limit => 2147483647, :null => false
-    t.text "nivel_1",        :limit => 2147483647
-    t.text "nivel_2",        :limit => 2147483647
-    t.text "nivel_3",        :limit => 2147483647
-    t.text "nivel_4",        :limit => 2147483647
-    t.text "nivel_5",        :limit => 2147483647
+    t.text   "nome",                         :null => false
+    t.text   "descr"
+    t.string "caracteristica", :limit => 60, :null => false
+    t.text   "nivel_1"
+    t.text   "nivel_2"
+    t.text   "nivel_3"
+    t.text   "nivel_4"
+    t.text   "nivel_5"
   end
 
   create_table "educacao", :force => true do |t|
@@ -111,98 +87,23 @@ ActiveRecord::Schema.define(:version => 20130326213848) do
     t.text   "access_token"
   end
 
-  create_table "hist_comp", :force => true do |t|
-    t.integer "id_usuario"
-    t.string  "data",          :limit => 60
-    t.integer "nivel_comp_1"
-    t.integer "nivel_comp_2"
-    t.integer "nivel_comp_3"
-    t.integer "nivel_comp_4"
-    t.integer "nivel_comp_5"
-    t.integer "nivel_comp_6"
-    t.integer "nivel_comp_7"
-    t.integer "nivel_comp_8"
-    t.integer "nivel_comp_9"
-    t.integer "nivel_comp_10"
-    t.integer "nivel_comp_11"
-    t.integer "nivel_comp_12"
-    t.integer "nivel_comp_13"
-    t.integer "nivel_comp_14"
-    t.integer "nivel_comp_15"
-    t.integer "nivel_comp_16"
-    t.integer "nivel_comp_17"
-    t.integer "nivel_comp_18"
-    t.integer "nivel_comp_19"
-    t.integer "nivel_comp_20"
-    t.integer "nivel_comp_21"
-    t.integer "nivel_comp_22"
-    t.integer "nivel_comp_23"
-    t.integer "nivel_comp_24"
-    t.integer "nivel_comp_25"
-    t.integer "nivel_comp_26"
-    t.integer "nivel_comp_27"
-    t.integer "nivel_comp_28"
-    t.integer "nivel_comp_29"
-    t.integer "nivel_comp_30"
-    t.integer "nivel_comp_31"
-    t.integer "nivel_comp_32"
-    t.integer "nivel_comp_33"
-    t.integer "nivel_comp_34"
-    t.integer "nivel_comp_35"
-    t.integer "nivel_comp_36"
-    t.integer "comp_1"
-    t.integer "comp_2"
-    t.integer "comp_3"
-    t.integer "comp_4"
-    t.integer "comp_5"
-    t.integer "comp_6"
-    t.integer "comp_7"
-    t.integer "comp_8"
-    t.integer "comp_9"
-    t.integer "comp_10"
-    t.integer "comp_11"
-    t.integer "comp_12"
-    t.integer "comp_13"
-    t.integer "comp_14"
-    t.integer "comp_15"
-    t.integer "comp_16"
-    t.integer "comp_17"
-    t.integer "comp_18"
-    t.integer "comp_19"
-    t.integer "comp_20"
-    t.integer "comp_21"
-    t.integer "comp_22"
-    t.integer "comp_23"
-    t.integer "comp_24"
-    t.integer "comp_25"
-    t.integer "comp_26"
-    t.integer "comp_27"
-    t.integer "comp_28"
-    t.integer "comp_29"
-    t.integer "comp_30"
-    t.integer "comp_31"
-    t.integer "comp_32"
-    t.integer "comp_33"
-    t.integer "comp_34"
-    t.integer "comp_35"
-    t.integer "comp_36"
-  end
-
   create_table "myers_areas", :force => true do |t|
-    t.integer "myers",       :null => false
-    t.integer "area",        :null => false
-    t.float   "porcentagem", :null => false
+    t.integer "myers_tipo_id",                  :null => false
+    t.integer "area_id",                        :null => false
+    t.float   "porcentagem",                    :null => false
+    t.float   "influencia",    :default => 1.0, :null => false
   end
 
   create_table "myers_perguntas", :force => true do |t|
-    t.text   "pergunta", :limit => 2147483647, :null => false
-    t.string "tipo",     :limit => 60,         :null => false
+    t.text    "pergunta",       :limit => 2147483647,                     :null => false
+    t.boolean "myers_tipo_id",                                            :null => false
+    t.binary  "tipo_invertido", :limit => 1,          :default => "b'0'", :null => false
   end
 
   create_table "myers_respostas", :force => true do |t|
-    t.integer "id_usuario",  :null => false
-    t.integer "id_pergunta", :null => false
-    t.integer "resposta",    :null => false
+    t.integer "usuario_id",        :null => false
+    t.integer "myers_pergunta_id", :null => false
+    t.integer "resposta",          :null => false
   end
 
   create_table "myers_tipos", :force => true do |t|
@@ -217,21 +118,6 @@ ActiveRecord::Schema.define(:version => 20130326213848) do
     t.string  "fim",         :limit => 60
   end
 
-  create_table "usuario", :force => true do |t|
-    t.string  "nome",         :limit => 60,         :null => false
-    t.text    "descr",        :limit => 2147483647, :null => false
-    t.string  "login",        :limit => 60,         :null => false
-    t.string  "senha",        :limit => 60,         :null => false
-    t.string  "email",        :limit => 60,         :null => false
-    t.string  "data_nasc",    :limit => 60,         :null => false
-    t.integer "id_cargo_alm",                       :null => false
-    t.integer "id_carreira",                        :null => false
-    t.text    "facebook_id",  :limit => 2147483647
-    t.text    "imagem"
-    t.integer "id_area",                            :null => false
-    t.text    "porque",       :limit => 2147483647
-  end
-
   create_table "usuario_form", :force => true do |t|
     t.text    "nome",      :null => false
     t.text    "email",     :null => false
@@ -239,6 +125,37 @@ ActiveRecord::Schema.define(:version => 20130326213848) do
     t.text    "data_nasc", :null => false
     t.integer "area"
   end
+
+  create_table "usuarios", :force => true do |t|
+    t.string   "nome",                   :limit => 60
+    t.string   "sobrenome",              :limit => 60
+    t.text     "descr",                  :limit => 16777215
+    t.string   "email",                  :limit => 60,                       :null => false
+    t.date     "data_nasc"
+    t.integer  "cargo_id"
+    t.integer  "facebook_id"
+    t.text     "imagem"
+    t.integer  "area_id"
+    t.text     "porque"
+    t.string   "encrypted_password",                         :default => "", :null => false
+    t.string   "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.integer  "sign_in_count",                              :default => 0
+    t.datetime "current_sign_in_at"
+    t.datetime "last_sign_in_at"
+    t.string   "current_sign_in_ip"
+    t.string   "last_sign_in_ip"
+    t.string   "confirmation_token"
+    t.datetime "confirmed_at"
+    t.datetime "confirmation_sent_at"
+    t.string   "unconfirmed_email"
+    t.string   "facebook_uid"
+  end
+
+  add_index "usuarios", ["confirmation_token"], :name => "index_usuarios_on_confirmation_token", :unique => true
+  add_index "usuarios", ["email"], :name => "index_usuarios_on_email", :unique => true
+  add_index "usuarios", ["reset_password_token"], :name => "index_usuarios_on_reset_password_token", :unique => true
 
   create_table "vagas", :force => true do |t|
     t.integer "id_area",                             :null => false
