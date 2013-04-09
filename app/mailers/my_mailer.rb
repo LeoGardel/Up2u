@@ -2,6 +2,7 @@
 
 class MyMailer < Devise::Mailer
 	default :from => "carreiraup2u@gmail.com"
+	
 	def password_generation(user, password, provider)
 	  @nome = user.nome
 	  @sobrenome = user.sobrenome

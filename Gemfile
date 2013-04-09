@@ -11,6 +11,8 @@ gem 'omniauth-facebook'
 gem 'mysql2'
 gem 'activerecord-mysql-adapter'
 
+gem 'heroku_external_db'
+
 #gem 'execjs'
 #gem 'therubyracer'
 
