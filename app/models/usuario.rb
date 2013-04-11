@@ -47,22 +47,26 @@ class Usuario < ActiveRecord::Base
   end
 
   def save_work_history_facebook(work_list)
-    work_list.each do |work|
-      self.trabalhos.build :empregador_facebook_uid => work.employer.id,
-        :empregador_nome => work.employer.name,
-        :data_inicio => work.start_date,
-        :data_fim => work.end_date,
-        :cargo => work.position.name,
-        :local => work.location.name
+    if work_list
+      work_list.each do |work|
+        self.trabalhos.build :empregador_facebook_uid => work.employer.id,
+          :empregador_nome => work.employer.name,
+          :data_inicio => work.start_date,
+          :data_fim => work.end_date,
+          :cargo => work.position.name,
+          :local => work.location.name
+      end
     end
   end
 
   def save_education_history_facebook(education_list)
-    education_list.each do |education|
-      self.educacoes.build :instituicao_facebook_uid => education.school.id,
-        :instituicao_nome => education.school.name,
-        :ano_conclusao => education.year.name,
-        :tipo => education.type
+    if education_list
+      education_list.each do |education|
+        self.educacoes.build :instituicao_facebook_uid => education.school.id,
+          :instituicao_nome => education.school.name,
+          :ano_conclusao => education.year.name,
+          :tipo => education.type
+      end
     end
   end
 
