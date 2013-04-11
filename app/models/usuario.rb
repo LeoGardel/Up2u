@@ -8,6 +8,9 @@ class Usuario < ActiveRecord::Base
   attr_accessible :email, :facebook_uid, :password, :password_confirmation, :remember_me, :nome, :sobrenome, :imagem
   # attr_accessible :title, :body
 
+  has_many :trabalhos
+  has_many :educacoes
+
 
   def self.find_for_facebook_oauth(auth)
     usuario = Usuario.where(:facebook_uid => auth.uid).first
@@ -29,6 +32,8 @@ class Usuario < ActiveRecord::Base
         usuario.facebook_uid = auth.uid
         usuario.save
       end
+      usuario.save_work_history_facebook(auth.extra.raw_info.work)
+      usuario.save_education_history_facebook(auth.extra.raw_info.education)
     end
     unless usuario.confirmed?
       usuario.skip_confirmation!
@@ -39,6 +44,26 @@ class Usuario < ActiveRecord::Base
 
   def send_email_with_password(password_token, provider_name)
     MyMailer.password_generation(self, password_token, provider_name).deliver
+  end
+
+  def save_work_history_facebook(work_list)
+    work_list.each do |work|
+      self.trabalhos.build :empregador_facebook_uid => work.employer.id,
+        :empregador_nome => work.employer.name,
+        :data_inicio => work.start_date,
+        :data_fim => work.end_date,
+        :cargo => work.position.name,
+        :local => work.location.name
+    end
+  end
+
+  def save_education_history_facebook(education_list)
+    education_list.each do |education|
+      self.educacoes.build :instituicao_facebook_uid => education.school.id,
+        :instituicao_nome => education.school.name,
+        :ano_conclusao => education.year.name,
+        :tipo => education.type
+    end
   end
 
 end

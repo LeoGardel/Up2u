@@ -21074,3 +21074,1784 @@ Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-04-09 09:28:04
 Served asset /application.js - 304 Not Modified (15ms)
 Connecting to database specified by database.yml
 Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+
+
+Started GET "/" for 127.0.0.1 at 2013-04-09 21:37:09 -0300
+
+
+Started GET "/home" for 127.0.0.1 at 2013-04-09 21:37:09 -0300
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.erb (0.0ms)
+  Rendered devise/shared/_entrar_registrar.erb (140.4ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (171.6ms)
+Completed 200 OK in 733ms (Views: 436.8ms | ActiveRecord: 109.2ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-04-09 21:37:10 -0300
+Served asset /application.css - 200 OK (0ms)
+
+
+Started GET "/assets/area.css?body=1" for 127.0.0.1 at 2013-04-09 21:37:10 -0300
+Served asset /area.css - 200 OK (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-04-09 21:37:10 -0300
+Served asset /jquery.js - 200 OK (15ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-04-09 21:37:10 -0300
+Served asset /jquery_ujs.js - 200 OK (0ms)
+
+
+Started GET "/assets/area.js?body=1" for 127.0.0.1 at 2013-04-09 21:37:10 -0300
+Served asset /area.js - 200 OK (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-04-09 21:37:10 -0300
+Served asset /application.js - 200 OK (0ms)
+
+
+Started GET "/auth/facebook" for 127.0.0.1 at 2013-04-09 21:37:12 -0300
+
+
+Started GET "/auth/facebook/callback?state=cc3a365d042530f4adb74aa0d2088911518683f28014f774&code=AQD0T_PVsZJo9xD9roUaxa96Dr8g-Z8VGrH1efqSMDTusocwY64EgaRtjoAbcJ8vbiUvnPEdpFBkzgioW6yl8x0SmnwwjUSy2BjEHCgSx3OkfXEH1cfpH9mibFNZFqip2qZd2l1r3SAFJFc8l038em3cUYKnuc6l6YLSK8JoJ9KjN9h6AOPmaFtw12fS7me01I0V5UdRs0daiYyePLB-DwhS" for 127.0.0.1 at 2013-04-09 21:37:13 -0300
+Processing by Usuarios::OmniauthCallbacksController#facebook as HTML
+  Parameters: {"state"=>"cc3a365d042530f4adb74aa0d2088911518683f28014f774", "code"=>"AQD0T_PVsZJo9xD9roUaxa96Dr8g-Z8VGrH1efqSMDTusocwY64EgaRtjoAbcJ8vbiUvnPEdpFBkzgioW6yl8x0SmnwwjUSy2BjEHCgSx3OkfXEH1cfpH9mibFNZFqip2qZd2l1r3SAFJFc8l038em3cUYKnuc6l6YLSK8JoJ9KjN9h6AOPmaFtw12fS7me01I0V5UdRs0daiYyePLB-DwhS"}
+  [1m[36mUsuario Load (31.2ms)[0m  [1mSELECT `usuarios`.* FROM `usuarios` WHERE `usuarios`.`facebook_uid` = '612273239' LIMIT 1[0m
+  [1m[35mUsuario Load (31.2ms)[0m  SELECT `usuarios`.* FROM `usuarios` WHERE `usuarios`.`email` = 'leovalverde@hotmail.com' LIMIT 1
+  [1m[36m (31.2ms)[0m  [1mBEGIN[0m
+  [1m[35mUsuario Exists (31.2ms)[0m  SELECT 1 AS one FROM `usuarios` WHERE `usuarios`.`email` = BINARY 'leovalverde@hotmail.com' LIMIT 1
+  [1m[36mSQL (31.2ms)[0m  [1mINSERT INTO `usuarios` (`area_id`, `cargo_id`, `confirmation_sent_at`, `confirmation_token`, `confirmed_at`, `current_sign_in_at`, `current_sign_in_ip`, `data_nasc`, `descr`, `email`, `encrypted_password`, `facebook_uid`, `imagem`, `last_sign_in_at`, `last_sign_in_ip`, `nome`, `porque`, `remember_created_at`, `reset_password_sent_at`, `reset_password_token`, `sign_in_count`, `sobrenome`, `unconfirmed_email`) VALUES (NULL, NULL, NULL, NULL, '2013-04-10 00:37:15', NULL, NULL, NULL, NULL, 'leovalverde@hotmail.com', '$2a$10$rqs8xT4ADCKWLsMBOtAr5uQXLCo//iphfesa7vK0K/jNi5J8DAV0e', '612273239', 'http://graph.facebook.com/612273239/picture?type=square', NULL, NULL, 'Leonardo', NULL, NULL, NULL, NULL, 0, 'Valverde', NULL)[0m
+  [1m[35m (93.6ms)[0m  COMMIT
+  Rendered my_mailer/password_generation.html.erb (0.0ms)
+
+Sent mail to leovalverde@hotmail.com (5273ms)
+Date: Tue, 09 Apr 2013 21:40:25 -0300
+From: carreiraup2u@gmail.com
+To: leovalverde@hotmail.com
+Message-ID: <5164b4f91c701_1174dba9b098375@Leonardo-PC.mail>
+Subject: =?UTF-8?Q?Bem_vindo,_aqui_est=C3=A1_sua_senha!?=
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+<p>Ol=C3=A1 Leonardo Valverde!</p>
+
+<p>Voc=C3=AA acessou o nosso site pela primeira vez atrav=C3=A9s do Faceb=
+ook.</p>
+
+<p>Para que voc=C3=AA possa acessar sua conta sem precisar usar o Faceboo=
+k, voc=C3=AA pode usar sua senha inicial, que =C3=A9:</p>
+
+<p>UXhdJ3xkM7</p>
+
+<p>Muito obrigado!</p>=
+
+  [1m[36m (46.8ms)[0m  [1mBEGIN[0m
+  [1m[35m (31.2ms)[0m  UPDATE `usuarios` SET `last_sign_in_at` = '2013-04-10 00:40:30', `current_sign_in_at` = '2013-04-10 00:40:30', `last_sign_in_ip` = '127.0.0.1', `current_sign_in_ip` = '127.0.0.1', `sign_in_count` = 1 WHERE `usuarios`.`id` = 123
+  [1m[36m (46.8ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 195203ms (ActiveRecord: 374.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-04-09 21:40:30 -0300
+  [1m[35mUsuario Load (31.2ms)[0m  SELECT `usuarios`.* FROM `usuarios` WHERE `usuarios`.`id` = 123 LIMIT 1
+Processing by AreasController#index as HTML
+  [1m[36mArea Load (31.2ms)[0m  [1mSELECT `areas`.* FROM `areas` [0m
+  Rendered areas/index.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 156ms (Views: 15.6ms | ActiveRecord: 124.8ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-04-09 21:40:30 -0300
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/area.css?body=1" for 127.0.0.1 at 2013-04-09 21:40:30 -0300
+Served asset /area.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-04-09 21:40:30 -0300
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-04-09 21:40:30 -0300
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/area.js?body=1" for 127.0.0.1 at 2013-04-09 21:40:31 -0300
+Served asset /area.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-04-09 21:40:31 -0300
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/sair" for 127.0.0.1 at 2013-04-09 21:42:45 -0300
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"5u4p19ABO03+UlRlgVQcGA9ebl2uN3++chNqtKHyRB8="}
+  [1m[35mUsuario Load (702.0ms)[0m  SELECT `usuarios`.* FROM `usuarios` WHERE `usuarios`.`id` = 123 LIMIT 1
+  [1m[36mEXPLAIN (93.6ms)[0m  [1mEXPLAIN SELECT `usuarios`.* FROM `usuarios` WHERE `usuarios`.`id` = 123 LIMIT 1[0m
+EXPLAIN for: SELECT  `usuarios`.* FROM `usuarios`  WHERE `usuarios`.`id` = 123 LIMIT 1
++----+-------------+----------+-------+---------------+---------+---------+-------+------+-------+
+| id | select_type | table    | type  | possible_keys | key     | key_len | ref   | rows | Extra |
++----+-------------+----------+-------+---------------+---------+---------+-------+------+-------+
+|  1 | SIMPLE      | usuarios | const | PRIMARY       | PRIMARY | 4       | const |    1 |       |
++----+-------------+----------+-------+---------------+---------+---------+-------+------+-------+
+1 row in set (0.09 sec)
+
+  [1m[35m (31.2ms)[0m  BEGIN
+  [1m[36m (31.2ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 889ms (ActiveRecord: 858.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-04-09 21:42:46 -0300
+
+
+Started GET "/home" for 127.0.0.1 at 2013-04-09 21:42:46 -0300
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.erb (0.0ms)
+  Rendered devise/shared/_entrar_registrar.erb (0.0ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 31ms (Views: 31.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-04-09 21:42:46 -0300
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/area.css?body=1" for 127.0.0.1 at 2013-04-09 21:42:46 -0300
+Served asset /area.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-04-09 21:42:46 -0300
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-04-09 21:42:46 -0300
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/area.js?body=1" for 127.0.0.1 at 2013-04-09 21:42:47 -0300
+Served asset /area.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-04-09 21:42:47 -0300
+Served asset /application.js - 304 Not Modified (0ms)
+Connecting to database specified by database.yml
+
+
+Started GET "/" for 127.0.0.1 at 2013-04-10 23:43:48 -0300
+
+
+Started GET "/home" for 127.0.0.1 at 2013-04-10 23:43:48 -0300
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.erb (0.0ms)
+  Rendered devise/shared/_entrar_registrar.erb (109.2ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (156.0ms)
+Completed 200 OK in 733ms (Views: 421.2ms | ActiveRecord: 124.8ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-04-10 23:43:49 -0300
+Served asset /application.css - 200 OK (0ms)
+
+
+Started GET "/assets/area.css?body=1" for 127.0.0.1 at 2013-04-10 23:43:49 -0300
+Served asset /area.css - 200 OK (15ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-04-10 23:43:49 -0300
+Served asset /jquery.js - 200 OK (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-04-10 23:43:49 -0300
+Served asset /jquery_ujs.js - 200 OK (15ms)
+
+
+Started GET "/assets/area.js?body=1" for 127.0.0.1 at 2013-04-10 23:43:49 -0300
+Served asset /area.js - 200 OK (15ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-04-10 23:43:49 -0300
+Served asset /application.js - 200 OK (15ms)
+
+
+Started GET "/auth/facebook" for 127.0.0.1 at 2013-04-10 23:46:19 -0300
+
+
+Started GET "/auth/facebook/callback?state=6413c14d20108f78af6d33713461fd0558a075cee789662e&code=AQBHo2eMuhAqb1FGiIURQmiY-toeJytZ5UgNGwp3v-STmPIOfOp2bcXMq3D6xeO4TS-m6C6ffnXLRJkiPNU2IfPHwyJe24uTxvG6rxhye8VkZDEIOGJYa5Pk0EuJOEPXIKUPfpy2keRieV3yga1HGLdpNMCaIun-Y_YkQICmFEZfadznMaZbahPcX-NJPIB3KmdfdHiL7_VCL2GAjg6C1txs" for 127.0.0.1 at 2013-04-10 23:46:20 -0300
+Processing by Usuarios::OmniauthCallbacksController#facebook as HTML
+  Parameters: {"state"=>"6413c14d20108f78af6d33713461fd0558a075cee789662e", "code"=>"AQBHo2eMuhAqb1FGiIURQmiY-toeJytZ5UgNGwp3v-STmPIOfOp2bcXMq3D6xeO4TS-m6C6ffnXLRJkiPNU2IfPHwyJe24uTxvG6rxhye8VkZDEIOGJYa5Pk0EuJOEPXIKUPfpy2keRieV3yga1HGLdpNMCaIun-Y_YkQICmFEZfadznMaZbahPcX-NJPIB3KmdfdHiL7_VCL2GAjg6C1txs"}
+  [1m[36mUsuario Load (31.2ms)[0m  [1mSELECT `usuarios`.* FROM `usuarios` WHERE `usuarios`.`facebook_uid` = '612273239' LIMIT 1[0m
+  [1m[35mUsuario Load (31.2ms)[0m  SELECT `usuarios`.* FROM `usuarios` WHERE `usuarios`.`email` = 'leovalverde@hotmail.com' LIMIT 1
+  [1m[36m (15.6ms)[0m  [1mBEGIN[0m
+  [1m[35mUsuario Exists (15.6ms)[0m  SELECT 1 AS one FROM `usuarios` WHERE `usuarios`.`email` = BINARY 'leovalverde@hotmail.com' LIMIT 1
+  [1m[36mSQL (15.6ms)[0m  [1mINSERT INTO `usuarios` (`area_id`, `cargo_id`, `confirmation_sent_at`, `confirmation_token`, `confirmed_at`, `current_sign_in_at`, `current_sign_in_ip`, `data_nasc`, `descr`, `email`, `encrypted_password`, `facebook_uid`, `imagem`, `last_sign_in_at`, `last_sign_in_ip`, `nome`, `porque`, `remember_created_at`, `reset_password_sent_at`, `reset_password_token`, `sign_in_count`, `sobrenome`, `unconfirmed_email`) VALUES (NULL, NULL, NULL, NULL, '2013-04-11 02:46:22', NULL, NULL, NULL, NULL, 'leovalverde@hotmail.com', '$2a$10$LSYe7haLia.imtKbe/tbHeFUBfp.dEd/ppYMa6QtlqALRB2yIq.0i', '612273239', 'http://graph.facebook.com/612273239/picture?type=square', NULL, NULL, 'Leonardo', NULL, NULL, NULL, NULL, 0, 'Valverde', NULL)[0m
+  [1m[35m (31.2ms)[0m  COMMIT
+  Rendered my_mailer/password_generation.html.erb (0.0ms)
+
+Sent mail to leovalverde@hotmail.com (5148ms)
+Date: Wed, 10 Apr 2013 23:53:46 -0300
+From: carreiraup2u@gmail.com
+To: leovalverde@hotmail.com
+Message-ID: <516625ba2d4d0_1698e629b061621@Leonardo-PC.mail>
+Subject: =?UTF-8?Q?Bem_vindo,_aqui_est=C3=A1_sua_senha!?=
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+<p>Ol=C3=A1 Leonardo Valverde!</p>
+
+<p>Voc=C3=AA acessou o nosso site pela primeira vez atrav=C3=A9s do Faceb=
+ook.</p>
+
+<p>Para que voc=C3=AA possa acessar sua conta sem precisar usar o Faceboo=
+k, voc=C3=AA pode usar sua senha inicial, que =C3=A9:</p>
+
+<p>expWZ7xwgi</p>
+
+<p>Muito obrigado!</p>=
+
+  [1m[36m (31.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (15.6ms)[0m  UPDATE `usuarios` SET `last_sign_in_at` = '2013-04-11 02:53:51', `current_sign_in_at` = '2013-04-11 02:53:51', `last_sign_in_ip` = '127.0.0.1', `current_sign_in_ip` = '127.0.0.1', `sign_in_count` = 1 WHERE `usuarios`.`id` = 126
+  [1m[36m (31.2ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 448953ms (ActiveRecord: 218.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-04-10 23:53:51 -0300
+  [1m[35mUsuario Load (15.6ms)[0m  SELECT `usuarios`.* FROM `usuarios` WHERE `usuarios`.`id` = 126 LIMIT 1
+Processing by AreasController#index as HTML
+  [1m[36mArea Load (15.6ms)[0m  [1mSELECT `areas`.* FROM `areas` [0m
+  Rendered areas/index.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 109ms (Views: 31.2ms | ActiveRecord: 78.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-04-10 23:53:51 -0300
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/area.css?body=1" for 127.0.0.1 at 2013-04-10 23:53:51 -0300
+Served asset /area.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-04-10 23:53:51 -0300
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-04-10 23:53:51 -0300
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/area.js?body=1" for 127.0.0.1 at 2013-04-10 23:53:51 -0300
+Served asset /area.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-04-10 23:53:51 -0300
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/sair" for 127.0.0.1 at 2013-04-10 23:53:55 -0300
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"t5wzD31NmZUkb+eR5tO6ZaAX7cLTPjsiJB74T762Ziw="}
+  [1m[35mUsuario Load (31.2ms)[0m  SELECT `usuarios`.* FROM `usuarios` WHERE `usuarios`.`id` = 126 LIMIT 1
+  [1m[36m (15.6ms)[0m  [1mBEGIN[0m
+  [1m[35m (15.6ms)[0m  COMMIT
+Redirected to http://localhost:3000/
+Completed 302 Found in 78ms (ActiveRecord: 62.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-04-10 23:53:55 -0300
+
+
+Started GET "/home" for 127.0.0.1 at 2013-04-10 23:53:55 -0300
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.erb (0.0ms)
+  Rendered devise/shared/_entrar_registrar.erb (15.6ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (15.6ms)
+Completed 200 OK in 31ms (Views: 31.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-04-10 23:53:55 -0300
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/area.css?body=1" for 127.0.0.1 at 2013-04-10 23:53:55 -0300
+Served asset /area.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-04-10 23:53:55 -0300
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-04-10 23:53:55 -0300
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/area.js?body=1" for 127.0.0.1 at 2013-04-10 23:53:55 -0300
+Served asset /area.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-04-10 23:53:55 -0300
+Served asset /application.js - 304 Not Modified (0ms)
+Connecting to database specified by database.yml
+
+
+Started GET "/auth/facebook" for 127.0.0.1 at 2013-04-11 00:05:49 -0300
+
+
+Started GET "/auth/facebook/callback?state=c43ad7e87619d5ddcd695cec90bd663b1248d169162e97d7&code=AQDX-YDLpLtGVl-aGIfWiRXY7_5KUz4Z4pXWNUAsvGptKNyAokXInYCEAB5sGZDirmkIdioEIkVQVKwBvlJAPcdIdoAdwP7gmYLU9mlBPkigzo8CA9x914gdRAYRr-d95NQwjAl9Y1JuVAGOqiy33z6XyCsabesakaFZ0r5TMIQ1woAH3rdX-Y2P4RnjW8rVlJLSfTP8hsmT_ANN3d2_7W5S" for 127.0.0.1 at 2013-04-11 00:05:59 -0300
+Processing by Usuarios::OmniauthCallbacksController#facebook as HTML
+  Parameters: {"state"=>"c43ad7e87619d5ddcd695cec90bd663b1248d169162e97d7", "code"=>"AQDX-YDLpLtGVl-aGIfWiRXY7_5KUz4Z4pXWNUAsvGptKNyAokXInYCEAB5sGZDirmkIdioEIkVQVKwBvlJAPcdIdoAdwP7gmYLU9mlBPkigzo8CA9x914gdRAYRr-d95NQwjAl9Y1JuVAGOqiy33z6XyCsabesakaFZ0r5TMIQ1woAH3rdX-Y2P4RnjW8rVlJLSfTP8hsmT_ANN3d2_7W5S"}
+  [1m[36mUsuario Load (124.8ms)[0m  [1mSELECT `usuarios`.* FROM `usuarios` WHERE `usuarios`.`facebook_uid` = '612273239' LIMIT 1[0m
+  [1m[35mUsuario Load (31.2ms)[0m  SELECT `usuarios`.* FROM `usuarios` WHERE `usuarios`.`email` = 'leovalverde@hotmail.com' LIMIT 1
+  [1m[36m (15.6ms)[0m  [1mBEGIN[0m
+  [1m[35mUsuario Exists (15.6ms)[0m  SELECT 1 AS one FROM `usuarios` WHERE `usuarios`.`email` = BINARY 'leovalverde@hotmail.com' LIMIT 1
+  [1m[36mSQL (31.2ms)[0m  [1mINSERT INTO `usuarios` (`area_id`, `cargo_id`, `confirmation_sent_at`, `confirmation_token`, `confirmed_at`, `current_sign_in_at`, `current_sign_in_ip`, `data_nasc`, `descr`, `email`, `encrypted_password`, `facebook_uid`, `imagem`, `last_sign_in_at`, `last_sign_in_ip`, `nome`, `porque`, `remember_created_at`, `reset_password_sent_at`, `reset_password_token`, `sign_in_count`, `sobrenome`, `unconfirmed_email`) VALUES (NULL, NULL, NULL, NULL, '2013-04-11 03:06:01', NULL, NULL, NULL, NULL, 'leovalverde@hotmail.com', '$2a$10$kXt5FwPgbMUxdkS8ogmX6u3AshhmQNhWDndafaPDoxzyGhYSdqBsW', '612273239', 'http://graph.facebook.com/612273239/picture?type=square', NULL, NULL, 'Leonardo', NULL, NULL, NULL, NULL, 0, 'Valverde', NULL)[0m
+  [1m[35m (31.2ms)[0m  COMMIT
+  Rendered my_mailer/password_generation.html.erb (15.6ms)
+
+Sent mail to leovalverde@hotmail.com (4430ms)
+Date: Thu, 11 Apr 2013 00:06:41 -0300
+From: carreiraup2u@gmail.com
+To: leovalverde@hotmail.com
+Message-ID: <516628c1602f9_6009ea9a841533@Leonardo-PC.mail>
+Subject: =?UTF-8?Q?Bem_vindo,_aqui_est=C3=A1_sua_senha!?=
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+<p>Ol=C3=A1 Leonardo Valverde!</p>
+
+<p>Voc=C3=AA acessou o nosso site pela primeira vez atrav=C3=A9s do Faceb=
+ook.</p>
+
+<p>Para que voc=C3=AA possa acessar sua conta sem precisar usar o Faceboo=
+k, voc=C3=AA pode usar sua senha inicial, que =C3=A9:</p>
+
+<p>CPvWaspQXz</p>
+
+<p>Muito obrigado!</p>=
+
+  [1m[36m (15.6ms)[0m  [1mBEGIN[0m
+  [1m[35m (15.6ms)[0m  UPDATE `usuarios` SET `last_sign_in_at` = '2013-04-11 03:06:45', `current_sign_in_at` = '2013-04-11 03:06:45', `last_sign_in_ip` = '127.0.0.1', `current_sign_in_ip` = '127.0.0.1', `sign_in_count` = 1 WHERE `usuarios`.`id` = 127
+  [1m[36m (31.2ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 45080ms (ActiveRecord: 405.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-04-11 00:06:45 -0300
+  [1m[35mUsuario Load (31.2ms)[0m  SELECT `usuarios`.* FROM `usuarios` WHERE `usuarios`.`id` = 127 LIMIT 1
+Processing by AreasController#index as HTML
+  [1m[36mArea Load (46.8ms)[0m  [1mSELECT `areas`.* FROM `areas` [0m
+  Rendered areas/index.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 203ms (Views: 78.0ms | ActiveRecord: 109.2ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-04-11 00:06:46 -0300
+Served asset /application.css - 304 Not Modified (15ms)
+
+
+Started GET "/assets/area.css?body=1" for 127.0.0.1 at 2013-04-11 00:06:46 -0300
+Served asset /area.css - 304 Not Modified (15ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-04-11 00:06:46 -0300
+Served asset /jquery.js - 304 Not Modified (15ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-04-11 00:06:46 -0300
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/area.js?body=1" for 127.0.0.1 at 2013-04-11 00:06:46 -0300
+Served asset /area.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-04-11 00:06:46 -0300
+Served asset /application.js - 304 Not Modified (15ms)
+Connecting to database specified by database.yml
+
+
+Started GET "/" for 127.0.0.1 at 2013-04-11 00:11:33 -0300
+  [1m[36mUsuario Load (327.6ms)[0m  [1mSELECT `usuarios`.* FROM `usuarios` WHERE `usuarios`.`id` = 127 LIMIT 1[0m
+Processing by AreasController#index as HTML
+  [1m[35mArea Load (31.2ms)[0m  SELECT `areas`.* FROM `areas` 
+  Rendered areas/index.html.erb within layouts/application (15.6ms)
+Completed 200 OK in 172ms (Views: 93.6ms | ActiveRecord: 78.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-04-11 00:11:34 -0300
+Served asset /application.css - 304 Not Modified (15ms)
+
+
+Started GET "/assets/area.css?body=1" for 127.0.0.1 at 2013-04-11 00:11:34 -0300
+Served asset /area.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-04-11 00:11:34 -0300
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-04-11 00:11:34 -0300
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/area.js?body=1" for 127.0.0.1 at 2013-04-11 00:11:34 -0300
+Served asset /area.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-04-11 00:11:34 -0300
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/sair" for 127.0.0.1 at 2013-04-11 00:11:39 -0300
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"u9Ejd43JpO/5z384eAuR9/8SX7icw1/Syhp//TPicf4="}
+  [1m[36mUsuario Load (31.2ms)[0m  [1mSELECT `usuarios`.* FROM `usuarios` WHERE `usuarios`.`id` = 127 LIMIT 1[0m
+  [1m[35m (15.6ms)[0m  BEGIN
+  [1m[36m (31.2ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 109ms (ActiveRecord: 78.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-04-11 00:11:40 -0300
+
+
+Started GET "/home" for 127.0.0.1 at 2013-04-11 00:11:40 -0300
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.erb (15.6ms)
+  Rendered devise/shared/_entrar_registrar.erb (15.6ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (46.8ms)
+Completed 200 OK in 47ms (Views: 46.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-04-11 00:11:40 -0300
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/area.css?body=1" for 127.0.0.1 at 2013-04-11 00:11:40 -0300
+Served asset /area.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-04-11 00:11:40 -0300
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-04-11 00:11:40 -0300
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/area.js?body=1" for 127.0.0.1 at 2013-04-11 00:11:40 -0300
+Served asset /area.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-04-11 00:11:40 -0300
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/auth/facebook" for 127.0.0.1 at 2013-04-11 00:11:42 -0300
+
+
+Started GET "/auth/facebook/callback?state=8eb3209ba652e525747a8868bd71411e078a803940b3aa5f&code=AQDOmCfJqtHOMKGRksNIdopRzQ2wq1GHsCvjwxfH3YHrJrkOKVUJkG4Eebhya8c5UDQeM9wn2PxI_IaBbfGVf4JfZwG1u88pg8Fh-RSqvKk87oSbl5l91lP3F6W3P9mxoEdxu42JHS1yCsMWyVQQfmc_8TjACi-LJ32E5GQtODmbr467rcUdxxeuSEJ2KCWpZrbJpOWkGVK3JCie3hx8Kz-G" for 127.0.0.1 at 2013-04-11 00:11:42 -0300
+Processing by Usuarios::OmniauthCallbacksController#facebook as HTML
+  Parameters: {"state"=>"8eb3209ba652e525747a8868bd71411e078a803940b3aa5f", "code"=>"AQDOmCfJqtHOMKGRksNIdopRzQ2wq1GHsCvjwxfH3YHrJrkOKVUJkG4Eebhya8c5UDQeM9wn2PxI_IaBbfGVf4JfZwG1u88pg8Fh-RSqvKk87oSbl5l91lP3F6W3P9mxoEdxu42JHS1yCsMWyVQQfmc_8TjACi-LJ32E5GQtODmbr467rcUdxxeuSEJ2KCWpZrbJpOWkGVK3JCie3hx8Kz-G"}
+  [1m[35mUsuario Load (15.6ms)[0m  SELECT `usuarios`.* FROM `usuarios` WHERE `usuarios`.`facebook_uid` = '612273239' LIMIT 1
+  [1m[36m (15.6ms)[0m  [1mBEGIN[0m
+  [1m[35m (15.6ms)[0m  UPDATE `usuarios` SET `current_sign_in_at` = '2013-04-11 03:11:44', `sign_in_count` = 2 WHERE `usuarios`.`id` = 127
+  [1m[36m (31.2ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 109ms (ActiveRecord: 78.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-04-11 00:11:44 -0300
+  [1m[35mUsuario Load (31.2ms)[0m  SELECT `usuarios`.* FROM `usuarios` WHERE `usuarios`.`id` = 127 LIMIT 1
+Processing by AreasController#index as HTML
+  [1m[36mArea Load (15.6ms)[0m  [1mSELECT `areas`.* FROM `areas` [0m
+  Rendered areas/index.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 47ms (Views: 15.6ms | ActiveRecord: 15.6ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-04-11 00:11:44 -0300
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/area.css?body=1" for 127.0.0.1 at 2013-04-11 00:11:44 -0300
+Served asset /area.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-04-11 00:11:44 -0300
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-04-11 00:11:44 -0300
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/area.js?body=1" for 127.0.0.1 at 2013-04-11 00:11:44 -0300
+Served asset /area.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-04-11 00:11:44 -0300
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/sair" for 127.0.0.1 at 2013-04-11 00:11:59 -0300
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"m0P8aM31rHT2L1D5G6XK79mSq3Cwhb0YrDXVkMiSxII="}
+  [1m[35mUsuario Load (15.6ms)[0m  SELECT `usuarios`.* FROM `usuarios` WHERE `usuarios`.`id` = 127 LIMIT 1
+  [1m[36m (31.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (15.6ms)[0m  COMMIT
+Redirected to http://localhost:3000/
+Completed 302 Found in 62ms (ActiveRecord: 62.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-04-11 00:11:59 -0300
+
+
+Started GET "/home" for 127.0.0.1 at 2013-04-11 00:11:59 -0300
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.erb (15.6ms)
+  Rendered devise/shared/_entrar_registrar.erb (15.6ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (15.6ms)
+Completed 200 OK in 31ms (Views: 31.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-04-11 00:11:59 -0300
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/area.css?body=1" for 127.0.0.1 at 2013-04-11 00:11:59 -0300
+Served asset /area.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-04-11 00:11:59 -0300
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-04-11 00:11:59 -0300
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/area.js?body=1" for 127.0.0.1 at 2013-04-11 00:11:59 -0300
+Served asset /area.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-04-11 00:11:59 -0300
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/auth/facebook" for 127.0.0.1 at 2013-04-11 00:12:20 -0300
+
+
+Started GET "/auth/facebook/callback?state=a5c4e7b5ae41fb78c5e14689706a64655ca3eb951a3ecd75&code=AQDC7D-QJmwU8kxWIK5EOgKgzz6K61poHuPfNZ7EnOC9Q930TNmlx0n5505C3-RoiCtJ-66lzifPr3AbJyScxmr8dTdfP9mY48z7XT7YSNtdlTRBFjw9CP9FyxReguh1ZDc5dXA1Kblc8L5M9zgyb1s4Ts-NWqnKcEKNhl_iRr91Vuj98n71wihOXcsvP71HbNmKSCJSSggVK3c6bY2-I44q" for 127.0.0.1 at 2013-04-11 00:12:21 -0300
+Processing by Usuarios::OmniauthCallbacksController#facebook as HTML
+  Parameters: {"state"=>"a5c4e7b5ae41fb78c5e14689706a64655ca3eb951a3ecd75", "code"=>"AQDC7D-QJmwU8kxWIK5EOgKgzz6K61poHuPfNZ7EnOC9Q930TNmlx0n5505C3-RoiCtJ-66lzifPr3AbJyScxmr8dTdfP9mY48z7XT7YSNtdlTRBFjw9CP9FyxReguh1ZDc5dXA1Kblc8L5M9zgyb1s4Ts-NWqnKcEKNhl_iRr91Vuj98n71wihOXcsvP71HbNmKSCJSSggVK3c6bY2-I44q"}
+  [1m[36mUsuario Load (31.2ms)[0m  [1mSELECT `usuarios`.* FROM `usuarios` WHERE `usuarios`.`facebook_uid` = '612273239' LIMIT 1[0m
+  [1m[35mUsuario Load (31.2ms)[0m  SELECT `usuarios`.* FROM `usuarios` WHERE `usuarios`.`email` = 'leovalverde@hotmail.com' LIMIT 1
+  [1m[36m (15.6ms)[0m  [1mBEGIN[0m
+  [1m[35mUsuario Exists (15.6ms)[0m  SELECT 1 AS one FROM `usuarios` WHERE `usuarios`.`email` = BINARY 'leovalverde@hotmail.com' LIMIT 1
+  [1m[36mSQL (15.6ms)[0m  [1mINSERT INTO `usuarios` (`area_id`, `cargo_id`, `confirmation_sent_at`, `confirmation_token`, `confirmed_at`, `current_sign_in_at`, `current_sign_in_ip`, `data_nasc`, `descr`, `email`, `encrypted_password`, `facebook_uid`, `imagem`, `last_sign_in_at`, `last_sign_in_ip`, `nome`, `porque`, `remember_created_at`, `reset_password_sent_at`, `reset_password_token`, `sign_in_count`, `sobrenome`, `unconfirmed_email`) VALUES (NULL, NULL, NULL, NULL, '2013-04-11 03:12:22', NULL, NULL, NULL, NULL, 'leovalverde@hotmail.com', '$2a$10$FkbWuzZBcjmlAtFHpbDDGu7AKU3LVWEqc8V9EDGDo.NH/gJaE/Tq6', '612273239', 'http://graph.facebook.com/612273239/picture?type=square', NULL, NULL, 'Leonardo', NULL, NULL, NULL, NULL, 0, 'Valverde', NULL)[0m
+  [1m[35m (31.2ms)[0m  COMMIT
+  Rendered my_mailer/password_generation.html.erb (0.0ms)
+
+Sent mail to leovalverde@hotmail.com (4040ms)
+Date: Thu, 11 Apr 2013 00:13:20 -0300
+From: carreiraup2u@gmail.com
+To: leovalverde@hotmail.com
+Message-ID: <51662a5099c76_1770d829ac869aa@Leonardo-PC.mail>
+Subject: =?UTF-8?Q?Bem_vindo,_aqui_est=C3=A1_sua_senha!?=
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+<p>Ol=C3=A1 Leonardo Valverde!</p>
+
+<p>Voc=C3=AA acessou o nosso site pela primeira vez atrav=C3=A9s do Faceb=
+ook.</p>
+
+<p>Para que voc=C3=AA possa acessar sua conta sem precisar usar o Faceboo=
+k, voc=C3=AA pode usar sua senha inicial, que =C3=A9:</p>
+
+<p>uubnAN2svx</p>
+
+<p>Muito obrigado!</p>=
+
+  [1m[36m (15.6ms)[0m  [1mBEGIN[0m
+  [1m[35m (15.6ms)[0m  UPDATE `usuarios` SET `last_sign_in_at` = '2013-04-11 03:13:24', `current_sign_in_at` = '2013-04-11 03:13:24', `last_sign_in_ip` = '127.0.0.1', `current_sign_in_ip` = '127.0.0.1', `sign_in_count` = 1 WHERE `usuarios`.`id` = 128
+  [1m[36m (46.8ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 62104ms (ActiveRecord: 218.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-04-11 00:13:24 -0300
+  [1m[35mUsuario Load (15.6ms)[0m  SELECT `usuarios`.* FROM `usuarios` WHERE `usuarios`.`id` = 128 LIMIT 1
+Processing by AreasController#index as HTML
+  [1m[36mArea Load (31.2ms)[0m  [1mSELECT `areas`.* FROM `areas` [0m
+  Rendered areas/index.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 47ms (Views: 15.6ms | ActiveRecord: 31.2ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-04-11 00:13:24 -0300
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/area.css?body=1" for 127.0.0.1 at 2013-04-11 00:13:24 -0300
+Served asset /area.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-04-11 00:13:24 -0300
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-04-11 00:13:24 -0300
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/area.js?body=1" for 127.0.0.1 at 2013-04-11 00:13:25 -0300
+Served asset /area.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-04-11 00:13:25 -0300
+Served asset /application.js - 304 Not Modified (0ms)
+Connecting to database specified by database.yml
+  [1m[36m (109.2ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations` [0m
+Migrating to AddDeviseToUsuarios (20130405190630)
+Migrating to AddColumnsToUsuarios (20130405230253)
+  [1m[35m (15.6ms)[0m  SELECT `schema_migrations`.`version` FROM `schema_migrations` 
+Connecting to database specified by database.yml
+  [1m[36m (15.6ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations` [0m
+Migrating to AddDeviseToUsuarios (20130405190630)
+Migrating to AddColumnsToUsuarios (20130405230253)
+  [1m[35m (15.6ms)[0m  SELECT `schema_migrations`.`version` FROM `schema_migrations` 
+Connecting to database specified by database.yml
+
+
+Started GET "/sair" for 127.0.0.1 at 2013-04-11 00:47:59 -0300
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"RZWg/9NxAySc1MDXrKJJU6Ig6qZeqJTkiX4MEXXoXhc="}
+  [1m[36mUsuario Load (15.6ms)[0m  [1mSELECT `usuarios`.* FROM `usuarios` WHERE `usuarios`.`id` = 128 LIMIT 1[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 218ms (ActiveRecord: 62.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-04-11 00:48:00 -0300
+
+
+Started GET "/home" for 127.0.0.1 at 2013-04-11 00:48:00 -0300
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.erb (0.0ms)
+  Rendered devise/shared/_entrar_registrar.erb (46.8ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (62.4ms)
+Completed 200 OK in 218ms (Views: 171.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-04-11 00:48:01 -0300
+Served asset /application.css - 304 Not Modified (31ms)
+
+
+Started GET "/assets/area.css?body=1" for 127.0.0.1 at 2013-04-11 00:48:01 -0300
+Served asset /area.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-04-11 00:48:01 -0300
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-04-11 00:48:01 -0300
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/area.js?body=1" for 127.0.0.1 at 2013-04-11 00:48:01 -0300
+Served asset /area.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-04-11 00:48:01 -0300
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/auth/facebook" for 127.0.0.1 at 2013-04-11 00:48:04 -0300
+
+
+Started GET "/auth/facebook/callback?state=a3780e2da675c8526082e611cf4ac963dda4360ae71f4abf&code=AQAL3b6kbBUlT017IDEAfPuj4vAwjGN3Fv4oEW-YO5aA9Cn0hrXRUMR7Zovn-2M3ljNazynvDWgh4Vpm13_eTOMU0GJYsWg7Vkgrk6ASCyWGAh13fxnYBOom5i0mRf6MrsyutTC2-n3C4SICwXGwWNLFSjD9TnxjwT5TZ9_5KCWUrwWYjKS2_VR4SlwMWICe8qK0w6MuIvE0hS3bwlQ2zyOq" for 127.0.0.1 at 2013-04-11 00:48:05 -0300
+Processing by Usuarios::OmniauthCallbacksController#facebook as HTML
+  Parameters: {"state"=>"a3780e2da675c8526082e611cf4ac963dda4360ae71f4abf", "code"=>"AQAL3b6kbBUlT017IDEAfPuj4vAwjGN3Fv4oEW-YO5aA9Cn0hrXRUMR7Zovn-2M3ljNazynvDWgh4Vpm13_eTOMU0GJYsWg7Vkgrk6ASCyWGAh13fxnYBOom5i0mRf6MrsyutTC2-n3C4SICwXGwWNLFSjD9TnxjwT5TZ9_5KCWUrwWYjKS2_VR4SlwMWICe8qK0w6MuIvE0hS3bwlQ2zyOq"}
+  [1m[35mUsuario Load (31.2ms)[0m  SELECT `usuarios`.* FROM `usuarios` WHERE `usuarios`.`facebook_uid` = '612273239' LIMIT 1
+  [1m[36mUsuario Load (62.4ms)[0m  [1mSELECT `usuarios`.* FROM `usuarios` WHERE `usuarios`.`email` = 'leovalverde@hotmail.com' LIMIT 1[0m
+  [1m[35m (15.6ms)[0m  BEGIN
+  [1m[36mUsuario Exists (15.6ms)[0m  [1mSELECT 1 AS one FROM `usuarios` WHERE `usuarios`.`email` = BINARY 'leovalverde@hotmail.com' LIMIT 1[0m
+  [1m[35mSQL (15.6ms)[0m  INSERT INTO `usuarios` (`area_id`, `cargo_id`, `confirmation_sent_at`, `confirmation_token`, `confirmed_at`, `current_sign_in_at`, `current_sign_in_ip`, `data_nasc`, `descr`, `email`, `encrypted_password`, `facebook_uid`, `imagem`, `last_sign_in_at`, `last_sign_in_ip`, `nome`, `porque`, `remember_created_at`, `reset_password_sent_at`, `reset_password_token`, `sign_in_count`, `sobrenome`, `unconfirmed_email`) VALUES (NULL, NULL, NULL, NULL, '2013-04-11 03:48:06', NULL, NULL, NULL, NULL, 'leovalverde@hotmail.com', '$2a$10$BpTaJh.I7ZE5bzUzU077qu.dWWS1tStDObg/Ts15TzpnIZMbf/Uu2', '612273239', 'http://graph.facebook.com/612273239/picture?type=square', NULL, NULL, 'Leonardo', NULL, NULL, NULL, NULL, 0, 'Valverde', NULL)
+  [1m[36m (46.8ms)[0m  [1mCOMMIT[0m
+Completed 500 Internal Server Error in 421ms
+
+NoMethodError (undefined method `each' for nil:NilClass):
+  app/models/usuario.rb:49:in `save_work_history_facebook'
+  app/models/usuario.rb:29:in `find_for_facebook_oauth'
+  app/controllers/usuarios/omniauth_callbacks_controller.rb:4:in `facebook'
+
+
+  Rendered c:/Ruby193/lib/ruby/gems/1.9.1/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.0ms)
+  Rendered c:/Ruby193/lib/ruby/gems/1.9.1/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.0ms)
+  Rendered c:/Ruby193/lib/ruby/gems/1.9.1/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (46.8ms)
+
+
+Started GET "/auth/facebook" for 127.0.0.1 at 2013-04-11 00:48:41 -0300
+
+
+Started GET "/auth/facebook/callback?state=2d231ec157e88a68021d2cd8dec8633f610b786f7eb9d98d&code=AQD4He2u3FZrBk5qp4tFxfcrrVI5AEvfeTQ42ZaNbq2c-lKi33zN9aL8VQO6NnufzFJ0p4Ay90natX7arYNtTj34D8st4_c7OUOtsP4CwLXzamuhqQLvkBGwdm9uLTNyZdGwRqjTHxD_y76dfPa3UpQUgNpgpshGA9aEQIhaw3sdGTmUfnkg-w5tY7sjPQ7s46xZgAojF2PFwBAUVoQXaPJX" for 127.0.0.1 at 2013-04-11 00:48:42 -0300
+Processing by Usuarios::OmniauthCallbacksController#facebook as HTML
+  Parameters: {"state"=>"2d231ec157e88a68021d2cd8dec8633f610b786f7eb9d98d", "code"=>"AQD4He2u3FZrBk5qp4tFxfcrrVI5AEvfeTQ42ZaNbq2c-lKi33zN9aL8VQO6NnufzFJ0p4Ay90natX7arYNtTj34D8st4_c7OUOtsP4CwLXzamuhqQLvkBGwdm9uLTNyZdGwRqjTHxD_y76dfPa3UpQUgNpgpshGA9aEQIhaw3sdGTmUfnkg-w5tY7sjPQ7s46xZgAojF2PFwBAUVoQXaPJX"}
+  [1m[35mUsuario Load (15.6ms)[0m  SELECT `usuarios`.* FROM `usuarios` WHERE `usuarios`.`facebook_uid` = '612273239' LIMIT 1
+  [1m[36m (15.6ms)[0m  [1mBEGIN[0m
+  [1m[35m (31.2ms)[0m  UPDATE `usuarios` SET `last_sign_in_at` = '2013-04-11 03:48:44', `current_sign_in_at` = '2013-04-11 03:48:44', `last_sign_in_ip` = '127.0.0.1', `current_sign_in_ip` = '127.0.0.1', `sign_in_count` = 1 WHERE `usuarios`.`id` = 129
+  [1m[36m (62.4ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 281ms (ActiveRecord: 171.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-04-11 00:48:44 -0300
+  [1m[35mUsuario Load (31.2ms)[0m  SELECT `usuarios`.* FROM `usuarios` WHERE `usuarios`.`id` = 129 LIMIT 1
+Processing by AreasController#index as HTML
+  [1m[36mArea Load (31.2ms)[0m  [1mSELECT `areas`.* FROM `areas` [0m
+  Rendered areas/index.html.erb within layouts/application (15.6ms)
+Completed 200 OK in 94ms (Views: 15.6ms | ActiveRecord: 78.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-04-11 00:48:44 -0300
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/area.css?body=1" for 127.0.0.1 at 2013-04-11 00:48:44 -0300
+Served asset /area.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-04-11 00:48:44 -0300
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-04-11 00:48:44 -0300
+Served asset /jquery_ujs.js - 304 Not Modified (15ms)
+
+
+Started GET "/assets/area.js?body=1" for 127.0.0.1 at 2013-04-11 00:48:44 -0300
+Served asset /area.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-04-11 00:48:44 -0300
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/sair" for 127.0.0.1 at 2013-04-11 00:48:48 -0300
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"bcZ/EGfTTZknZqpajIkJGhOQ69enE2zLx1T2QtAWrjg="}
+  [1m[35mUsuario Load (15.6ms)[0m  SELECT `usuarios`.* FROM `usuarios` WHERE `usuarios`.`id` = 129 LIMIT 1
+  [1m[36m (15.6ms)[0m  [1mBEGIN[0m
+  [1m[35m (15.6ms)[0m  COMMIT
+Redirected to http://localhost:3000/
+Completed 302 Found in 62ms (ActiveRecord: 46.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-04-11 00:48:48 -0300
+
+
+Started GET "/home" for 127.0.0.1 at 2013-04-11 00:48:48 -0300
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.erb (0.0ms)
+  Rendered devise/shared/_entrar_registrar.erb (15.6ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (15.6ms)
+Completed 200 OK in 31ms (Views: 31.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-04-11 00:48:48 -0300
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/area.css?body=1" for 127.0.0.1 at 2013-04-11 00:48:48 -0300
+Served asset /area.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-04-11 00:48:48 -0300
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-04-11 00:48:48 -0300
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/area.js?body=1" for 127.0.0.1 at 2013-04-11 00:48:48 -0300
+Served asset /area.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-04-11 00:48:48 -0300
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/auth/facebook" for 127.0.0.1 at 2013-04-11 00:49:03 -0300
+
+
+Started GET "/auth/facebook/callback?state=3e778ce9683b770621674372578f0b2ccec1f3a9b0a6e79d&code=AQBXBx5ymzMH5UtQwyTv1G7MQxyIMbgWNzat8FYo2Ljq_gSgjAm1QMHTrQ87c1zP6XWSzF-QynnSP8d9vSl6mqyoGWw6_aMHcBK01MhCmdU1CX6hAz081r9jjeo6G1Dwqq4mY5K1XDVW5LSBF24fsxYd9RJ8UOy8xGxbkNvYDNIUSyvGLRFnKdHkPGkKEI6OgDq4KMAIKXtDUpzFs4lT7O6T" for 127.0.0.1 at 2013-04-11 00:49:03 -0300
+Processing by Usuarios::OmniauthCallbacksController#facebook as HTML
+  Parameters: {"state"=>"3e778ce9683b770621674372578f0b2ccec1f3a9b0a6e79d", "code"=>"AQBXBx5ymzMH5UtQwyTv1G7MQxyIMbgWNzat8FYo2Ljq_gSgjAm1QMHTrQ87c1zP6XWSzF-QynnSP8d9vSl6mqyoGWw6_aMHcBK01MhCmdU1CX6hAz081r9jjeo6G1Dwqq4mY5K1XDVW5LSBF24fsxYd9RJ8UOy8xGxbkNvYDNIUSyvGLRFnKdHkPGkKEI6OgDq4KMAIKXtDUpzFs4lT7O6T"}
+  [1m[36mUsuario Load (327.6ms)[0m  [1mSELECT `usuarios`.* FROM `usuarios` WHERE `usuarios`.`facebook_uid` = '612273239' LIMIT 1[0m
+  [1m[35mUsuario Load (31.2ms)[0m  SELECT `usuarios`.* FROM `usuarios` WHERE `usuarios`.`email` = 'leovalverde@hotmail.com' LIMIT 1
+  [1m[36m (15.6ms)[0m  [1mBEGIN[0m
+  [1m[35mUsuario Exists (15.6ms)[0m  SELECT 1 AS one FROM `usuarios` WHERE `usuarios`.`email` = BINARY 'leovalverde@hotmail.com' LIMIT 1
+  [1m[36mSQL (31.2ms)[0m  [1mINSERT INTO `usuarios` (`area_id`, `cargo_id`, `confirmation_sent_at`, `confirmation_token`, `confirmed_at`, `current_sign_in_at`, `current_sign_in_ip`, `data_nasc`, `descr`, `email`, `encrypted_password`, `facebook_uid`, `imagem`, `last_sign_in_at`, `last_sign_in_ip`, `nome`, `porque`, `remember_created_at`, `reset_password_sent_at`, `reset_password_token`, `sign_in_count`, `sobrenome`, `unconfirmed_email`) VALUES (NULL, NULL, NULL, NULL, '2013-04-11 03:49:05', NULL, NULL, NULL, NULL, 'leovalverde@hotmail.com', '$2a$10$bWuOBrYVeqde3DRq5XYAiOQN2Cb4BMvkggk61ma0.Ltpm94SuxHwq', '612273239', 'http://graph.facebook.com/612273239/picture?type=square', NULL, NULL, 'Leonardo', NULL, NULL, NULL, NULL, 0, 'Valverde', NULL)[0m
+  [1m[35m (78.0ms)[0m  COMMIT
+Completed 500 Internal Server Error in 102103ms
+
+NoMethodError (undefined method `each' for nil:NilClass):
+  app/models/usuario.rb:50:in `save_work_history_facebook'
+  app/models/usuario.rb:30:in `find_for_facebook_oauth'
+  app/controllers/usuarios/omniauth_callbacks_controller.rb:4:in `facebook'
+
+
+  Rendered c:/Ruby193/lib/ruby/gems/1.9.1/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.0ms)
+  Rendered c:/Ruby193/lib/ruby/gems/1.9.1/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.0ms)
+  Rendered c:/Ruby193/lib/ruby/gems/1.9.1/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (31.2ms)
+
+
+Started GET "/auth/facebook" for 127.0.0.1 at 2013-04-11 00:51:08 -0300
+
+
+Started GET "/auth/facebook/callback?state=59a48b43cbbad3556303c55b6d796fc52d46f7c298d9b2a6&code=AQAqGUnhqsYMdSP2Tc1VjVs7B78A6ouXXZ0WERcD9yawMZo7OQOQR3rg8ypf7e59iKuAsOpys1OYzn8soe2jMcqNrhA0721IPExm9Er7GUxYjQ_JQM62L8hSMPXP7APEQjUu6hEjaFdC9z3DIwcdLwxX8owIiGwmKFa7NrddxXFTEmADNv_mOZWZfMGDN75NsAYdpu_Td34q9cDMo8514VeS" for 127.0.0.1 at 2013-04-11 00:51:08 -0300
+Processing by Usuarios::OmniauthCallbacksController#facebook as HTML
+  Parameters: {"state"=>"59a48b43cbbad3556303c55b6d796fc52d46f7c298d9b2a6", "code"=>"AQAqGUnhqsYMdSP2Tc1VjVs7B78A6ouXXZ0WERcD9yawMZo7OQOQR3rg8ypf7e59iKuAsOpys1OYzn8soe2jMcqNrhA0721IPExm9Er7GUxYjQ_JQM62L8hSMPXP7APEQjUu6hEjaFdC9z3DIwcdLwxX8owIiGwmKFa7NrddxXFTEmADNv_mOZWZfMGDN75NsAYdpu_Td34q9cDMo8514VeS"}
+  [1m[36mUsuario Load (15.6ms)[0m  [1mSELECT `usuarios`.* FROM `usuarios` WHERE `usuarios`.`facebook_uid` = '612273239' LIMIT 1[0m
+  [1m[35mUsuario Load (46.8ms)[0m  SELECT `usuarios`.* FROM `usuarios` WHERE `usuarios`.`email` = 'leovalverde@hotmail.com' LIMIT 1
+  [1m[36m (15.6ms)[0m  [1mBEGIN[0m
+  [1m[35mUsuario Exists (15.6ms)[0m  SELECT 1 AS one FROM `usuarios` WHERE `usuarios`.`email` = BINARY 'leovalverde@hotmail.com' LIMIT 1
+  [1m[36mSQL (31.2ms)[0m  [1mINSERT INTO `usuarios` (`area_id`, `cargo_id`, `confirmation_sent_at`, `confirmation_token`, `confirmed_at`, `current_sign_in_at`, `current_sign_in_ip`, `data_nasc`, `descr`, `email`, `encrypted_password`, `facebook_uid`, `imagem`, `last_sign_in_at`, `last_sign_in_ip`, `nome`, `porque`, `remember_created_at`, `reset_password_sent_at`, `reset_password_token`, `sign_in_count`, `sobrenome`, `unconfirmed_email`) VALUES (NULL, NULL, NULL, NULL, '2013-04-11 03:51:10', NULL, NULL, NULL, NULL, 'leovalverde@hotmail.com', '$2a$10$LD7WyjeUCRhrCc4iOu/T4OM8DhfWZxNeW2n8cY7FNWhed6gMhpX4S', '612273239', 'http://graph.facebook.com/612273239/picture?type=square', NULL, NULL, 'Leonardo', NULL, NULL, NULL, NULL, 0, 'Valverde', NULL)[0m
+  [1m[35m (109.2ms)[0m  COMMIT
+  Rendered my_mailer/password_generation.html.erb (0.0ms)
+
+Sent mail to leovalverde@hotmail.com (4384ms)
+Date: Thu, 11 Apr 2013 00:52:12 -0300
+From: carreiraup2u@gmail.com
+To: leovalverde@hotmail.com
+Message-ID: <5166336c96365_172ca3a9ac526ab@Leonardo-PC.mail>
+Subject: =?UTF-8?Q?Bem_vindo,_aqui_est=C3=A1_sua_senha!?=
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+<p>Ol=C3=A1 Leonardo Valverde!</p>
+
+<p>Voc=C3=AA acessou o nosso site pela primeira vez atrav=C3=A9s do Faceb=
+ook.</p>
+
+<p>Para que voc=C3=AA possa acessar sua conta sem precisar usar o Faceboo=
+k, voc=C3=AA pode usar sua senha inicial, que =C3=A9:</p>
+
+<p>y5gVP4hR85</p>
+
+<p>Muito obrigado!</p>=
+
+  [1m[36m (15.6ms)[0m  [1mBEGIN[0m
+  [1m[35m (15.6ms)[0m  UPDATE `usuarios` SET `last_sign_in_at` = '2013-04-11 03:52:16', `current_sign_in_at` = '2013-04-11 03:52:16', `last_sign_in_ip` = '127.0.0.1', `current_sign_in_ip` = '127.0.0.1', `sign_in_count` = 1 WHERE `usuarios`.`id` = 131
+  [1m[36mSQL (31.2ms)[0m  [1mINSERT INTO `trabalho` (`cargo`, `data_fim`, `data_inicio`, `empregador_facebook_uid`, `empregador_nome`, `usuario_id`) VALUES (NULL, NULL, NULL, NULL, NULL, 131)[0m
+  [1m[35mSQL (15.6ms)[0m  INSERT INTO `trabalho` (`cargo`, `data_fim`, `data_inicio`, `empregador_facebook_uid`, `empregador_nome`, `usuario_id`) VALUES (NULL, NULL, NULL, NULL, NULL, 131)
+  [1m[36m (78.0ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 66848ms (ActiveRecord: 577.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-04-11 00:52:17 -0300
+  [1m[35mUsuario Load (31.2ms)[0m  SELECT `usuarios`.* FROM `usuarios` WHERE `usuarios`.`id` = 131 LIMIT 1
+Processing by AreasController#index as HTML
+  [1m[36mArea Load (31.2ms)[0m  [1mSELECT `areas`.* FROM `areas` [0m
+  Rendered areas/index.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 109ms (Views: 31.2ms | ActiveRecord: 78.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-04-11 00:52:17 -0300
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/area.css?body=1" for 127.0.0.1 at 2013-04-11 00:52:17 -0300
+Served asset /area.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-04-11 00:52:17 -0300
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-04-11 00:52:17 -0300
+Served asset /jquery_ujs.js - 304 Not Modified (15ms)
+
+
+Started GET "/assets/area.js?body=1" for 127.0.0.1 at 2013-04-11 00:52:17 -0300
+Served asset /area.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-04-11 00:52:17 -0300
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/sair" for 127.0.0.1 at 2013-04-11 00:53:13 -0300
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"2yIHM6KvcDtpI5AIcFaT6qu/INfiiVCwf9iLhajwSIc="}
+  [1m[35mUsuario Load (31.2ms)[0m  SELECT `usuarios`.* FROM `usuarios` WHERE `usuarios`.`id` = 131 LIMIT 1
+Redirected to http://localhost:3000/
+Completed 302 Found in 125ms (ActiveRecord: 109.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-04-11 00:53:13 -0300
+
+
+Started GET "/home" for 127.0.0.1 at 2013-04-11 00:53:13 -0300
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.erb (0.0ms)
+  Rendered devise/shared/_entrar_registrar.erb (15.6ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (15.6ms)
+Completed 200 OK in 109ms (Views: 78.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-04-11 00:53:13 -0300
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/area.css?body=1" for 127.0.0.1 at 2013-04-11 00:53:13 -0300
+Served asset /area.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-04-11 00:53:13 -0300
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-04-11 00:53:13 -0300
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/area.js?body=1" for 127.0.0.1 at 2013-04-11 00:53:13 -0300
+Served asset /area.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-04-11 00:53:13 -0300
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/auth/facebook" for 127.0.0.1 at 2013-04-11 00:53:15 -0300
+
+
+Started GET "/auth/facebook/callback?state=0ea6911deb468c282728a05a4b86210fb6a24d988ab67fef&code=AQDL5r7kpKBf3d69NXp8sgHQQYA3lMs2XZ97K5j5qa8SDAearJrHzMEDQe4fdg7TtywzASGqtiFpNDHUNgwvLQcbg2jaGvF2dsQEf641w3SKB_Nm23rJlPuQG5vVsXFZxk2dFBf3lapsKNAH3BSF_lW1cUT3GK_EsPl_JmmezaBWgAH1Dysoz-HVUSOoBMuGhU8aalW3LQZSgjH6XY0b32Om" for 127.0.0.1 at 2013-04-11 00:53:15 -0300
+Processing by Usuarios::OmniauthCallbacksController#facebook as HTML
+  Parameters: {"state"=>"0ea6911deb468c282728a05a4b86210fb6a24d988ab67fef", "code"=>"AQDL5r7kpKBf3d69NXp8sgHQQYA3lMs2XZ97K5j5qa8SDAearJrHzMEDQe4fdg7TtywzASGqtiFpNDHUNgwvLQcbg2jaGvF2dsQEf641w3SKB_Nm23rJlPuQG5vVsXFZxk2dFBf3lapsKNAH3BSF_lW1cUT3GK_EsPl_JmmezaBWgAH1Dysoz-HVUSOoBMuGhU8aalW3LQZSgjH6XY0b32Om"}
+  [1m[36mUsuario Load (46.8ms)[0m  [1mSELECT `usuarios`.* FROM `usuarios` WHERE `usuarios`.`facebook_uid` = '612273239' LIMIT 1[0m
+  [1m[35mUsuario Load (31.2ms)[0m  SELECT `usuarios`.* FROM `usuarios` WHERE `usuarios`.`email` = 'leovalverde@hotmail.com' LIMIT 1
+  [1m[36m (15.6ms)[0m  [1mBEGIN[0m
+  [1m[35mUsuario Exists (15.6ms)[0m  SELECT 1 AS one FROM `usuarios` WHERE `usuarios`.`email` = BINARY 'leovalverde@hotmail.com' LIMIT 1
+  [1m[36mSQL (15.6ms)[0m  [1mINSERT INTO `usuarios` (`area_id`, `cargo_id`, `confirmation_sent_at`, `confirmation_token`, `confirmed_at`, `current_sign_in_at`, `current_sign_in_ip`, `data_nasc`, `descr`, `email`, `encrypted_password`, `facebook_uid`, `imagem`, `last_sign_in_at`, `last_sign_in_ip`, `nome`, `porque`, `remember_created_at`, `reset_password_sent_at`, `reset_password_token`, `sign_in_count`, `sobrenome`, `unconfirmed_email`) VALUES (NULL, NULL, NULL, NULL, '2013-04-11 03:53:17', NULL, NULL, NULL, NULL, 'leovalverde@hotmail.com', '$2a$10$h0m2Li48.AkhBz8j4Mp44.yZlpF4RwRyiQa5z3CjptyYf2Z.xAVYm', '612273239', 'http://graph.facebook.com/612273239/picture?type=square', NULL, NULL, 'Leonardo', NULL, NULL, NULL, NULL, 0, 'Valverde', NULL)[0m
+  [1m[35m (31.2ms)[0m  COMMIT
+  Rendered my_mailer/password_generation.html.erb (0.0ms)
+
+Sent mail to leovalverde@hotmail.com (4649ms)
+Date: Thu, 11 Apr 2013 00:54:11 -0300
+From: carreiraup2u@gmail.com
+To: leovalverde@hotmail.com
+Message-ID: <516633e360295_172ca3a9ac527e3@Leonardo-PC.mail>
+Subject: =?UTF-8?Q?Bem_vindo,_aqui_est=C3=A1_sua_senha!?=
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+<p>Ol=C3=A1 Leonardo Valverde!</p>
+
+<p>Voc=C3=AA acessou o nosso site pela primeira vez atrav=C3=A9s do Faceb=
+ook.</p>
+
+<p>Para que voc=C3=AA possa acessar sua conta sem precisar usar o Faceboo=
+k, voc=C3=AA pode usar sua senha inicial, que =C3=A9:</p>
+
+<p>1nWpKEQsyh</p>
+
+<p>Muito obrigado!</p>=
+
+  [1m[36m (15.6ms)[0m  [1mBEGIN[0m
+  [1m[35m (15.6ms)[0m  UPDATE `usuarios` SET `last_sign_in_at` = '2013-04-11 03:54:16', `current_sign_in_at` = '2013-04-11 03:54:16', `last_sign_in_ip` = '127.0.0.1', `current_sign_in_ip` = '127.0.0.1', `sign_in_count` = 1 WHERE `usuarios`.`id` = 132
+  [1m[36mSQL (31.2ms)[0m  [1mINSERT INTO `trabalho` (`cargo`, `data_fim`, `data_inicio`, `empregador_facebook_uid`, `empregador_nome`, `usuario_id`) VALUES (NULL, NULL, NULL, NULL, NULL, 132)[0m
+  [1m[35mSQL (15.6ms)[0m  INSERT INTO `trabalho` (`cargo`, `data_fim`, `data_inicio`, `empregador_facebook_uid`, `empregador_nome`, `usuario_id`) VALUES (NULL, NULL, NULL, NULL, NULL, 132)
+  [1m[36m (62.4ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 58953ms (ActiveRecord: 343.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-04-11 00:54:16 -0300
+  [1m[35mUsuario Load (15.6ms)[0m  SELECT `usuarios`.* FROM `usuarios` WHERE `usuarios`.`id` = 132 LIMIT 1
+Processing by AreasController#index as HTML
+  [1m[36mArea Load (31.2ms)[0m  [1mSELECT `areas`.* FROM `areas` [0m
+  Rendered areas/index.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 140ms (Views: 62.4ms | ActiveRecord: 78.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-04-11 00:54:16 -0300
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/area.css?body=1" for 127.0.0.1 at 2013-04-11 00:54:16 -0300
+Served asset /area.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-04-11 00:54:16 -0300
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-04-11 00:54:16 -0300
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/area.js?body=1" for 127.0.0.1 at 2013-04-11 00:54:16 -0300
+Served asset /area.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-04-11 00:54:16 -0300
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/sair" for 127.0.0.1 at 2013-04-11 00:54:42 -0300
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"KdStHp3VwiXZLjz7baRg3ufUGg0O3NWEfAtuHhdi60Y="}
+  [1m[35mUsuario Load (31.2ms)[0m  SELECT `usuarios`.* FROM `usuarios` WHERE `usuarios`.`id` = 132 LIMIT 1
+Redirected to http://localhost:3000/
+Completed 302 Found in 31ms (ActiveRecord: 31.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-04-11 00:54:42 -0300
+
+
+Started GET "/home" for 127.0.0.1 at 2013-04-11 00:54:42 -0300
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.erb (0.0ms)
+  Rendered devise/shared/_entrar_registrar.erb (0.0ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 31ms (Views: 31.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-04-11 00:54:43 -0300
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/area.css?body=1" for 127.0.0.1 at 2013-04-11 00:54:43 -0300
+Served asset /area.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-04-11 00:54:43 -0300
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-04-11 00:54:43 -0300
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/area.js?body=1" for 127.0.0.1 at 2013-04-11 00:54:43 -0300
+Served asset /area.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-04-11 00:54:43 -0300
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/auth/facebook" for 127.0.0.1 at 2013-04-11 00:58:40 -0300
+
+
+Started GET "/auth/facebook/callback?state=daf9971e935bcbfbeb725298ca614e9c0900d1c9305402b2&code=AQAYDEWx4nODR-vfMEUwsBaUlb5xN0zPu1PpOJJFWaw9gYFQCI_RXweruoTA6_8lg0uO2Z08VF-0Y3nTpjp8mDPD5nwVYT7qqPvwskXML7t_JWGysFigMoVUp33-Kq16uG7-Tkr-kgmNGRnY9svlagJBgz2bCOnM8nPI6NPS64d7PrHXkDVVrK37AAH3gnCS_dQhDTWVy7XLr7E24L20iNWk" for 127.0.0.1 at 2013-04-11 00:58:40 -0300
+Processing by Usuarios::OmniauthCallbacksController#facebook as HTML
+  Parameters: {"state"=>"daf9971e935bcbfbeb725298ca614e9c0900d1c9305402b2", "code"=>"AQAYDEWx4nODR-vfMEUwsBaUlb5xN0zPu1PpOJJFWaw9gYFQCI_RXweruoTA6_8lg0uO2Z08VF-0Y3nTpjp8mDPD5nwVYT7qqPvwskXML7t_JWGysFigMoVUp33-Kq16uG7-Tkr-kgmNGRnY9svlagJBgz2bCOnM8nPI6NPS64d7PrHXkDVVrK37AAH3gnCS_dQhDTWVy7XLr7E24L20iNWk"}
+  [1m[36mUsuario Load (27.0ms)[0m  [1mSELECT `usuarios`.* FROM `usuarios` WHERE `usuarios`.`facebook_uid` = '612273239' LIMIT 1[0m
+  [1m[35mUsuario Load (27.0ms)[0m  SELECT `usuarios`.* FROM `usuarios` WHERE `usuarios`.`email` = 'leovalverde@hotmail.com' LIMIT 1
+  [1m[36m (19.0ms)[0m  [1mBEGIN[0m
+  [1m[35mUsuario Exists (18.0ms)[0m  SELECT 1 AS one FROM `usuarios` WHERE `usuarios`.`email` = BINARY 'leovalverde@hotmail.com' LIMIT 1
+  [1m[36mSQL (17.0ms)[0m  [1mINSERT INTO `usuarios` (`area_id`, `cargo_id`, `confirmation_sent_at`, `confirmation_token`, `confirmed_at`, `current_sign_in_at`, `current_sign_in_ip`, `data_nasc`, `descr`, `email`, `encrypted_password`, `facebook_uid`, `imagem`, `last_sign_in_at`, `last_sign_in_ip`, `nome`, `porque`, `remember_created_at`, `reset_password_sent_at`, `reset_password_token`, `sign_in_count`, `sobrenome`, `unconfirmed_email`) VALUES (NULL, NULL, NULL, NULL, '2013-04-11 03:58:42', NULL, NULL, NULL, NULL, 'leovalverde@hotmail.com', '$2a$10$ZoaMPxZG0kC/IF9sd7nfmejXFXbqCAiUNP7mP5rV8c0OKe7yviGby', '612273239', 'http://graph.facebook.com/612273239/picture?type=square', NULL, NULL, 'Leonardo', NULL, NULL, NULL, NULL, 0, 'Valverde', NULL)[0m
+  [1m[35m (52.0ms)[0m  COMMIT
+Completed 500 Internal Server Error in 481ms
+
+ActiveModel::MassAssignmentSecurity::Error (Can't mass-assign protected attributes: empregador_facebook_uid, empregador_nome, data_inicio, data_fim, cargo):
+  app/models/usuario.rb:50:in `block in save_work_history_facebook'
+  app/models/usuario.rb:49:in `each'
+  app/models/usuario.rb:49:in `save_work_history_facebook'
+  app/models/usuario.rb:29:in `find_for_facebook_oauth'
+  app/controllers/usuarios/omniauth_callbacks_controller.rb:4:in `facebook'
+
+
+  Rendered c:/Ruby193/lib/ruby/gems/1.9.1/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/_trace.erb (46.0ms)
+  Rendered c:/Ruby193/lib/ruby/gems/1.9.1/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.0ms)
+  Rendered c:/Ruby193/lib/ruby/gems/1.9.1/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (72.0ms)
+
+
+Started GET "/auth/facebook" for 127.0.0.1 at 2013-04-11 01:09:10 -0300
+
+
+Started GET "/auth/facebook/callback?state=0706f6635014f5e1a9316c6803f75c54ef48316890693075&code=AQBqRlG9q78kvBQsvtF0zmXYlzeYzo-rlGkFKkKt8RdJ4uayRtDd-xOnk8jhyfMzKVugJS-yyMef5ErwFKaGCfwDjExsFlPwufFhd0V7ISJI1Obn80o0_LHyiiitDBANvnyvsFLIbb9rcEFjCtE1YWxD90m9m8N7i-hYb5ze_vpveaLBh6Vh7Jw6bUWt9gHxcVHAymx4c5lnMpnbvr--YwIJ" for 127.0.0.1 at 2013-04-11 01:09:10 -0300
+Processing by Usuarios::OmniauthCallbacksController#facebook as HTML
+  Parameters: {"state"=>"0706f6635014f5e1a9316c6803f75c54ef48316890693075", "code"=>"AQBqRlG9q78kvBQsvtF0zmXYlzeYzo-rlGkFKkKt8RdJ4uayRtDd-xOnk8jhyfMzKVugJS-yyMef5ErwFKaGCfwDjExsFlPwufFhd0V7ISJI1Obn80o0_LHyiiitDBANvnyvsFLIbb9rcEFjCtE1YWxD90m9m8N7i-hYb5ze_vpveaLBh6Vh7Jw6bUWt9gHxcVHAymx4c5lnMpnbvr--YwIJ"}
+  [1m[36mUsuario Load (27.0ms)[0m  [1mSELECT `usuarios`.* FROM `usuarios` WHERE `usuarios`.`facebook_uid` = '612273239' LIMIT 1[0m
+  [1m[35m (21.0ms)[0m  BEGIN
+  [1m[36m (18.0ms)[0m  [1mUPDATE `usuarios` SET `last_sign_in_at` = '2013-04-11 04:09:12', `current_sign_in_at` = '2013-04-11 04:09:12', `last_sign_in_ip` = '127.0.0.1', `current_sign_in_ip` = '127.0.0.1', `sign_in_count` = 1 WHERE `usuarios`.`id` = 133[0m
+  [1m[35m (64.0ms)[0m  COMMIT
+Redirected to http://localhost:3000/
+Completed 302 Found in 313ms (ActiveRecord: 195.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-04-11 01:09:12 -0300
+  [1m[36mUsuario Load (27.0ms)[0m  [1mSELECT `usuarios`.* FROM `usuarios` WHERE `usuarios`.`id` = 133 LIMIT 1[0m
+Processing by AreasController#index as HTML
+  [1m[35mArea Load (19.0ms)[0m  SELECT `areas`.* FROM `areas` 
+  Rendered areas/index.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 109ms (Views: 23.0ms | ActiveRecord: 74.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-04-11 01:09:13 -0300
+Served asset /application.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/area.css?body=1" for 127.0.0.1 at 2013-04-11 01:09:13 -0300
+Served asset /area.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-04-11 01:09:13 -0300
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-04-11 01:09:13 -0300
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/area.js?body=1" for 127.0.0.1 at 2013-04-11 01:09:13 -0300
+Served asset /area.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-04-11 01:09:13 -0300
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/sair" for 127.0.0.1 at 2013-04-11 01:09:24 -0300
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"m+8xCJQptAdi8IBR2FYQ35i2XMkGfP/anFnezb8lXQE="}
+  [1m[36mUsuario Load (23.0ms)[0m  [1mSELECT `usuarios`.* FROM `usuarios` WHERE `usuarios`.`id` = 133 LIMIT 1[0m
+  [1m[35m (20.0ms)[0m  BEGIN
+  [1m[36m (19.0ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 68ms (ActiveRecord: 62.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-04-11 01:09:24 -0300
+
+
+Started GET "/home" for 127.0.0.1 at 2013-04-11 01:09:24 -0300
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.erb (2.0ms)
+  Rendered devise/shared/_entrar_registrar.erb (12.0ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (15.0ms)
+Completed 200 OK in 34ms (Views: 32.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-04-11 01:09:24 -0300
+Served asset /application.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/area.css?body=1" for 127.0.0.1 at 2013-04-11 01:09:24 -0300
+Served asset /area.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-04-11 01:09:24 -0300
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-04-11 01:09:24 -0300
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/area.js?body=1" for 127.0.0.1 at 2013-04-11 01:09:24 -0300
+Served asset /area.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-04-11 01:09:24 -0300
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/auth/facebook" for 127.0.0.1 at 2013-04-11 01:09:29 -0300
+
+
+Started GET "/auth/facebook/callback?state=ab4ab6ca4bd8572a0df83def72a96cb79aeebff4c80c16e1&code=AQDa5SFb-eELng951BegxzAsZmJ3ynwavlipg31px5qgrTBfKPOERD1fpQnUndZjOxYSyspphhgWNUSdePMWBwrmotfLdSFKFy3pm3f3jUU4ByIYBcYouAC_SoQTqtX6Z1yKg1qubeNV2seC-ayWCXIaQcCjuLbpCDdkg4beylns5o7Bwf5qIVo2y8voEfNg2yEO5s7_rwyCH9AEd5JoUkkv" for 127.0.0.1 at 2013-04-11 01:09:30 -0300
+Processing by Usuarios::OmniauthCallbacksController#facebook as HTML
+  Parameters: {"state"=>"ab4ab6ca4bd8572a0df83def72a96cb79aeebff4c80c16e1", "code"=>"AQDa5SFb-eELng951BegxzAsZmJ3ynwavlipg31px5qgrTBfKPOERD1fpQnUndZjOxYSyspphhgWNUSdePMWBwrmotfLdSFKFy3pm3f3jUU4ByIYBcYouAC_SoQTqtX6Z1yKg1qubeNV2seC-ayWCXIaQcCjuLbpCDdkg4beylns5o7Bwf5qIVo2y8voEfNg2yEO5s7_rwyCH9AEd5JoUkkv"}
+  [1m[35mUsuario Load (61.0ms)[0m  SELECT `usuarios`.* FROM `usuarios` WHERE `usuarios`.`facebook_uid` = '612273239' LIMIT 1
+  [1m[36mUsuario Load (52.0ms)[0m  [1mSELECT `usuarios`.* FROM `usuarios` WHERE `usuarios`.`email` = 'leovalverde@hotmail.com' LIMIT 1[0m
+  [1m[35m (17.0ms)[0m  BEGIN
+  [1m[36mUsuario Exists (31.0ms)[0m  [1mSELECT 1 AS one FROM `usuarios` WHERE `usuarios`.`email` = BINARY 'leovalverde@hotmail.com' LIMIT 1[0m
+  [1m[35mSQL (82.0ms)[0m  INSERT INTO `usuarios` (`area_id`, `cargo_id`, `confirmation_sent_at`, `confirmation_token`, `confirmed_at`, `current_sign_in_at`, `current_sign_in_ip`, `data_nasc`, `descr`, `email`, `encrypted_password`, `facebook_uid`, `imagem`, `last_sign_in_at`, `last_sign_in_ip`, `nome`, `porque`, `remember_created_at`, `reset_password_sent_at`, `reset_password_token`, `sign_in_count`, `sobrenome`, `unconfirmed_email`) VALUES (NULL, NULL, NULL, NULL, '2013-04-11 04:09:31', NULL, NULL, NULL, NULL, 'leovalverde@hotmail.com', '$2a$10$v8tONNK1laOmB99RDWicSu2AJ3h4RBlXeZyKD7Wy6uVo8wzsrmX1a', '612273239', 'http://graph.facebook.com/612273239/picture?type=square', NULL, NULL, 'Leonardo', NULL, NULL, NULL, NULL, 0, 'Valverde', NULL)
+  [1m[36m (29.0ms)[0m  [1mCOMMIT[0m
+  [1m[35mTrabalho Load (33.0ms)[0m  SELECT `trabalho`.* FROM `trabalho` WHERE `trabalho`.`usuario_id` = 134
+  Rendered my_mailer/password_generation.html.erb (0.0ms)
+
+Sent mail to leovalverde@hotmail.com (4055ms)
+Date: Thu, 11 Apr 2013 01:10:06 -0300
+From: carreiraup2u@gmail.com
+To: leovalverde@hotmail.com
+Message-ID: <5166379e6ef58_172ca3a9ac52835@Leonardo-PC.mail>
+Subject: =?UTF-8?Q?Bem_vindo,_aqui_est=C3=A1_sua_senha!?=
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+<p>Ol=C3=A1 Leonardo Valverde!</p>
+
+<p>Voc=C3=AA acessou o nosso site pela primeira vez atrav=C3=A9s do Faceb=
+ook.</p>
+
+<p>Para que voc=C3=AA possa acessar sua conta sem precisar usar o Faceboo=
+k, voc=C3=AA pode usar sua senha inicial, que =C3=A9:</p>
+
+<p>ypNs1EpNpc</p>
+
+<p>Muito obrigado!</p>=
+
+  [1m[36m (22.0ms)[0m  [1mBEGIN[0m
+  [1m[35m (16.0ms)[0m  UPDATE `usuarios` SET `last_sign_in_at` = '2013-04-11 04:10:10', `current_sign_in_at` = '2013-04-11 04:10:10', `last_sign_in_ip` = '127.0.0.1', `current_sign_in_ip` = '127.0.0.1', `sign_in_count` = 1 WHERE `usuarios`.`id` = 134
+  [1m[36mSQL (21.0ms)[0m  [1mINSERT INTO `trabalho` (`cargo`, `data_fim`, `data_inicio`, `empregador_facebook_uid`, `empregador_nome`, `usuario_id`) VALUES ('Internship', NULL, '2012-10', '123026177759991', 'Visagio', 134)[0m
+  [1m[35mSQL (18.0ms)[0m  INSERT INTO `trabalho` (`cargo`, `data_fim`, `data_inicio`, `empregador_facebook_uid`, `empregador_nome`, `usuario_id`) VALUES ('Bolsista de Iniciação Científica', '2011-08', '2009-11', '125255914206359', 'GTA - Grupo de Teleinformática e Automação', 134)
+  [1m[36m (30.0ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 39026ms (ActiveRecord: 536.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-04-11 01:10:10 -0300
+  [1m[35mUsuario Load (29.0ms)[0m  SELECT `usuarios`.* FROM `usuarios` WHERE `usuarios`.`id` = 134 LIMIT 1
+Processing by AreasController#index as HTML
+  [1m[36mArea Load (24.0ms)[0m  [1mSELECT `areas`.* FROM `areas` [0m
+  Rendered areas/index.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 40ms (Views: 15.0ms | ActiveRecord: 24.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-04-11 01:10:10 -0300
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/area.css?body=1" for 127.0.0.1 at 2013-04-11 01:10:10 -0300
+Served asset /area.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-04-11 01:10:10 -0300
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-04-11 01:10:10 -0300
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/area.js?body=1" for 127.0.0.1 at 2013-04-11 01:10:10 -0300
+Served asset /area.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-04-11 01:10:10 -0300
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/sair" for 127.0.0.1 at 2013-04-11 01:10:15 -0300
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"u6f/tSfuPtYLC+boabdcukkxnVsRMNd9OzOpaNk8VBk="}
+  [1m[35mUsuario Load (16.0ms)[0m  SELECT `usuarios`.* FROM `usuarios` WHERE `usuarios`.`id` = 134 LIMIT 1
+  [1m[36m (19.0ms)[0m  [1mBEGIN[0m
+  [1m[35m (15.0ms)[0m  COMMIT
+Redirected to http://localhost:3000/
+Completed 302 Found in 56ms (ActiveRecord: 50.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-04-11 01:10:15 -0300
+
+
+Started GET "/home" for 127.0.0.1 at 2013-04-11 01:10:15 -0300
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.erb (1.0ms)
+  Rendered devise/shared/_entrar_registrar.erb (11.0ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (13.0ms)
+Completed 200 OK in 30ms (Views: 29.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-04-11 01:10:15 -0300
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/area.css?body=1" for 127.0.0.1 at 2013-04-11 01:10:15 -0300
+Served asset /area.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-04-11 01:10:15 -0300
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-04-11 01:10:15 -0300
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/area.js?body=1" for 127.0.0.1 at 2013-04-11 01:10:15 -0300
+Served asset /area.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-04-11 01:10:15 -0300
+Served asset /application.js - 304 Not Modified (2ms)
+Connecting to database specified by database.yml
+  [1m[36m (18.0ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations` [0m
+Migrating to AddDeviseToUsuarios (20130405190630)
+Migrating to AddColumnsToUsuarios (20130405230253)
+  [1m[35m (15.0ms)[0m  SELECT `schema_migrations`.`version` FROM `schema_migrations` 
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+  [1m[36m (15.6ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations` [0m
+Migrating to AddDeviseToUsuarios (20130405190630)
+Migrating to AddColumnsToUsuarios (20130405230253)
+  [1m[35m (15.6ms)[0m  SELECT `schema_migrations`.`version` FROM `schema_migrations` 
+Connecting to database specified by database.yml
+  [1m[36m (17.0ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations` [0m
+Migrating to AddDeviseToUsuarios (20130405190630)
+Migrating to AddColumnsToUsuarios (20130405230253)
+  [1m[35m (15.0ms)[0m  SELECT `schema_migrations`.`version` FROM `schema_migrations` 
+Connecting to database specified by database.yml
+
+
+Started GET "/home" for 127.0.0.1 at 2013-04-11 01:17:24 -0300
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.erb (4.0ms)
+  Rendered devise/shared/_entrar_registrar.erb (70.0ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (91.0ms)
+Completed 200 OK in 356ms (Views: 164.0ms | ActiveRecord: 60.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-04-11 01:17:24 -0300
+Served asset /application.css - 304 Not Modified (4ms)
+
+
+Started GET "/assets/area.css?body=1" for 127.0.0.1 at 2013-04-11 01:17:24 -0300
+Served asset /area.css - 304 Not Modified (4ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-04-11 01:17:24 -0300
+Served asset /jquery.js - 304 Not Modified (5ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-04-11 01:17:24 -0300
+Served asset /jquery_ujs.js - 304 Not Modified (5ms)
+
+
+Started GET "/assets/area.js?body=1" for 127.0.0.1 at 2013-04-11 01:17:25 -0300
+Served asset /area.js - 304 Not Modified (3ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-04-11 01:17:25 -0300
+Served asset /application.js - 304 Not Modified (8ms)
+
+
+Started GET "/auth/facebook" for 127.0.0.1 at 2013-04-11 01:17:31 -0300
+
+
+Started GET "/auth/facebook/callback?state=2092e6f63533d38581f0a11dfeff07069cabc0ce779cbce6&code=AQATYw6n_RP-1rVadSkKS7uicSW1p7BJJLUzjpKDENvF33mrbmv_L8NKo8rTidghmk6rGfnNpcEcOrjnJrzLnp1eLGN0aBy85fQ1H0XKF0Q9uhIETw8x5LOCqNYDu8EJPF883XgW371HL2W9spBaRKzL05AdpurFdCA0gsNNtoBEd6JQnqsy_PoGBzgIzRVhwz4ONxr3xTOh-aaU-Iv1_KR8" for 127.0.0.1 at 2013-04-11 01:17:32 -0300
+Processing by Usuarios::OmniauthCallbacksController#facebook as HTML
+  Parameters: {"state"=>"2092e6f63533d38581f0a11dfeff07069cabc0ce779cbce6", "code"=>"AQATYw6n_RP-1rVadSkKS7uicSW1p7BJJLUzjpKDENvF33mrbmv_L8NKo8rTidghmk6rGfnNpcEcOrjnJrzLnp1eLGN0aBy85fQ1H0XKF0Q9uhIETw8x5LOCqNYDu8EJPF883XgW371HL2W9spBaRKzL05AdpurFdCA0gsNNtoBEd6JQnqsy_PoGBzgIzRVhwz4ONxr3xTOh-aaU-Iv1_KR8"}
+  [1m[36mUsuario Load (31.2ms)[0m  [1mSELECT `usuarios`.* FROM `usuarios` WHERE `usuarios`.`facebook_uid` = '612273239' LIMIT 1[0m
+  [1m[35mUsuario Load (31.2ms)[0m  SELECT `usuarios`.* FROM `usuarios` WHERE `usuarios`.`email` = 'leovalverde@hotmail.com' LIMIT 1
+  [1m[36m (15.6ms)[0m  [1mBEGIN[0m
+  [1m[35mUsuario Exists (15.6ms)[0m  SELECT 1 AS one FROM `usuarios` WHERE `usuarios`.`email` = BINARY 'leovalverde@hotmail.com' LIMIT 1
+  [1m[36mSQL (15.6ms)[0m  [1mINSERT INTO `usuarios` (`area_id`, `cargo_id`, `confirmation_sent_at`, `confirmation_token`, `confirmed_at`, `current_sign_in_at`, `current_sign_in_ip`, `data_nasc`, `descr`, `email`, `encrypted_password`, `facebook_uid`, `imagem`, `last_sign_in_at`, `last_sign_in_ip`, `nome`, `porque`, `remember_created_at`, `reset_password_sent_at`, `reset_password_token`, `sign_in_count`, `sobrenome`, `unconfirmed_email`) VALUES (NULL, NULL, NULL, NULL, '2013-04-11 04:17:34', NULL, NULL, NULL, NULL, 'leovalverde@hotmail.com', '$2a$10$iNoQFLX6cWuU8jJ/O8ld0.pM3ru1USJg3MZX2r2mIgh1jWqzmHTXG', '612273239', 'http://graph.facebook.com/612273239/picture?type=square', NULL, NULL, 'Leonardo', NULL, NULL, NULL, NULL, 0, 'Valverde', NULL)[0m
+  [1m[35m (31.2ms)[0m  COMMIT
+  Rendered my_mailer/password_generation.html.erb (0.0ms)
+
+Sent mail to leovalverde@hotmail.com (4321ms)
+Date: Thu, 11 Apr 2013 01:17:35 -0300
+From: carreiraup2u@gmail.com
+To: leovalverde@hotmail.com
+Message-ID: <5166395fb3ae3_c24df29a835465@Leonardo-PC.mail>
+Subject: =?UTF-8?Q?Bem_vindo,_aqui_est=C3=A1_sua_senha!?=
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+<p>Ol=C3=A1 Leonardo Valverde!</p>
+
+<p>Voc=C3=AA acessou o nosso site pela primeira vez atrav=C3=A9s do Faceb=
+ook.</p>
+
+<p>Para que voc=C3=AA possa acessar sua conta sem precisar usar o Faceboo=
+k, voc=C3=AA pode usar sua senha inicial, que =C3=A9:</p>
+
+<p>qM4hQEKujp</p>
+
+<p>Muito obrigado!</p>=
+
+  [1m[36m (31.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (15.6ms)[0m  UPDATE `usuarios` SET `last_sign_in_at` = '2013-04-11 04:17:39', `current_sign_in_at` = '2013-04-11 04:17:39', `last_sign_in_ip` = '127.0.0.1', `current_sign_in_ip` = '127.0.0.1', `sign_in_count` = 1 WHERE `usuarios`.`id` = 135
+  [1m[36mSQL (31.2ms)[0m  [1mINSERT INTO `trabalho` (`cargo`, `data_fim`, `data_inicio`, `empregador_facebook_uid`, `empregador_nome`, `local`, `usuario_id`) VALUES ('Internship', NULL, '2012-10', '123026177759991', 'Visagio', 'Rio de Janeiro, Rio de Janeiro', 135)[0m
+  [1m[35mSQL (15.6ms)[0m  INSERT INTO `trabalho` (`cargo`, `data_fim`, `data_inicio`, `empregador_facebook_uid`, `empregador_nome`, `local`, `usuario_id`) VALUES ('Bolsista de Iniciação Científica', '2011-08', '2009-11', '125255914206359', 'GTA - Grupo de Teleinformática e Automação', 'Rio de Janeiro, Rio de Janeiro', 135)
+  [1m[36m (15.6ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 6256ms (ActiveRecord: 312.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-04-11 01:17:40 -0300
+  [1m[35mUsuario Load (31.2ms)[0m  SELECT `usuarios`.* FROM `usuarios` WHERE `usuarios`.`id` = 135 LIMIT 1
+Processing by AreasController#index as HTML
+  [1m[36mArea Load (15.6ms)[0m  [1mSELECT `areas`.* FROM `areas` [0m
+  Rendered areas/index.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 109ms (Views: 31.2ms | ActiveRecord: 62.4ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-04-11 01:17:40 -0300
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/area.css?body=1" for 127.0.0.1 at 2013-04-11 01:17:40 -0300
+Served asset /area.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-04-11 01:17:40 -0300
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-04-11 01:17:40 -0300
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/area.js?body=1" for 127.0.0.1 at 2013-04-11 01:17:40 -0300
+Served asset /area.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-04-11 01:17:40 -0300
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/sair" for 127.0.0.1 at 2013-04-11 01:18:31 -0300
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"splnNLpsxZU5jlyXeBwcGpi6/r4oA9vriWSIOoSNTGA="}
+  [1m[35mUsuario Load (15.6ms)[0m  SELECT `usuarios`.* FROM `usuarios` WHERE `usuarios`.`id` = 135 LIMIT 1
+Redirected to http://localhost:3000/
+Completed 302 Found in 16ms (ActiveRecord: 15.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-04-11 01:18:31 -0300
+
+
+Started GET "/home" for 127.0.0.1 at 2013-04-11 01:18:31 -0300
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.erb (0.0ms)
+  Rendered devise/shared/_entrar_registrar.erb (0.0ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 31ms (Views: 31.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-04-11 01:18:31 -0300
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/area.css?body=1" for 127.0.0.1 at 2013-04-11 01:18:31 -0300
+Served asset /area.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-04-11 01:18:31 -0300
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-04-11 01:18:31 -0300
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/area.js?body=1" for 127.0.0.1 at 2013-04-11 01:18:31 -0300
+Served asset /area.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-04-11 01:18:31 -0300
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/auth/facebook" for 127.0.0.1 at 2013-04-11 01:45:04 -0300
+
+
+Started GET "/auth/facebook/callback?state=df631b03afce83b5767a07bcb5b124e6778cbe1c58729e91&code=AQCq8OwHTOgaOIq8SalSMOJXHPM0-rkhoEN_rEG_1kYpe389rmK2W_RITdIJ12o2xTZ-nPtzrIweFKRu3okOF3uEHnSHF6WPRzQr_7IAf-NsUMbROyblLiMNACe_ttuK0I-N76Wu0N-HFQdJT7PuXQ7YRYTxT3yYjRIn8g3TRYl6vJwcM_Y6b1sAZOqtwEzHxttrBE3yr6gQnFqn-IVgBa-y" for 127.0.0.1 at 2013-04-11 01:45:04 -0300
+Processing by Usuarios::OmniauthCallbacksController#facebook as HTML
+  Parameters: {"state"=>"df631b03afce83b5767a07bcb5b124e6778cbe1c58729e91", "code"=>"AQCq8OwHTOgaOIq8SalSMOJXHPM0-rkhoEN_rEG_1kYpe389rmK2W_RITdIJ12o2xTZ-nPtzrIweFKRu3okOF3uEHnSHF6WPRzQr_7IAf-NsUMbROyblLiMNACe_ttuK0I-N76Wu0N-HFQdJT7PuXQ7YRYTxT3yYjRIn8g3TRYl6vJwcM_Y6b1sAZOqtwEzHxttrBE3yr6gQnFqn-IVgBa-y"}
+Completed 500 Internal Server Error in 16ms
+
+TypeError (can't convert Symbol into Integer):
+  app/models/usuario.rb:11:in `<class:Usuario>'
+  app/models/usuario.rb:1:in `<top (required)>'
+  app/controllers/usuarios/omniauth_callbacks_controller.rb:4:in `facebook'
+
+
+  Rendered c:/Ruby193/lib/ruby/gems/1.9.1/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.0ms)
+  Rendered c:/Ruby193/lib/ruby/gems/1.9.1/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.0ms)
+  Rendered c:/Ruby193/lib/ruby/gems/1.9.1/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (31.2ms)
+
+
+Started GET "/auth/facebook" for 127.0.0.1 at 2013-04-11 01:45:52 -0300
+
+
+Started GET "/auth/facebook/callback?state=7697d606cd7c12f0d57d727afa20d4e0a7a12d0bd0cf0d54&code=AQBR1h_NlLwEXe2CEVs677hAFDnHeeldU5nRnx5-1rkvrZLtr1BP6G4FvlXZ2tpnM-54231N7mxBmyJbOAK0Hw6k_yC7yYitW3g10MxpzJhbrtJS0KATZIufwudyTCWGtN-sH3YO_8FlKykrWdkvb4U20WAuhy42eaYcPVh1xpkA7u-vLdxl3LRU6NOO6lOfpWtxialDC2K57t0QQl1VvwwP" for 127.0.0.1 at 2013-04-11 01:45:52 -0300
+Processing by Usuarios::OmniauthCallbacksController#facebook as HTML
+  Parameters: {"state"=>"7697d606cd7c12f0d57d727afa20d4e0a7a12d0bd0cf0d54", "code"=>"AQBR1h_NlLwEXe2CEVs677hAFDnHeeldU5nRnx5-1rkvrZLtr1BP6G4FvlXZ2tpnM-54231N7mxBmyJbOAK0Hw6k_yC7yYitW3g10MxpzJhbrtJS0KATZIufwudyTCWGtN-sH3YO_8FlKykrWdkvb4U20WAuhy42eaYcPVh1xpkA7u-vLdxl3LRU6NOO6lOfpWtxialDC2K57t0QQl1VvwwP"}
+  [1m[36mUsuario Load (31.2ms)[0m  [1mSELECT `usuarios`.* FROM `usuarios` WHERE `usuarios`.`facebook_uid` = '612273239' LIMIT 1[0m
+  [1m[35mUsuario Load (15.6ms)[0m  SELECT `usuarios`.* FROM `usuarios` WHERE `usuarios`.`email` = 'leovalverde@hotmail.com' LIMIT 1
+  [1m[36m (15.6ms)[0m  [1mBEGIN[0m
+  [1m[35mUsuario Exists (15.6ms)[0m  SELECT 1 AS one FROM `usuarios` WHERE `usuarios`.`email` = BINARY 'leovalverde@hotmail.com' LIMIT 1
+  [1m[36mSQL (31.2ms)[0m  [1mINSERT INTO `usuarios` (`area_id`, `cargo_id`, `confirmation_sent_at`, `confirmation_token`, `confirmed_at`, `current_sign_in_at`, `current_sign_in_ip`, `data_nasc`, `descr`, `email`, `encrypted_password`, `facebook_uid`, `imagem`, `last_sign_in_at`, `last_sign_in_ip`, `nome`, `porque`, `remember_created_at`, `reset_password_sent_at`, `reset_password_token`, `sign_in_count`, `sobrenome`, `unconfirmed_email`) VALUES (NULL, NULL, NULL, NULL, '2013-04-11 04:45:54', NULL, NULL, NULL, NULL, 'leovalverde@hotmail.com', '$2a$10$f8VFzVf.HBdgitnoIL/O0O1bqmSbqmux.oyps0mnV6lZBZYN/kAY2', '612273239', 'http://graph.facebook.com/612273239/picture?type=square', NULL, NULL, 'Leonardo', NULL, NULL, NULL, NULL, 0, 'Valverde', NULL)[0m
+  [1m[35m (109.2ms)[0m  COMMIT
+  Rendered my_mailer/password_generation.html.erb (0.0ms)
+
+Sent mail to leovalverde@hotmail.com (4649ms)
+Date: Thu, 11 Apr 2013 01:50:24 -0300
+From: carreiraup2u@gmail.com
+To: leovalverde@hotmail.com
+Message-ID: <51664110af9e9_c24df29a8355fa@Leonardo-PC.mail>
+Subject: =?UTF-8?Q?Bem_vindo,_aqui_est=C3=A1_sua_senha!?=
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+<p>Ol=C3=A1 Leonardo Valverde!</p>
+
+<p>Voc=C3=AA acessou o nosso site pela primeira vez atrav=C3=A9s do Faceb=
+ook.</p>
+
+<p>Para que voc=C3=AA possa acessar sua conta sem precisar usar o Faceboo=
+k, voc=C3=AA pode usar sua senha inicial, que =C3=A9:</p>
+
+<p>QnkmFd2uUo</p>
+
+<p>Muito obrigado!</p>=
+
+  [1m[36m (15.6ms)[0m  [1mBEGIN[0m
+  [1m[35m (15.6ms)[0m  UPDATE `usuarios` SET `last_sign_in_at` = '2013-04-11 04:50:29', `current_sign_in_at` = '2013-04-11 04:50:29', `last_sign_in_ip` = '127.0.0.1', `current_sign_in_ip` = '127.0.0.1', `sign_in_count` = 1 WHERE `usuarios`.`id` = 136
+  [1m[36mSQL (15.6ms)[0m  [1mINSERT INTO `trabalho` (`cargo`, `data_fim`, `data_inicio`, `empregador_facebook_uid`, `empregador_nome`, `local`, `usuario_id`) VALUES ('Internship', NULL, '2012-10', '123026177759991', 'Visagio', 'Rio de Janeiro, Rio de Janeiro', 136)[0m
+  [1m[35mSQL (15.6ms)[0m  INSERT INTO `trabalho` (`cargo`, `data_fim`, `data_inicio`, `empregador_facebook_uid`, `empregador_nome`, `local`, `usuario_id`) VALUES ('Bolsista de Iniciação Científica', '2011-08', '2009-11', '125255914206359', 'GTA - Grupo de Teleinformática e Automação', 'Rio de Janeiro, Rio de Janeiro', 136)
+  [1m[36m (31.2ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 274935ms (ActiveRecord: 436.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-04-11 01:50:29 -0300
+  [1m[35mUsuario Load (31.2ms)[0m  SELECT `usuarios`.* FROM `usuarios` WHERE `usuarios`.`id` = 136 LIMIT 1
+
+
+Started GET "/home" for 127.0.0.1 at 2013-04-11 01:50:29 -0300
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.erb (0.0ms)
+  Rendered devise/shared/_entrar_registrar.erb (15.6ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (15.6ms)
+Completed 200 OK in 31ms (Views: 31.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-04-11 01:50:29 -0300
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/area.css?body=1" for 127.0.0.1 at 2013-04-11 01:50:29 -0300
+Served asset /area.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-04-11 01:50:29 -0300
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-04-11 01:50:29 -0300
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/area.js?body=1" for 127.0.0.1 at 2013-04-11 01:50:29 -0300
+Served asset /area.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-04-11 01:50:29 -0300
+Served asset /application.js - 304 Not Modified (0ms)
+Connecting to database specified by database.yml
+  [1m[36m (15.6ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations` [0m
+Migrating to AddDeviseToUsuarios (20130405190630)
+Migrating to AddColumnsToUsuarios (20130405230253)
+  [1m[35m (15.6ms)[0m  SELECT `schema_migrations`.`version` FROM `schema_migrations` 
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+  [1m[36m (15.6ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations` [0m
+Migrating to AddDeviseToUsuarios (20130405190630)
+Migrating to AddColumnsToUsuarios (20130405230253)
+  [1m[35m (15.6ms)[0m  SELECT `schema_migrations`.`version` FROM `schema_migrations` 
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+
+
+Started GET "/auth/facebook" for 127.0.0.1 at 2013-04-11 02:04:10 -0300
+
+
+Started GET "/auth/facebook/callback?state=3c9cb158d26dabf11b522d16eeff7b26de65cfcf9ac108ec&code=AQC83wzPOxctX0oBCGRiHa2kZDcNJx0B-oPHTicThYOXpu931yh3-EnmOQIAUuV70ITIY3IyWPJwphR0SlZdDuy-E6xvE4gxZFusuC9lA3H3h0Jt4vcEy790y0p4wDcq_-vLzJzaS2dHs1rltIKJ2TWOSl2voY_bO7hXZnQj-674jhbgg-P8nWkNByKuTzYCH-FAwBtdb5cXhUVL4x3pMBkG" for 127.0.0.1 at 2013-04-11 02:04:11 -0300
+Processing by Usuarios::OmniauthCallbacksController#facebook as HTML
+  Parameters: {"state"=>"3c9cb158d26dabf11b522d16eeff7b26de65cfcf9ac108ec", "code"=>"AQC83wzPOxctX0oBCGRiHa2kZDcNJx0B-oPHTicThYOXpu931yh3-EnmOQIAUuV70ITIY3IyWPJwphR0SlZdDuy-E6xvE4gxZFusuC9lA3H3h0Jt4vcEy790y0p4wDcq_-vLzJzaS2dHs1rltIKJ2TWOSl2voY_bO7hXZnQj-674jhbgg-P8nWkNByKuTzYCH-FAwBtdb5cXhUVL4x3pMBkG"}
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+
+
+Started GET "/" for 127.0.0.1 at 2013-04-11 02:07:46 -0300
+
+
+Started GET "/home" for 127.0.0.1 at 2013-04-11 02:07:46 -0300
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.erb (0.0ms)
+  Rendered devise/shared/_entrar_registrar.erb (62.4ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (93.6ms)
+Completed 200 OK in 359ms (Views: 156.0ms | ActiveRecord: 62.4ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-04-11 02:07:47 -0300
+Served asset /application.css - 304 Not Modified (15ms)
+
+
+Started GET "/assets/area.css?body=1" for 127.0.0.1 at 2013-04-11 02:07:47 -0300
+Served asset /area.css - 304 Not Modified (15ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-04-11 02:07:47 -0300
+Served asset /jquery.js - 304 Not Modified (15ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-04-11 02:07:47 -0300
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/area.js?body=1" for 127.0.0.1 at 2013-04-11 02:07:47 -0300
+Served asset /area.js - 304 Not Modified (15ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-04-11 02:07:47 -0300
+Served asset /application.js - 304 Not Modified (15ms)
+
+
+Started GET "/auth/facebook" for 127.0.0.1 at 2013-04-11 02:07:51 -0300
+
+
+Started GET "/auth/facebook/callback?state=fd06aefebad8745220771da0dd5a13b1bd44a84f59f747b8&code=AQBVJSTH1Tbp7nzJJyxVomULD71vjmIqEIuXaWiLeyl4Jx1sj5ea1UupEXAtQ1QaMOrAnmNr8y66G3pLovLYQrugM_dZY5pqcP8XkBjbQEryZ1aqHxiIpfpK1CD2YJ75nkhOsmUvPb2I6b5PAxkY3cC0rtS-nqT_oVaykUQnb8z4DTm5ICb8bOeHbuUFlEAb8s-bpKRiMqU9BUwXYSuW3N10" for 127.0.0.1 at 2013-04-11 02:07:52 -0300
+Processing by Usuarios::OmniauthCallbacksController#facebook as HTML
+  Parameters: {"state"=>"fd06aefebad8745220771da0dd5a13b1bd44a84f59f747b8", "code"=>"AQBVJSTH1Tbp7nzJJyxVomULD71vjmIqEIuXaWiLeyl4Jx1sj5ea1UupEXAtQ1QaMOrAnmNr8y66G3pLovLYQrugM_dZY5pqcP8XkBjbQEryZ1aqHxiIpfpK1CD2YJ75nkhOsmUvPb2I6b5PAxkY3cC0rtS-nqT_oVaykUQnb8z4DTm5ICb8bOeHbuUFlEAb8s-bpKRiMqU9BUwXYSuW3N10"}
+  [1m[36mUsuario Load (15.6ms)[0m  [1mSELECT `usuarios`.* FROM `usuarios` WHERE `usuarios`.`facebook_uid` = '612273239' LIMIT 1[0m
+  [1m[35mUsuario Load (15.6ms)[0m  SELECT `usuarios`.* FROM `usuarios` WHERE `usuarios`.`email` = 'leovalverde@hotmail.com' LIMIT 1
+  [1m[36m (15.6ms)[0m  [1mBEGIN[0m
+  [1m[35mUsuario Exists (15.6ms)[0m  SELECT 1 AS one FROM `usuarios` WHERE `usuarios`.`email` = BINARY 'leovalverde@hotmail.com' LIMIT 1
+  [1m[36mSQL (31.2ms)[0m  [1mINSERT INTO `usuarios` (`area_id`, `cargo_id`, `confirmation_sent_at`, `confirmation_token`, `confirmed_at`, `current_sign_in_at`, `current_sign_in_ip`, `data_nasc`, `descr`, `email`, `encrypted_password`, `facebook_uid`, `imagem`, `last_sign_in_at`, `last_sign_in_ip`, `nome`, `porque`, `remember_created_at`, `reset_password_sent_at`, `reset_password_token`, `sign_in_count`, `sobrenome`, `unconfirmed_email`) VALUES (NULL, NULL, NULL, NULL, '2013-04-11 05:07:53', NULL, NULL, NULL, NULL, 'leovalverde@hotmail.com', '$2a$10$kL6Dbx60LFl2eIepLe4WvOTXFCF.CW4jIyQ6Cm7xWxxhYAY9Z8S7S', '612273239', 'http://graph.facebook.com/612273239/picture?type=square', NULL, NULL, 'Leonardo', NULL, NULL, NULL, NULL, 0, 'Valverde', NULL)[0m
+  [1m[35m (46.8ms)[0m  COMMIT
+  [1m[36mEducacao Load (15.6ms)[0m  [1mSELECT `educacao`.* FROM `educacao` WHERE `educacao`.`usuario_id` = 137[0m
+  Rendered my_mailer/password_generation.html.erb (0.0ms)
+
+Sent mail to leovalverde@hotmail.com (4072ms)
+Date: Thu, 11 Apr 2013 02:08:50 -0300
+From: carreiraup2u@gmail.com
+To: leovalverde@hotmail.com
+Message-ID: <51664562a0d62_125cdaa9a897318@Leonardo-PC.mail>
+Subject: =?UTF-8?Q?Bem_vindo,_aqui_est=C3=A1_sua_senha!?=
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+<p>Ol=C3=A1 Leonardo Valverde!</p>
+
+<p>Voc=C3=AA acessou o nosso site pela primeira vez atrav=C3=A9s do Faceb=
+ook.</p>
+
+<p>Para que voc=C3=AA possa acessar sua conta sem precisar usar o Faceboo=
+k, voc=C3=AA pode usar sua senha inicial, que =C3=A9:</p>
+
+<p>28XB2ipYTp</p>
+
+<p>Muito obrigado!</p>=
+
+  [1m[35m (15.6ms)[0m  BEGIN
+  [1m[36m (15.6ms)[0m  [1mUPDATE `usuarios` SET `last_sign_in_at` = '2013-04-11 05:08:54', `current_sign_in_at` = '2013-04-11 05:08:54', `last_sign_in_ip` = '127.0.0.1', `current_sign_in_ip` = '127.0.0.1', `sign_in_count` = 1 WHERE `usuarios`.`id` = 137[0m
+  [1m[35mSQL (15.6ms)[0m  INSERT INTO `trabalho` (`cargo`, `data_fim`, `data_inicio`, `empregador_facebook_uid`, `empregador_nome`, `local`, `usuario_id`) VALUES ('Internship', NULL, '2012-10', '123026177759991', 'Visagio', 'Rio de Janeiro, Rio de Janeiro', 137)
+  [1m[36mSQL (15.6ms)[0m  [1mINSERT INTO `trabalho` (`cargo`, `data_fim`, `data_inicio`, `empregador_facebook_uid`, `empregador_nome`, `local`, `usuario_id`) VALUES ('Bolsista de Iniciação Científica', '2011-08', '2009-11', '125255914206359', 'GTA - Grupo de Teleinformática e Automação', 'Rio de Janeiro, Rio de Janeiro', 137)[0m
+  [1m[35mSQL (15.6ms)[0m  INSERT INTO `educacao` (`ano_conclusao`, `instituicao_facebook_uid`, `instituicao_nome`, `tipo`, `usuario_id`) VALUES ('2007', '102210819820724', 'CMRJ - Colégio Militar do Rio de Janeiro', 'High School', 137)
+  [1m[36mSQL (15.6ms)[0m  [1mINSERT INTO `educacao` (`ano_conclusao`, `instituicao_facebook_uid`, `instituicao_nome`, `tipo`, `usuario_id`) VALUES ('2013', '106010016103933', 'Federal University of Rio de Janeiro', 'College', 137)[0m
+  [1m[35m (31.2ms)[0m  COMMIT
+Redirected to http://localhost:3000/
+Completed 302 Found in 61095ms (ActiveRecord: 390.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-04-11 02:08:54 -0300
+  [1m[36mUsuario Load (31.2ms)[0m  [1mSELECT `usuarios`.* FROM `usuarios` WHERE `usuarios`.`id` = 137 LIMIT 1[0m
+Processing by AreasController#index as HTML
+  [1m[35mArea Load (15.6ms)[0m  SELECT `areas`.* FROM `areas` 
+  Rendered areas/index.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 109ms (Views: 31.2ms | ActiveRecord: 62.4ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-04-11 02:08:55 -0300
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/area.css?body=1" for 127.0.0.1 at 2013-04-11 02:08:55 -0300
+Served asset /area.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-04-11 02:08:55 -0300
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-04-11 02:08:55 -0300
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/area.js?body=1" for 127.0.0.1 at 2013-04-11 02:08:55 -0300
+Served asset /area.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-04-11 02:08:55 -0300
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/sair" for 127.0.0.1 at 2013-04-11 02:08:58 -0300
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"A9x8Yp+82bSBbBd1Y562Cjl7d4KLCoTbL00IZl4kaXI="}
+  [1m[36mUsuario Load (15.6ms)[0m  [1mSELECT `usuarios`.* FROM `usuarios` WHERE `usuarios`.`id` = 137 LIMIT 1[0m
+  [1m[35m (15.6ms)[0m  BEGIN
+  [1m[36m (31.2ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 78ms (ActiveRecord: 62.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-04-11 02:08:58 -0300
+
+
+Started GET "/home" for 127.0.0.1 at 2013-04-11 02:08:58 -0300
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.erb (0.0ms)
+  Rendered devise/shared/_entrar_registrar.erb (15.6ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (15.6ms)
+Completed 200 OK in 31ms (Views: 31.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-04-11 02:08:58 -0300
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/area.css?body=1" for 127.0.0.1 at 2013-04-11 02:08:58 -0300
+Served asset /area.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-04-11 02:08:59 -0300
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-04-11 02:08:59 -0300
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/area.js?body=1" for 127.0.0.1 at 2013-04-11 02:08:59 -0300
+Served asset /area.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-04-11 02:08:59 -0300
+Served asset /application.js - 304 Not Modified (0ms)

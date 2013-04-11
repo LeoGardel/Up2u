@@ -65,27 +65,14 @@ ActiveRecord::Schema.define(:version => 20130405230253) do
   end
 
   create_table "educacao", :force => true do |t|
-    t.integer "id_usuario"
-    t.string  "id_facebook",     :limit => 60
-    t.string  "nome",            :limit => 60
-    t.string  "ano_id_facebook", :limit => 60
-    t.string  "ano",             :limit => 60
-    t.string  "tipo",            :limit => 60
+    t.integer "usuario_id",                             :null => false
+    t.string  "instituicao_facebook_uid", :limit => 60
+    t.string  "instituicao_nome",         :limit => 60
+    t.string  "ano_conclusao",            :limit => 60
+    t.string  "tipo",                     :limit => 60
   end
 
-  create_table "facebook", :force => true do |t|
-    t.string "facebook_id",  :limit => 20
-    t.string "name",         :limit => 200
-    t.string "email",        :limit => 200
-    t.string "gender",       :limit => 10
-    t.date   "birthday"
-    t.string "location",     :limit => 200
-    t.string "hometown",     :limit => 200
-    t.text   "bio"
-    t.string "relationship", :limit => 30
-    t.string "timezone",     :limit => 10
-    t.text   "access_token"
-  end
+  add_index "educacao", ["usuario_id"], :name => "index_educacao_on_usuario_id"
 
   create_table "myers_areas", :force => true do |t|
     t.integer "myers_tipo_id",                  :null => false
@@ -111,12 +98,16 @@ ActiveRecord::Schema.define(:version => 20130405230253) do
   end
 
   create_table "trabalho", :force => true do |t|
-    t.integer "id_usuario"
-    t.string  "id_facebook", :limit => 60
-    t.string  "nome",        :limit => 60
-    t.string  "inicio",      :limit => 60
-    t.string  "fim",         :limit => 60
+    t.integer "usuario_id",                            :null => false
+    t.string  "empregador_facebook_uid", :limit => 60
+    t.string  "empregador_nome",         :limit => 60
+    t.string  "data_inicio",             :limit => 60
+    t.string  "data_fim",                :limit => 60
+    t.string  "cargo",                   :limit => 60
+    t.string  "local",                   :limit => 60
   end
+
+  add_index "trabalho", ["usuario_id"], :name => "index_trabalho_on_usuario_id"
 
   create_table "usuario_form", :force => true do |t|
     t.text    "nome",      :null => false
@@ -133,7 +124,6 @@ ActiveRecord::Schema.define(:version => 20130405230253) do
     t.string   "email",                  :limit => 60,                       :null => false
     t.date     "data_nasc"
     t.integer  "cargo_id"
-    t.integer  "facebook_id"
     t.text     "imagem"
     t.integer  "area_id"
     t.text     "porque"
