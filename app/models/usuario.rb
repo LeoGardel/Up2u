@@ -11,6 +11,9 @@ class Usuario < ActiveRecord::Base
   has_many :trabalhos
   has_many :educacoes
 
+  belongs_to :area
+  belongs_to :cargo
+
 
   def self.find_for_facebook_oauth(auth)
     usuario = Usuario.where(:facebook_uid => auth.uid).first
@@ -26,14 +29,16 @@ class Usuario < ActiveRecord::Base
                              imagem:auth.info.image
                              )
         usuario.skip_confirmation!
-        usuario.save
         usuario.send_email_with_password(password_token, "Facebook")
       else
         usuario.facebook_uid = auth.uid
-        usuario.save
       end
       usuario.save_work_history_facebook(auth.extra.raw_info.work)
       usuario.save_education_history_facebook(auth.extra.raw_info.education)
+      unless usuario.imagem
+        usuario.imagem = auth.info.image
+      end
+      usuario.save
     end
     unless usuario.confirmed?
       usuario.skip_confirmation!

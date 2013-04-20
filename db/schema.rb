@@ -47,9 +47,7 @@ ActiveRecord::Schema.define(:version => 20130405230253) do
   create_table "comp_usuarios", :force => true do |t|
     t.integer   "id_usuario",     :null => false
     t.integer   "id_competencia", :null => false
-    t.integer   "experiencia",    :null => false
-    t.integer   "conhecimento",   :null => false
-    t.integer   "gosto",          :null => false
+    t.integer   "nivel",          :null => false
     t.timestamp "data",           :null => false
   end
 
