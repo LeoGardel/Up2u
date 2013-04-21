@@ -1,9 +1,0 @@
-<%= link_to "Sair", destroy_usuario_session_path, :method => :get %> | 
-<%= link_to "Alterar configurações de segurança", edit_usuario_registration_path, :method => :get %>
-
-<h1> Painel do Usuário </h1>
-
-<section>
-	Área de Interesse: <%= collection_select(:area, :nome, @areas, :id, :nome, {:selected => current_usuario.area.id}) %><br/>
-	Cargo Almejado: <%= collection_select(:cargo, :nome, @cargos, :id, :nome, {:selected => current_usuario.cargo.id}) %><br/>
-</section>
