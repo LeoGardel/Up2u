@@ -13,6 +13,7 @@ class Usuario < ActiveRecord::Base
 
   belongs_to :area
   belongs_to :cargo
+  belongs_to :competencia, :foreign_key => :pergunta_atual_competencias
 
 
   def self.find_for_facebook_oauth(auth)
@@ -75,4 +76,9 @@ class Usuario < ActiveRecord::Base
     end
   end
 
+  def update_cargo_area(area_id, cargo_id)
+    self.area_id = area_id
+    self.cargo_id = cargo_id
+    self.save
+  end
 end

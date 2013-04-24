@@ -8,10 +8,17 @@
 	<%= form_tag(:url => dashboard_salvar_cargo_area_path, :html => { :method => :post }) do |f| %>
 
 	  <div>Área de Interesse:<br />
-	  <%= collection_select(:area, :area_id, @areas, :id, :nome, {:selected => current_usuario.area.id}) %></div>
-
+	  <%- if current_usuario.area %>
+	    <%= collection_select(:area, :area_id, @areas, :id, :nome, {:selected => current_usuario.area.id}) %></div>
+	  <%- else %>
+	    <%= collection_select(:area, :area_id, @areas, :id, :nome, {:prompt => "-Selecione"}) %></div>
+	  <%- end %>
 	  <div>Posição Almejada:<br />
-	  <%= collection_select(:cargo, :cargo_id, @cargos, :id, :nome, {:selected => current_usuario.cargo.id}) %></div>
+	  <%- if current_usuario.cargo %>
+	    <%= collection_select(:cargo, :cargo_id, @cargos, :id, :nome, {:selected => current_usuario.cargo.id}) %></div>
+	  <%- else %>
+	    <%= collection_select(:cargo, :cargo_id, @cargos, :id, :nome, {:prompt => "-Selecione"}) %></div>
+	  <%- end %>
 
 	  <div><%= submit_tag("Salvar") %></div>
 	<% end %>
