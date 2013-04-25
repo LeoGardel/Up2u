@@ -45,8 +45,8 @@ ActiveRecord::Schema.define(:version => 20130405230253) do
   end
 
   create_table "comp_usuarios", :force => true do |t|
-    t.integer   "id_usuario",     :null => false
-    t.integer   "id_competencia", :null => false
+    t.integer   "usuario_id",     :null => false
+    t.integer   "competencia_id", :null => false
     t.integer   "nivel",          :null => false
     t.timestamp "data",           :null => false
   end
@@ -116,20 +116,21 @@ ActiveRecord::Schema.define(:version => 20130405230253) do
   end
 
   create_table "usuarios", :force => true do |t|
-    t.string   "nome",                   :limit => 60
-    t.string   "sobrenome",              :limit => 60
-    t.text     "descr",                  :limit => 16777215
-    t.string   "email",                  :limit => 60,                       :null => false
+    t.string   "nome",                        :limit => 60
+    t.string   "sobrenome",                   :limit => 60
+    t.text     "descr",                       :limit => 16777215
+    t.string   "email",                       :limit => 60,                       :null => false
     t.date     "data_nasc"
     t.integer  "cargo_id"
     t.text     "imagem"
     t.integer  "area_id"
     t.text     "porque"
-    t.string   "encrypted_password",                         :default => "", :null => false
+    t.integer  "pergunta_atual_competencias"
+    t.string   "encrypted_password",                              :default => "", :null => false
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.integer  "sign_in_count",                              :default => 0
+    t.integer  "sign_in_count",                                   :default => 0
     t.datetime "current_sign_in_at"
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"

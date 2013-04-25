@@ -3,8 +3,8 @@ class AreaComp < ActiveRecord::Base
   belongs_to :area
   belongs_to :competencia
 
-  def put_in_user_session_by_area(area_id)
-    AreaComp::where(:area_id => area_id).select("competencia_id").uniq
-    #colocar na session do usuario
+  def self.lista_competencias_por_area(area_id)
+    list = AreaComp.where(:area_id => area_id).pluck(:competencia_id).uniq
+    list.reverse!
   end
 end

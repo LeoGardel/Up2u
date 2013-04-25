@@ -7,18 +7,33 @@ class QuestionarioCompetenciasController < ApplicationController
   end
 
   def prox_pergunta
-    if usuario_session.empty?
-      #colocar lista de perguntar a serem feitas na session
-      list = AreaComp::put_in_user_session_by_area current_usuario.area_id
-      binding.pry
-    end
+    atualiza_session_com_competencias
+    competencia = Competencia.find(current_usuario.pergunta_atual_competencias)
+    @pergunta = competencia[:nome]
+    @nivel1 = competencia[:nivel_1]
+    @nivel2 = competencia[:nivel_2]
+    @nivel3 = competencia[:nivel_3]
+    @nivel4 = competencia[:nivel_4]
+    @nivel5 = competencia[:nivel_5]
+    binding.pry
   end
 
   def registrar_resposta
-    CompUsuario.new(usuario_id:current_usuario.id,
-                    competencia_id:current_usuario.pergunta_atual_competencias,
-                    nivel:params["nivel"])
-    redirect_to :action => "prox_pergunta"
+    atualiza_session_com_competencias
+    CompUsuario.registrar_resposta params["nivel"]
+    unless usuario_session["lista_competencias_pendentes"].empty?
+      current_usuario.pergunta_atual_competencias = usuario_session["lista_competencias_pendentes"].pop
+      current_usuario.save
+      redirect_to :action => "prox_pergunta"
+    else
+      current_usuario.pergunta_atual_competencias = nil
+      current_usuario.save
+      redirect_to :action => "exibe_resultados"
+    end
+  end
+
+  def exibe_resultados
+
   end
 
 protected
