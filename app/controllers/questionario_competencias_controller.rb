@@ -14,6 +14,13 @@ class QuestionarioCompetenciasController < ApplicationController
     end
   end
 
+  def registrar_resposta
+    CompUsuario.new(usuario_id:current_usuario.id,
+                    competencia_id:current_usuario.pergunta_atual_competencias,
+                    nivel:params["nivel"])
+    redirect_to :action => "prox_pergunta"
+  end
+
 protected
 
   def possui_cargo_area?
