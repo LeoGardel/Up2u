@@ -4,7 +4,7 @@
 
 
     <div class="progress progress-info progress-striped active" style="margin-bottom: 9px; width: 50%">  
-        <div class="bar" style=<%= "width: " + (@respondidos*100/ @total).to_s + "%" %>></div>  
+        <div class="bar" style="<%= "width: " + (@respondidos*100/ @total).to_s + "%" %>"></div>  
       </div>
 
       <hr>  
@@ -12,16 +12,16 @@
 <%= @pergunta %>:<br />
 	<%= form_tag(questionario_competencias_registrar_resposta_path) do %>
 
-		<%= radio_button_tag(:nivel, "1") %>
-		<%= label_tag(:nivel_1, @nivel_1) %><br />
-		<%= radio_button_tag(:nivel, "2") %>
-		<%= label_tag(:nivel_2, @nivel_2) %><br />
-		<%= radio_button_tag(:nivel, "3") %>
-		<%= label_tag(:nivel_3, @nivel_3) %><br />
-		<%= radio_button_tag(:nivel, "4") %>
-		<%= label_tag(:nivel_4, @nivel_4) %><br />
 		<%= radio_button_tag(:nivel, "5") %>
 		<%= label_tag(:nivel_5, @nivel_5) %><br />
+		<%= radio_button_tag(:nivel, "4") %>
+		<%= label_tag(:nivel_4, @nivel_4) %><br />
+		<%= radio_button_tag(:nivel, "3") %>
+		<%= label_tag(:nivel_3, @nivel_3) %><br />
+		<%= radio_button_tag(:nivel, "2") %>
+		<%= label_tag(:nivel_2, @nivel_2) %><br />
+		<%= radio_button_tag(:nivel, "1") %>
+		<%= label_tag(:nivel_1, @nivel_1) %><br />
 
 	  <div><%= submit_tag("Submeter") %></div>
 	<% end %>
