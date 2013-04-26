@@ -1,12 +1,12 @@
-<%= link_to "Sair", destroy_usuario_session_path, :method => :get %> | 
-<%= link_to "Alterar configurações de segurança", edit_usuario_registration_path, :method => :get %>
-
 <h1> Questionário de Competências </h1>
 
 <section>
 	Você está prestes a responder um questionário, que tem como único objetivo te orientar em sua carreira profissional, indicando as suas deficiências profissionais na área de atuação que escolheu.
 	Responda as questões com verdade para que tenha o diagnóstico e o aconselhamento corretos para sua carreira. Você só tem a ganhar!<br/>
-
-	<%= link_to "Iniciar Teste", prox_pergunta_questionario_competencias_path, :method => :post %><br/>
+	<%- unless current_usuario.pergunta_atual_competencias %>
+		<%= link_to "Iniciar Teste", questionario_competencias_prox_pergunta_path, :method => :get %><br/>
+	<%- else %>
+		<%= link_to "Continuar Teste", questionario_competencias_prox_pergunta_path, :method => :get %><br/>
+	<%- end %>
 	<%= link_to "Voltar", dashboard_index_path, :method => :get %>
 </section>

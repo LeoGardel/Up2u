@@ -1,11 +1,8 @@
-<%= link_to "Sair", destroy_usuario_session_path, :method => :get %> | 
-<%= link_to "Alterar configurações de segurança", edit_usuario_registration_path, :method => :get %>
-
 <h1> Painel do Usuário </h1>
 
 <section>
 	<%- if current_usuario.cargo && current_usuario.area %>
-	Cargo Almejado: <%= current_usuario.cargo.nome %> <%= current_usuario.area.nome %><br/>
+	Cargo Almejado: <%= current_usuario.cargo.nome %> <%= current_usuario.area.nome_adjetivo %><br/>
 	<%- else %>
 	Cargo Almejado: Indefinido.<br/>
 	<%- end %>
@@ -13,5 +10,5 @@
 </section>
 
 <section>
-	<%= link_to "Avalie as suas competências!", instrucoes_questionario_competencias_path, :method => :get %>
+	<%= link_to "Avalie as suas competências!", questionario_competencias_instrucoes_path, :method => :get %>
 </section>

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130405230253) do
+ActiveRecord::Schema.define(:version => 20130426050852) do
 
   create_table "area_comp", :force => true do |t|
     t.integer "area_id",                      :null => false
@@ -19,9 +19,12 @@ ActiveRecord::Schema.define(:version => 20130405230253) do
     t.string  "importancia",    :limit => 60, :null => false
   end
 
+  add_index "area_comp", ["area_id"], :name => "index_area_comp_on_area_id"
+
   create_table "areas", :force => true do |t|
-    t.string "nome",  :limit => 60, :null => false
-    t.string "descr", :limit => 60, :null => false
+    t.string "nome",          :limit => 60, :null => false
+    t.string "nome_adjetivo", :limit => 60, :null => false
+    t.string "descr",         :limit => 60, :null => false
   end
 
   create_table "cargo_area", :force => true do |t|
@@ -45,10 +48,11 @@ ActiveRecord::Schema.define(:version => 20130405230253) do
   end
 
   create_table "comp_usuarios", :force => true do |t|
-    t.integer   "usuario_id",     :null => false
-    t.integer   "competencia_id", :null => false
-    t.integer   "nivel",          :null => false
-    t.timestamp "data",           :null => false
+    t.integer   "usuario_id",                    :null => false
+    t.integer   "competencia_id",                :null => false
+    t.integer   "nivel",                         :null => false
+    t.integer   "turno",          :default => 0, :null => false
+    t.timestamp "data",                          :null => false
   end
 
   create_table "competencias", :force => true do |t|
@@ -126,6 +130,7 @@ ActiveRecord::Schema.define(:version => 20130405230253) do
     t.integer  "area_id"
     t.text     "porque"
     t.integer  "pergunta_atual_competencias"
+    t.integer  "turno_competencias",                              :default => 0,  :null => false
     t.string   "encrypted_password",                              :default => "", :null => false
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
@@ -144,6 +149,7 @@ ActiveRecord::Schema.define(:version => 20130405230253) do
 
   add_index "usuarios", ["confirmation_token"], :name => "index_usuarios_on_confirmation_token", :unique => true
   add_index "usuarios", ["email"], :name => "index_usuarios_on_email", :unique => true
+  add_index "usuarios", ["facebook_uid"], :name => "index_usuarios_on_facebook_uid", :unique => true
   add_index "usuarios", ["reset_password_token"], :name => "index_usuarios_on_reset_password_token", :unique => true
 
   create_table "vagas", :force => true do |t|

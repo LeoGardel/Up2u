@@ -2,38 +2,74 @@
 
 class QuestionarioCompetenciasController < ApplicationController
   before_filter :authenticate_usuario!, :possui_cargo_area?
+  helper_method :atualiza_session_com_competencias, :inicializa_pergunta_atual
+
   def instrucoes
 		
   end
 
   def prox_pergunta
     atualiza_session_com_competencias
-    competencia = Competencia.find(current_usuario.pergunta_atual_competencias)
-    @pergunta = competencia[:nome]
-    @nivel1 = competencia[:nivel_1]
-    @nivel2 = competencia[:nivel_2]
-    @nivel3 = competencia[:nivel_3]
-    @nivel4 = competencia[:nivel_4]
-    @nivel5 = competencia[:nivel_5]
-    binding.pry
-  end
-
-  def registrar_resposta
-    atualiza_session_com_competencias
-    CompUsuario.registrar_resposta params["nivel"]
-    unless usuario_session["lista_competencias_pendentes"].empty?
-      current_usuario.pergunta_atual_competencias = usuario_session["lista_competencias_pendentes"].pop
-      current_usuario.save
-      redirect_to :action => "prox_pergunta"
+    inicializa_pergunta_atual
+    if current_usuario.pergunta_atual_competencias
+      competencia = Competencia.find(current_usuario.pergunta_atual_competencias)
+      @pergunta = competencia[:nome]
+      @nivel_1 = competencia[:nivel_1]
+      @nivel_2 = competencia[:nivel_2]
+      @nivel_3 = competencia[:nivel_3]
+      @nivel_4 = competencia[:nivel_4]
+      @nivel_5 = competencia[:nivel_5]
+      @total = usuario_session["lista_competencias"].length
+      @respondidos = @total - usuario_session["lista_competencias"].index(current_usuario.pergunta_atual_competencias) - 1
     else
-      current_usuario.pergunta_atual_competencias = nil
-      current_usuario.save
-      redirect_to :action => "exibe_resultados"
+      usuario_session.delete("lista_competencias")
+      redirect_to :action => "resultados"
     end
   end
 
-  def exibe_resultados
+  def registrar_resposta
+    if current_usuario.pergunta_atual_competencias
+      if [1,2,3,4,5].include?(params[:nivel].to_i)
+        atualiza_session_com_competencias
+        CompUsuario.registrar_resposta current_usuario.id, current_usuario.pergunta_atual_competencias, params[:nivel], current_usuario.turno_competencias
+        posicao_atual = usuario_session["lista_competencias"].index(current_usuario.pergunta_atual_competencias)
+        unless posicao_atual == 0
+          current_usuario.pergunta_atual_competencias = usuario_session["lista_competencias"][posicao_atual - 1]
+          current_usuario.save
+          redirect_to :action => "prox_pergunta"
+        else
+          current_usuario.pergunta_atual_competencias = nil
+          current_usuario.save
+          usuario_session.delete("lista_competencias")
+          redirect_to :action => "resultados"
+        end
+      else
+        flash[:alert] = "Você tem que escolher uma das alternativas do questionário."
+        redirect_to :action => "prox_pergunta"
+      end
+    else
+      flash[:alert] = "Você não está em um questionário."
+      redirect_to dashboard_index_path
+    end
+  end
 
+  def resultados
+
+  end
+
+  def atualiza_session_com_competencias
+    unless usuario_session["lista_competencias"]
+      lista = AreaComp.lista_competencias_por_area(current_usuario.area_id)
+      usuario_session["lista_competencias"] = lista
+    end
+  end
+
+  def inicializa_pergunta_atual
+    unless current_usuario.pergunta_atual_competencias
+      current_usuario.pergunta_atual_competencias = usuario_session["lista_competencias"].last
+      current_usuario.turno_competencias += 1
+      current_usuario.save
+    end
   end
 
 protected

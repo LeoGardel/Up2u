@@ -1,11 +1,8 @@
-<%= link_to "Sair", destroy_usuario_session_path, :method => :get %> | 
-<%= link_to "Alterar configurações de segurança", edit_usuario_registration_path, :method => :get %>
-
 <h1> Painel do Usuário </h1>
 
 <section>
 
-	<%= form_tag(:url => dashboard_salvar_cargo_area_path, :html => { :method => :post }) do |f| %>
+	<%= form_tag(:url => dashboard_salvar_cargo_area_path, :html => { :method => :post }) do %>
 
 	  <div>Área de Interesse:<br />
 	  <%- if current_usuario.area %>
@@ -22,4 +19,6 @@
 
 	  <div><%= submit_tag("Salvar") %></div>
 	<% end %>
+
+	<%= link_to "Voltar", dashboard_index_path, :method => :get %>
 </section>

@@ -77,8 +77,11 @@ class Usuario < ActiveRecord::Base
   end
 
   def update_cargo_area(area_id, cargo_id)
-    self.area_id = area_id
-    self.cargo_id = cargo_id
-    self.save
+    if (self.area_id != area_id) or (self.cargo_id != cargo_id)
+      self.area_id = area_id
+      self.cargo_id = cargo_id
+      self.pergunta_atual_competencias = nil
+      self.save
+    end
   end
 end
