@@ -13,14 +13,6 @@
 
 ActiveRecord::Schema.define(:version => 20130426050852) do
 
-  create_table "area_comp", :force => true do |t|
-    t.integer "area_id",                      :null => false
-    t.integer "competencia_id",               :null => false
-    t.string  "importancia",    :limit => 60, :null => false
-  end
-
-  add_index "area_comp", ["area_id"], :name => "index_area_comp_on_area_id"
-
   create_table "areas", :force => true do |t|
     t.string "nome",          :limit => 60, :null => false
     t.string "nome_adjetivo", :limit => 60, :null => false

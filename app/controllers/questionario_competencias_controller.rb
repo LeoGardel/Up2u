@@ -59,7 +59,7 @@ class QuestionarioCompetenciasController < ApplicationController
 
   def atualiza_session_com_competencias
     unless usuario_session["lista_competencias"]
-      lista = AreaComp.lista_competencias_por_area(current_usuario.area_id)
+      lista = CargoComp.lista_competencias_por_area(current_usuario.area_id)
       usuario_session["lista_competencias"] = lista
     end
   end

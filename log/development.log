@@ -43340,3 +43340,1094 @@ Served asset /area.js - 304 Not Modified (0ms)
 
 Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-04-26 03:05:42 -0300
 Served asset /application.js - 304 Not Modified (1ms)
+Connecting to database specified by database.yml
+
+
+Started GET "/" for 127.0.0.1 at 2013-05-02 10:23:10 -0300
+
+
+Started GET "/home" for 127.0.0.1 at 2013-05-02 10:23:10 -0300
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.erb (0.0ms)
+  Rendered devise/shared/_entrar_registrar.erb (93.6ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (124.8ms)
+Completed 200 OK in 889ms (Views: 405.6ms | ActiveRecord: 280.8ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-05-02 10:23:11 -0300
+Served asset /application.css - 200 OK (0ms)
+
+
+Started GET "/assets/area.css?body=1" for 127.0.0.1 at 2013-05-02 10:23:11 -0300
+Served asset /area.css - 200 OK (0ms)
+
+
+Started GET "/assets/bootstrap.css?body=1" for 127.0.0.1 at 2013-05-02 10:23:11 -0300
+Served asset /bootstrap.css - 200 OK (0ms)
+
+
+Started GET "/assets/bootstrap.min.css?body=1" for 127.0.0.1 at 2013-05-02 10:23:11 -0300
+Served asset /bootstrap.min.css - 200 OK (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-05-02 10:23:11 -0300
+Served asset /jquery.js - 200 OK (15ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-05-02 10:23:11 -0300
+Served asset /jquery_ujs.js - 200 OK (31ms)
+
+
+Started GET "/assets/area.js?body=1" for 127.0.0.1 at 2013-05-02 10:23:11 -0300
+Served asset /area.js - 200 OK (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-05-02 10:23:11 -0300
+Served asset /application.js - 200 OK (15ms)
+
+
+Started POST "/home" for 127.0.0.1 at 2013-05-02 10:23:25 -0300
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"bxTc/rx5rskh21GNHnSRJxSOARQ9KroLoNPfu1axGJ8=", "usuario"=>{"email"=>"leovalverde@poli.ufrj.br", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Entrar"}
+  [1m[36mUsuario Load (109.2ms)[0m  [1mSELECT `usuarios`.* FROM `usuarios` WHERE `usuarios`.`email` = 'leovalverde@poli.ufrj.br' LIMIT 1[0m
+  [1m[35m (93.6ms)[0m  BEGIN
+  [1m[36m (93.6ms)[0m  [1mUPDATE `usuarios` SET `last_sign_in_at` = '2013-04-26 15:06:43', `current_sign_in_at` = '2013-05-02 13:23:25', `last_sign_in_ip` = '189.91.66.131', `current_sign_in_ip` = '127.0.0.1', `sign_in_count` = 14 WHERE `usuarios`.`id` = 140[0m
+  [1m[35m (93.6ms)[0m  COMMIT
+Redirected to http://localhost:3000/
+Completed 302 Found in 702ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-05-02 10:23:26 -0300
+  [1m[36mUsuario Load (78.0ms)[0m  [1mSELECT `usuarios`.* FROM `usuarios` WHERE `usuarios`.`id` = 140 LIMIT 1[0m
+Processing by DashboardController#index as HTML
+  [1m[35mCargo Load (93.6ms)[0m  SELECT `cargos`.* FROM `cargos` WHERE `cargos`.`id` = 3 LIMIT 1
+  [1m[36mArea Load (15.6ms)[0m  [1mSELECT `areas`.* FROM `areas` WHERE `areas`.`id` = 7 LIMIT 1[0m
+  Rendered dashboard/index.html.erb within layouts/application (670.8ms)
+Completed 200 OK in 702ms (Views: 234.0ms | ActiveRecord: 468.0ms)
+
+
+Started GET "/assets/bootstrap.min.css?body=1" for 127.0.0.1 at 2013-05-02 10:23:27 -0300
+Served asset /bootstrap.min.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap.css?body=1" for 127.0.0.1 at 2013-05-02 10:23:27 -0300
+Served asset /bootstrap.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-05-02 10:23:27 -0300
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/area.css?body=1" for 127.0.0.1 at 2013-05-02 10:23:27 -0300
+Served asset /area.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-05-02 10:23:27 -0300
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-05-02 10:23:27 -0300
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/area.js?body=1" for 127.0.0.1 at 2013-05-02 10:23:27 -0300
+Served asset /area.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-05-02 10:23:27 -0300
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/questionario_competencias/instrucoes" for 127.0.0.1 at 2013-05-02 10:23:29 -0300
+Processing by QuestionarioCompetenciasController#instrucoes as HTML
+  Parameters: {"authenticity_token"=>"bxTc/rx5rskh21GNHnSRJxSOARQ9KroLoNPfu1axGJ8="}
+  [1m[35mUsuario Load (390.0ms)[0m  SELECT `usuarios`.* FROM `usuarios` WHERE `usuarios`.`id` = 140 LIMIT 1
+  Rendered questionario_competencias/instrucoes.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 452ms (Views: 46.8ms | ActiveRecord: 390.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-05-02 10:23:29 -0300
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/area.css?body=1" for 127.0.0.1 at 2013-05-02 10:23:30 -0300
+Served asset /area.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap.css?body=1" for 127.0.0.1 at 2013-05-02 10:23:30 -0300
+Served asset /bootstrap.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap.min.css?body=1" for 127.0.0.1 at 2013-05-02 10:23:30 -0300
+Served asset /bootstrap.min.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-05-02 10:23:30 -0300
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-05-02 10:23:30 -0300
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/area.js?body=1" for 127.0.0.1 at 2013-05-02 10:23:30 -0300
+Served asset /area.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-05-02 10:23:30 -0300
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/questionario_competencias/prox_pergunta" for 127.0.0.1 at 2013-05-02 10:23:32 -0300
+Processing by QuestionarioCompetenciasController#prox_pergunta as HTML
+  Parameters: {"authenticity_token"=>"bxTc/rx5rskh21GNHnSRJxSOARQ9KroLoNPfu1axGJ8="}
+  [1m[36mUsuario Load (31.2ms)[0m  [1mSELECT `usuarios`.* FROM `usuarios` WHERE `usuarios`.`id` = 140 LIMIT 1[0m
+Completed 500 Internal Server Error in 31ms
+
+LoadError (Expected c:/Users/Leonardo/Documents/Leo/Visagio/Up2u/Up2u/app/models/area_comp.rb to define AreaComp):
+  app/controllers/questionario_competencias_controller.rb:62:in `atualiza_session_com_competencias'
+  app/controllers/questionario_competencias_controller.rb:12:in `prox_pergunta'
+
+
+  Rendered c:/Ruby193/lib/ruby/gems/1.9.1/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.0ms)
+  Rendered c:/Ruby193/lib/ruby/gems/1.9.1/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (15.6ms)
+  Rendered c:/Ruby193/lib/ruby/gems/1.9.1/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (31.2ms)
+
+
+Started GET "/questionario_competencias/prox_pergunta" for 127.0.0.1 at 2013-05-02 10:24:09 -0300
+Processing by QuestionarioCompetenciasController#prox_pergunta as HTML
+  Parameters: {"authenticity_token"=>"bxTc/rx5rskh21GNHnSRJxSOARQ9KroLoNPfu1axGJ8="}
+  [1m[35mUsuario Load (46.8ms)[0m  SELECT `usuarios`.* FROM `usuarios` WHERE `usuarios`.`id` = 140 LIMIT 1
+Completed 500 Internal Server Error in 218ms
+
+NameError (uninitialized constant QuestionarioCompetenciasController::CargoComp):
+  app/controllers/questionario_competencias_controller.rb:62:in `atualiza_session_com_competencias'
+  app/controllers/questionario_competencias_controller.rb:12:in `prox_pergunta'
+
+
+  Rendered c:/Ruby193/lib/ruby/gems/1.9.1/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.0ms)
+  Rendered c:/Ruby193/lib/ruby/gems/1.9.1/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.0ms)
+  Rendered c:/Ruby193/lib/ruby/gems/1.9.1/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (15.6ms)
+
+
+Started GET "/questionario_competencias/prox_pergunta" for 127.0.0.1 at 2013-05-02 10:24:20 -0300
+Processing by QuestionarioCompetenciasController#prox_pergunta as HTML
+  Parameters: {"authenticity_token"=>"bxTc/rx5rskh21GNHnSRJxSOARQ9KroLoNPfu1axGJ8="}
+  [1m[36mUsuario Load (31.2ms)[0m  [1mSELECT `usuarios`.* FROM `usuarios` WHERE `usuarios`.`id` = 140 LIMIT 1[0m
+Completed 500 Internal Server Error in 31ms
+
+NameError (uninitialized constant QuestionarioCompetenciasController::CargoComp):
+  app/controllers/questionario_competencias_controller.rb:62:in `atualiza_session_com_competencias'
+  app/controllers/questionario_competencias_controller.rb:12:in `prox_pergunta'
+
+
+  Rendered c:/Ruby193/lib/ruby/gems/1.9.1/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.0ms)
+  Rendered c:/Ruby193/lib/ruby/gems/1.9.1/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.0ms)
+  Rendered c:/Ruby193/lib/ruby/gems/1.9.1/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (31.2ms)
+Connecting to database specified by database.yml
+  [1m[36m (31.2ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations` [0m
+Migrating to AddDeviseToUsuarios (20130405190630)
+Migrating to AddIndexToAreaComp (20130426045111)
+Migrating to AddIndexToUsuarios (20130426050852)
+  [1m[35m (31.2ms)[0m  SELECT `schema_migrations`.`version` FROM `schema_migrations` 
+Connecting to database specified by database.yml
+
+
+Started GET "/" for 127.0.0.1 at 2013-05-02 10:26:41 -0300
+  [1m[36mUsuario Load (93.6ms)[0m  [1mSELECT `usuarios`.* FROM `usuarios` WHERE `usuarios`.`id` = 140 LIMIT 1[0m
+Processing by DashboardController#index as HTML
+  [1m[35mCargo Load (31.2ms)[0m  SELECT `cargos`.* FROM `cargos` WHERE `cargos`.`id` = 3 LIMIT 1
+  [1m[36mArea Load (31.2ms)[0m  [1mSELECT `areas`.* FROM `areas` WHERE `areas`.`id` = 7 LIMIT 1[0m
+  Rendered dashboard/index.html.erb within layouts/application (468.0ms)
+Completed 200 OK in 624ms (Views: 218.4ms | ActiveRecord: 374.4ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-05-02 10:26:42 -0300
+Served asset /application.css - 304 Not Modified (15ms)
+
+
+Started GET "/assets/area.css?body=1" for 127.0.0.1 at 2013-05-02 10:26:42 -0300
+Served asset /area.css - 304 Not Modified (15ms)
+
+
+Started GET "/assets/bootstrap.css?body=1" for 127.0.0.1 at 2013-05-02 10:26:42 -0300
+Served asset /bootstrap.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap.min.css?body=1" for 127.0.0.1 at 2013-05-02 10:26:42 -0300
+Served asset /bootstrap.min.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-05-02 10:26:42 -0300
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-05-02 10:26:42 -0300
+Served asset /jquery_ujs.js - 304 Not Modified (15ms)
+
+
+Started GET "/assets/area.js?body=1" for 127.0.0.1 at 2013-05-02 10:26:42 -0300
+Served asset /area.js - 304 Not Modified (15ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-05-02 10:26:42 -0300
+Served asset /application.js - 304 Not Modified (15ms)
+
+
+Started GET "/questionario_competencias/instrucoes" for 127.0.0.1 at 2013-05-02 10:26:50 -0300
+Processing by QuestionarioCompetenciasController#instrucoes as HTML
+  Parameters: {"authenticity_token"=>"bxTc/rx5rskh21GNHnSRJxSOARQ9KroLoNPfu1axGJ8="}
+  [1m[35mUsuario Load (31.2ms)[0m  SELECT `usuarios`.* FROM `usuarios` WHERE `usuarios`.`id` = 140 LIMIT 1
+  Rendered questionario_competencias/instrucoes.html.erb within layouts/application (15.6ms)
+Completed 200 OK in 94ms (Views: 62.4ms | ActiveRecord: 31.2ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-05-02 10:26:50 -0300
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/area.css?body=1" for 127.0.0.1 at 2013-05-02 10:26:50 -0300
+Served asset /area.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap.css?body=1" for 127.0.0.1 at 2013-05-02 10:26:50 -0300
+Served asset /bootstrap.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap.min.css?body=1" for 127.0.0.1 at 2013-05-02 10:26:50 -0300
+Served asset /bootstrap.min.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-05-02 10:26:51 -0300
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-05-02 10:26:51 -0300
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/area.js?body=1" for 127.0.0.1 at 2013-05-02 10:26:51 -0300
+Served asset /area.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-05-02 10:26:51 -0300
+Served asset /application.js - 304 Not Modified (15ms)
+
+
+Started GET "/questionario_competencias/prox_pergunta" for 127.0.0.1 at 2013-05-02 10:26:52 -0300
+Processing by QuestionarioCompetenciasController#prox_pergunta as HTML
+  Parameters: {"authenticity_token"=>"bxTc/rx5rskh21GNHnSRJxSOARQ9KroLoNPfu1axGJ8="}
+  [1m[36mUsuario Load (78.0ms)[0m  [1mSELECT `usuarios`.* FROM `usuarios` WHERE `usuarios`.`id` = 140 LIMIT 1[0m
+Completed 500 Internal Server Error in 125ms
+
+NameError (uninitialized constant CargoComp::AreaComp):
+  app/models/cargo_comp.rb:8:in `lista_competencias_por_area'
+  app/controllers/questionario_competencias_controller.rb:62:in `atualiza_session_com_competencias'
+  app/controllers/questionario_competencias_controller.rb:12:in `prox_pergunta'
+
+
+  Rendered c:/Ruby193/lib/ruby/gems/1.9.1/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/_trace.erb (15.6ms)
+  Rendered c:/Ruby193/lib/ruby/gems/1.9.1/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.0ms)
+  Rendered c:/Ruby193/lib/ruby/gems/1.9.1/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (31.2ms)
+
+
+Started GET "/questionario_competencias/prox_pergunta" for 127.0.0.1 at 2013-05-02 10:27:23 -0300
+Processing by QuestionarioCompetenciasController#prox_pergunta as HTML
+  Parameters: {"authenticity_token"=>"bxTc/rx5rskh21GNHnSRJxSOARQ9KroLoNPfu1axGJ8="}
+  [1m[35mUsuario Load (31.2ms)[0m  SELECT `usuarios`.* FROM `usuarios` WHERE `usuarios`.`id` = 140 LIMIT 1
+  [1m[36m (15.6ms)[0m  [1mSELECT `cargo_comp`.`competencia_id` FROM `cargo_comp` WHERE `cargo_comp`.`area_id` = 7[0m
+  [1m[35mCompetencia Load (15.6ms)[0m  SELECT `competencias`.* FROM `competencias` WHERE `competencias`.`id` = 6 LIMIT 1
+  Rendered questionario_competencias/prox_pergunta.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 484ms (Views: 15.6ms | ActiveRecord: 265.2ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-05-02 10:27:24 -0300
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/area.css?body=1" for 127.0.0.1 at 2013-05-02 10:27:24 -0300
+Served asset /area.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap.css?body=1" for 127.0.0.1 at 2013-05-02 10:27:24 -0300
+Served asset /bootstrap.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap.min.css?body=1" for 127.0.0.1 at 2013-05-02 10:27:24 -0300
+Served asset /bootstrap.min.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-05-02 10:27:24 -0300
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-05-02 10:27:24 -0300
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/area.js?body=1" for 127.0.0.1 at 2013-05-02 10:27:24 -0300
+Served asset /area.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-05-02 10:27:24 -0300
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started POST "/questionario_competencias/registrar_resposta" for 127.0.0.1 at 2013-05-02 10:27:29 -0300
+Processing by QuestionarioCompetenciasController#registrar_resposta as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"bxTc/rx5rskh21GNHnSRJxSOARQ9KroLoNPfu1axGJ8=", "nivel"=>"4", "commit"=>"Submeter"}
+  [1m[36mUsuario Load (31.2ms)[0m  [1mSELECT `usuarios`.* FROM `usuarios` WHERE `usuarios`.`id` = 140 LIMIT 1[0m
+  [1m[35m (15.6ms)[0m  BEGIN
+  [1m[36mSQL (15.6ms)[0m  [1mINSERT INTO `comp_usuarios` (`competencia_id`, `data`, `nivel`, `turno`, `usuario_id`) VALUES (6, NULL, 4, 3, 140)[0m
+  [1m[35m (31.2ms)[0m  COMMIT
+  [1m[36m (15.6ms)[0m  [1mBEGIN[0m
+  [1m[35m (31.2ms)[0m  UPDATE `usuarios` SET `pergunta_atual_competencias` = 7 WHERE `usuarios`.`id` = 140
+  [1m[36m (31.2ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/questionario_competencias/prox_pergunta
+Completed 302 Found in 250ms (ActiveRecord: 218.4ms)
+
+
+Started GET "/questionario_competencias/prox_pergunta" for 127.0.0.1 at 2013-05-02 10:27:29 -0300
+Processing by QuestionarioCompetenciasController#prox_pergunta as HTML
+  [1m[35mUsuario Load (31.2ms)[0m  SELECT `usuarios`.* FROM `usuarios` WHERE `usuarios`.`id` = 140 LIMIT 1
+  [1m[36mCompetencia Load (31.2ms)[0m  [1mSELECT `competencias`.* FROM `competencias` WHERE `competencias`.`id` = 7 LIMIT 1[0m
+  Rendered questionario_competencias/prox_pergunta.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 78ms (Views: 15.6ms | ActiveRecord: 62.4ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-05-02 10:27:29 -0300
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/area.css?body=1" for 127.0.0.1 at 2013-05-02 10:27:30 -0300
+Served asset /area.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap.css?body=1" for 127.0.0.1 at 2013-05-02 10:27:30 -0300
+Served asset /bootstrap.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap.min.css?body=1" for 127.0.0.1 at 2013-05-02 10:27:30 -0300
+Served asset /bootstrap.min.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-05-02 10:27:30 -0300
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-05-02 10:27:30 -0300
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/area.js?body=1" for 127.0.0.1 at 2013-05-02 10:27:30 -0300
+Served asset /area.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-05-02 10:27:30 -0300
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started POST "/questionario_competencias/registrar_resposta" for 127.0.0.1 at 2013-05-02 10:27:32 -0300
+Processing by QuestionarioCompetenciasController#registrar_resposta as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"bxTc/rx5rskh21GNHnSRJxSOARQ9KroLoNPfu1axGJ8=", "nivel"=>"3", "commit"=>"Submeter"}
+  [1m[35mUsuario Load (46.8ms)[0m  SELECT `usuarios`.* FROM `usuarios` WHERE `usuarios`.`id` = 140 LIMIT 1
+  [1m[36m (62.4ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (93.6ms)[0m  INSERT INTO `comp_usuarios` (`competencia_id`, `data`, `nivel`, `turno`, `usuario_id`) VALUES (7, NULL, 3, 3, 140)
+  [1m[36m (62.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (62.4ms)[0m  BEGIN
+  [1m[36m (93.6ms)[0m  [1mUPDATE `usuarios` SET `pergunta_atual_competencias` = 8 WHERE `usuarios`.`id` = 140[0m
+  [1m[35m (78.0ms)[0m  COMMIT
+Redirected to http://localhost:3000/questionario_competencias/prox_pergunta
+Completed 302 Found in 499ms (ActiveRecord: 499.2ms)
+
+
+Started GET "/questionario_competencias/prox_pergunta" for 127.0.0.1 at 2013-05-02 10:27:32 -0300
+Processing by QuestionarioCompetenciasController#prox_pergunta as HTML
+  [1m[36mUsuario Load (78.0ms)[0m  [1mSELECT `usuarios`.* FROM `usuarios` WHERE `usuarios`.`id` = 140 LIMIT 1[0m
+  [1m[35mCompetencia Load (46.8ms)[0m  SELECT `competencias`.* FROM `competencias` WHERE `competencias`.`id` = 8 LIMIT 1
+  Rendered questionario_competencias/prox_pergunta.html.erb within layouts/application (15.6ms)
+Completed 200 OK in 140ms (Views: 15.6ms | ActiveRecord: 124.8ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-05-02 10:27:32 -0300
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/area.css?body=1" for 127.0.0.1 at 2013-05-02 10:27:33 -0300
+Served asset /area.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap.css?body=1" for 127.0.0.1 at 2013-05-02 10:27:33 -0300
+Served asset /bootstrap.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap.min.css?body=1" for 127.0.0.1 at 2013-05-02 10:27:33 -0300
+Served asset /bootstrap.min.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-05-02 10:27:33 -0300
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-05-02 10:27:33 -0300
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/area.js?body=1" for 127.0.0.1 at 2013-05-02 10:27:33 -0300
+Served asset /area.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-05-02 10:27:33 -0300
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started POST "/questionario_competencias/registrar_resposta" for 127.0.0.1 at 2013-05-02 10:27:34 -0300
+Processing by QuestionarioCompetenciasController#registrar_resposta as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"bxTc/rx5rskh21GNHnSRJxSOARQ9KroLoNPfu1axGJ8=", "nivel"=>"2", "commit"=>"Submeter"}
+  [1m[36mUsuario Load (46.8ms)[0m  [1mSELECT `usuarios`.* FROM `usuarios` WHERE `usuarios`.`id` = 140 LIMIT 1[0m
+  [1m[35m (78.0ms)[0m  BEGIN
+  [1m[36mSQL (78.0ms)[0m  [1mINSERT INTO `comp_usuarios` (`competencia_id`, `data`, `nivel`, `turno`, `usuario_id`) VALUES (8, NULL, 2, 3, 140)[0m
+  [1m[35m (93.6ms)[0m  COMMIT
+  [1m[36m (78.0ms)[0m  [1mBEGIN[0m
+  [1m[35m (78.0ms)[0m  UPDATE `usuarios` SET `pergunta_atual_competencias` = 9 WHERE `usuarios`.`id` = 140
+  [1m[36m (78.0ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/questionario_competencias/prox_pergunta
+Completed 302 Found in 530ms (ActiveRecord: 530.4ms)
+
+
+Started GET "/questionario_competencias/prox_pergunta" for 127.0.0.1 at 2013-05-02 10:27:35 -0300
+Processing by QuestionarioCompetenciasController#prox_pergunta as HTML
+  [1m[35mUsuario Load (78.0ms)[0m  SELECT `usuarios`.* FROM `usuarios` WHERE `usuarios`.`id` = 140 LIMIT 1
+  [1m[36mCompetencia Load (78.0ms)[0m  [1mSELECT `competencias`.* FROM `competencias` WHERE `competencias`.`id` = 9 LIMIT 1[0m
+  Rendered questionario_competencias/prox_pergunta.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 172ms (Views: 15.6ms | ActiveRecord: 156.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-05-02 10:27:35 -0300
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/area.css?body=1" for 127.0.0.1 at 2013-05-02 10:27:36 -0300
+Served asset /area.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap.css?body=1" for 127.0.0.1 at 2013-05-02 10:27:36 -0300
+Served asset /bootstrap.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap.min.css?body=1" for 127.0.0.1 at 2013-05-02 10:27:36 -0300
+Served asset /bootstrap.min.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-05-02 10:27:36 -0300
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-05-02 10:27:36 -0300
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/area.js?body=1" for 127.0.0.1 at 2013-05-02 10:27:36 -0300
+Served asset /area.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-05-02 10:27:36 -0300
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started POST "/questionario_competencias/registrar_resposta" for 127.0.0.1 at 2013-05-02 10:27:37 -0300
+Processing by QuestionarioCompetenciasController#registrar_resposta as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"bxTc/rx5rskh21GNHnSRJxSOARQ9KroLoNPfu1axGJ8=", "nivel"=>"4", "commit"=>"Submeter"}
+  [1m[35mUsuario Load (31.2ms)[0m  SELECT `usuarios`.* FROM `usuarios` WHERE `usuarios`.`id` = 140 LIMIT 1
+  [1m[36m (15.6ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (15.6ms)[0m  INSERT INTO `comp_usuarios` (`competencia_id`, `data`, `nivel`, `turno`, `usuario_id`) VALUES (9, NULL, 4, 3, 140)
+  [1m[36m (31.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (15.6ms)[0m  BEGIN
+  [1m[36m (15.6ms)[0m  [1mUPDATE `usuarios` SET `pergunta_atual_competencias` = 10 WHERE `usuarios`.`id` = 140[0m
+  [1m[35m (31.2ms)[0m  COMMIT
+Redirected to http://localhost:3000/questionario_competencias/prox_pergunta
+Completed 302 Found in 156ms (ActiveRecord: 156.0ms)
+
+
+Started GET "/questionario_competencias/prox_pergunta" for 127.0.0.1 at 2013-05-02 10:27:38 -0300
+Processing by QuestionarioCompetenciasController#prox_pergunta as HTML
+  [1m[36mUsuario Load (31.2ms)[0m  [1mSELECT `usuarios`.* FROM `usuarios` WHERE `usuarios`.`id` = 140 LIMIT 1[0m
+  [1m[35mCompetencia Load (15.6ms)[0m  SELECT `competencias`.* FROM `competencias` WHERE `competencias`.`id` = 10 LIMIT 1
+  Rendered questionario_competencias/prox_pergunta.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 78ms (Views: 31.2ms | ActiveRecord: 46.8ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-05-02 10:27:38 -0300
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/area.css?body=1" for 127.0.0.1 at 2013-05-02 10:27:38 -0300
+Served asset /area.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap.css?body=1" for 127.0.0.1 at 2013-05-02 10:27:38 -0300
+Served asset /bootstrap.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap.min.css?body=1" for 127.0.0.1 at 2013-05-02 10:27:38 -0300
+Served asset /bootstrap.min.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-05-02 10:27:38 -0300
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-05-02 10:27:38 -0300
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/area.js?body=1" for 127.0.0.1 at 2013-05-02 10:27:38 -0300
+Served asset /area.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-05-02 10:27:38 -0300
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started POST "/questionario_competencias/registrar_resposta" for 127.0.0.1 at 2013-05-02 10:27:40 -0300
+Processing by QuestionarioCompetenciasController#registrar_resposta as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"bxTc/rx5rskh21GNHnSRJxSOARQ9KroLoNPfu1axGJ8=", "nivel"=>"3", "commit"=>"Submeter"}
+  [1m[36mUsuario Load (78.0ms)[0m  [1mSELECT `usuarios`.* FROM `usuarios` WHERE `usuarios`.`id` = 140 LIMIT 1[0m
+  [1m[35m (78.0ms)[0m  BEGIN
+  [1m[36mSQL (93.6ms)[0m  [1mINSERT INTO `comp_usuarios` (`competencia_id`, `data`, `nivel`, `turno`, `usuario_id`) VALUES (10, NULL, 3, 3, 140)[0m
+  [1m[35m (78.0ms)[0m  COMMIT
+  [1m[36m (78.0ms)[0m  [1mBEGIN[0m
+  [1m[35m (62.4ms)[0m  UPDATE `usuarios` SET `pergunta_atual_competencias` = 11 WHERE `usuarios`.`id` = 140
+  [1m[36m (93.6ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/questionario_competencias/prox_pergunta
+Completed 302 Found in 562ms (ActiveRecord: 561.6ms)
+
+
+Started GET "/questionario_competencias/prox_pergunta" for 127.0.0.1 at 2013-05-02 10:27:40 -0300
+Processing by QuestionarioCompetenciasController#prox_pergunta as HTML
+  [1m[35mUsuario Load (78.0ms)[0m  SELECT `usuarios`.* FROM `usuarios` WHERE `usuarios`.`id` = 140 LIMIT 1
+  [1m[36mCompetencia Load (78.0ms)[0m  [1mSELECT `competencias`.* FROM `competencias` WHERE `competencias`.`id` = 11 LIMIT 1[0m
+  Rendered questionario_competencias/prox_pergunta.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 218ms (Views: 62.4ms | ActiveRecord: 156.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-05-02 10:27:41 -0300
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/area.css?body=1" for 127.0.0.1 at 2013-05-02 10:27:41 -0300
+Served asset /area.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap.css?body=1" for 127.0.0.1 at 2013-05-02 10:27:41 -0300
+Served asset /bootstrap.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap.min.css?body=1" for 127.0.0.1 at 2013-05-02 10:27:41 -0300
+Served asset /bootstrap.min.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-05-02 10:27:41 -0300
+Served asset /jquery.js - 304 Not Modified (15ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-05-02 10:27:41 -0300
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/area.js?body=1" for 127.0.0.1 at 2013-05-02 10:27:41 -0300
+Served asset /area.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-05-02 10:27:41 -0300
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started POST "/questionario_competencias/registrar_resposta" for 127.0.0.1 at 2013-05-02 10:27:45 -0300
+Processing by QuestionarioCompetenciasController#registrar_resposta as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"bxTc/rx5rskh21GNHnSRJxSOARQ9KroLoNPfu1axGJ8=", "nivel"=>"1", "commit"=>"Submeter"}
+  [1m[35mUsuario Load (78.0ms)[0m  SELECT `usuarios`.* FROM `usuarios` WHERE `usuarios`.`id` = 140 LIMIT 1
+  [1m[36m (31.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (78.0ms)[0m  INSERT INTO `comp_usuarios` (`competencia_id`, `data`, `nivel`, `turno`, `usuario_id`) VALUES (11, NULL, 1, 3, 140)
+  [1m[36m (109.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (78.0ms)[0m  BEGIN
+  [1m[36m (78.0ms)[0m  [1mUPDATE `usuarios` SET `pergunta_atual_competencias` = 12 WHERE `usuarios`.`id` = 140[0m
+  [1m[35m (78.0ms)[0m  COMMIT
+Redirected to http://localhost:3000/questionario_competencias/prox_pergunta
+Completed 302 Found in 530ms (ActiveRecord: 530.4ms)
+
+
+Started GET "/questionario_competencias/prox_pergunta" for 127.0.0.1 at 2013-05-02 10:27:46 -0300
+Processing by QuestionarioCompetenciasController#prox_pergunta as HTML
+  [1m[36mUsuario Load (46.8ms)[0m  [1mSELECT `usuarios`.* FROM `usuarios` WHERE `usuarios`.`id` = 140 LIMIT 1[0m
+  [1m[35mCompetencia Load (15.6ms)[0m  SELECT `competencias`.* FROM `competencias` WHERE `competencias`.`id` = 12 LIMIT 1
+  Rendered questionario_competencias/prox_pergunta.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 109ms (Views: 31.2ms | ActiveRecord: 62.4ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-05-02 10:27:46 -0300
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/area.css?body=1" for 127.0.0.1 at 2013-05-02 10:27:46 -0300
+Served asset /area.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap.css?body=1" for 127.0.0.1 at 2013-05-02 10:27:46 -0300
+Served asset /bootstrap.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap.min.css?body=1" for 127.0.0.1 at 2013-05-02 10:27:46 -0300
+Served asset /bootstrap.min.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-05-02 10:27:46 -0300
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-05-02 10:27:46 -0300
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/area.js?body=1" for 127.0.0.1 at 2013-05-02 10:27:46 -0300
+Served asset /area.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-05-02 10:27:46 -0300
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started POST "/questionario_competencias/registrar_resposta" for 127.0.0.1 at 2013-05-02 10:27:47 -0300
+Processing by QuestionarioCompetenciasController#registrar_resposta as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"bxTc/rx5rskh21GNHnSRJxSOARQ9KroLoNPfu1axGJ8=", "nivel"=>"2", "commit"=>"Submeter"}
+  [1m[36mUsuario Load (78.0ms)[0m  [1mSELECT `usuarios`.* FROM `usuarios` WHERE `usuarios`.`id` = 140 LIMIT 1[0m
+  [1m[35m (62.4ms)[0m  BEGIN
+  [1m[36mSQL (78.0ms)[0m  [1mINSERT INTO `comp_usuarios` (`competencia_id`, `data`, `nivel`, `turno`, `usuario_id`) VALUES (12, NULL, 2, 3, 140)[0m
+  [1m[35m (78.0ms)[0m  COMMIT
+  [1m[36m (78.0ms)[0m  [1mBEGIN[0m
+  [1m[35m (93.6ms)[0m  UPDATE `usuarios` SET `pergunta_atual_competencias` = 13 WHERE `usuarios`.`id` = 140
+  [1m[36m (78.0ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/questionario_competencias/prox_pergunta
+Completed 302 Found in 577ms (ActiveRecord: 546.0ms)
+
+
+Started GET "/questionario_competencias/prox_pergunta" for 127.0.0.1 at 2013-05-02 10:27:48 -0300
+Processing by QuestionarioCompetenciasController#prox_pergunta as HTML
+  [1m[35mUsuario Load (78.0ms)[0m  SELECT `usuarios`.* FROM `usuarios` WHERE `usuarios`.`id` = 140 LIMIT 1
+  [1m[36mCompetencia Load (62.4ms)[0m  [1mSELECT `competencias`.* FROM `competencias` WHERE `competencias`.`id` = 13 LIMIT 1[0m
+  Rendered questionario_competencias/prox_pergunta.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 172ms (Views: 31.2ms | ActiveRecord: 140.4ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-05-02 10:27:48 -0300
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/area.css?body=1" for 127.0.0.1 at 2013-05-02 10:27:48 -0300
+Served asset /area.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap.css?body=1" for 127.0.0.1 at 2013-05-02 10:27:48 -0300
+Served asset /bootstrap.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap.min.css?body=1" for 127.0.0.1 at 2013-05-02 10:27:49 -0300
+Served asset /bootstrap.min.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-05-02 10:27:49 -0300
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-05-02 10:27:49 -0300
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/area.js?body=1" for 127.0.0.1 at 2013-05-02 10:27:49 -0300
+Served asset /area.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-05-02 10:27:49 -0300
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started POST "/questionario_competencias/registrar_resposta" for 127.0.0.1 at 2013-05-02 10:27:51 -0300
+Processing by QuestionarioCompetenciasController#registrar_resposta as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"bxTc/rx5rskh21GNHnSRJxSOARQ9KroLoNPfu1axGJ8=", "nivel"=>"3", "commit"=>"Submeter"}
+  [1m[35mUsuario Load (31.2ms)[0m  SELECT `usuarios`.* FROM `usuarios` WHERE `usuarios`.`id` = 140 LIMIT 1
+  [1m[36m (15.6ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (15.6ms)[0m  INSERT INTO `comp_usuarios` (`competencia_id`, `data`, `nivel`, `turno`, `usuario_id`) VALUES (13, NULL, 3, 3, 140)
+  [1m[36m (31.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (15.6ms)[0m  BEGIN
+  [1m[36m (15.6ms)[0m  [1mUPDATE `usuarios` SET `pergunta_atual_competencias` = 14 WHERE `usuarios`.`id` = 140[0m
+  [1m[35m (31.2ms)[0m  COMMIT
+Redirected to http://localhost:3000/questionario_competencias/prox_pergunta
+Completed 302 Found in 172ms (ActiveRecord: 156.0ms)
+
+
+Started GET "/questionario_competencias/prox_pergunta" for 127.0.0.1 at 2013-05-02 10:27:51 -0300
+Processing by QuestionarioCompetenciasController#prox_pergunta as HTML
+  [1m[36mUsuario Load (15.6ms)[0m  [1mSELECT `usuarios`.* FROM `usuarios` WHERE `usuarios`.`id` = 140 LIMIT 1[0m
+  [1m[35mCompetencia Load (31.2ms)[0m  SELECT `competencias`.* FROM `competencias` WHERE `competencias`.`id` = 14 LIMIT 1
+  Rendered questionario_competencias/prox_pergunta.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 62ms (Views: 15.6ms | ActiveRecord: 46.8ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-05-02 10:27:51 -0300
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/area.css?body=1" for 127.0.0.1 at 2013-05-02 10:27:51 -0300
+Served asset /area.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap.css?body=1" for 127.0.0.1 at 2013-05-02 10:27:51 -0300
+Served asset /bootstrap.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap.min.css?body=1" for 127.0.0.1 at 2013-05-02 10:27:51 -0300
+Served asset /bootstrap.min.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-05-02 10:27:51 -0300
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-05-02 10:27:51 -0300
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/area.js?body=1" for 127.0.0.1 at 2013-05-02 10:27:51 -0300
+Served asset /area.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-05-02 10:27:51 -0300
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started POST "/questionario_competencias/registrar_resposta" for 127.0.0.1 at 2013-05-02 10:27:54 -0300
+Processing by QuestionarioCompetenciasController#registrar_resposta as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"bxTc/rx5rskh21GNHnSRJxSOARQ9KroLoNPfu1axGJ8=", "nivel"=>"4", "commit"=>"Submeter"}
+  [1m[36mUsuario Load (46.8ms)[0m  [1mSELECT `usuarios`.* FROM `usuarios` WHERE `usuarios`.`id` = 140 LIMIT 1[0m
+  [1m[35m (31.2ms)[0m  BEGIN
+  [1m[36mSQL (78.0ms)[0m  [1mINSERT INTO `comp_usuarios` (`competencia_id`, `data`, `nivel`, `turno`, `usuario_id`) VALUES (14, NULL, 4, 3, 140)[0m
+  [1m[35m (109.2ms)[0m  COMMIT
+  [1m[36m (78.0ms)[0m  [1mBEGIN[0m
+  [1m[35m (31.2ms)[0m  UPDATE `usuarios` SET `pergunta_atual_competencias` = 15 WHERE `usuarios`.`id` = 140
+  [1m[36m (93.6ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/questionario_competencias/prox_pergunta
+Completed 302 Found in 499ms (ActiveRecord: 468.0ms)
+
+
+Started GET "/questionario_competencias/prox_pergunta" for 127.0.0.1 at 2013-05-02 10:27:54 -0300
+Processing by QuestionarioCompetenciasController#prox_pergunta as HTML
+  [1m[35mUsuario Load (78.0ms)[0m  SELECT `usuarios`.* FROM `usuarios` WHERE `usuarios`.`id` = 140 LIMIT 1
+  [1m[36mCompetencia Load (78.0ms)[0m  [1mSELECT `competencias`.* FROM `competencias` WHERE `competencias`.`id` = 15 LIMIT 1[0m
+  Rendered questionario_competencias/prox_pergunta.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 203ms (Views: 31.2ms | ActiveRecord: 156.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-05-02 10:27:55 -0300
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/area.css?body=1" for 127.0.0.1 at 2013-05-02 10:27:55 -0300
+Served asset /area.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap.css?body=1" for 127.0.0.1 at 2013-05-02 10:27:55 -0300
+Served asset /bootstrap.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap.min.css?body=1" for 127.0.0.1 at 2013-05-02 10:27:55 -0300
+Served asset /bootstrap.min.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-05-02 10:27:55 -0300
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-05-02 10:27:55 -0300
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/area.js?body=1" for 127.0.0.1 at 2013-05-02 10:27:55 -0300
+Served asset /area.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-05-02 10:27:55 -0300
+Served asset /application.js - 304 Not Modified (15ms)
+
+
+Started POST "/questionario_competencias/registrar_resposta" for 127.0.0.1 at 2013-05-02 10:27:57 -0300
+Processing by QuestionarioCompetenciasController#registrar_resposta as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"bxTc/rx5rskh21GNHnSRJxSOARQ9KroLoNPfu1axGJ8=", "nivel"=>"3", "commit"=>"Submeter"}
+  [1m[35mUsuario Load (78.0ms)[0m  SELECT `usuarios`.* FROM `usuarios` WHERE `usuarios`.`id` = 140 LIMIT 1
+  [1m[36m (62.4ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (93.6ms)[0m  INSERT INTO `comp_usuarios` (`competencia_id`, `data`, `nivel`, `turno`, `usuario_id`) VALUES (15, NULL, 3, 3, 140)
+  [1m[36m (78.0ms)[0m  [1mCOMMIT[0m
+  [1m[35m (46.8ms)[0m  BEGIN
+  [1m[36m (93.6ms)[0m  [1mUPDATE `usuarios` SET `pergunta_atual_competencias` = NULL WHERE `usuarios`.`id` = 140[0m
+  [1m[35m (93.6ms)[0m  COMMIT
+Redirected to http://localhost:3000/questionario_competencias/resultados
+Completed 302 Found in 546ms (ActiveRecord: 546.0ms)
+
+
+Started GET "/questionario_competencias/resultados" for 127.0.0.1 at 2013-05-02 10:27:58 -0300
+Processing by QuestionarioCompetenciasController#resultados as HTML
+  [1m[36mUsuario Load (78.0ms)[0m  [1mSELECT `usuarios`.* FROM `usuarios` WHERE `usuarios`.`id` = 140 LIMIT 1[0m
+  Rendered questionario_competencias/resultados.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 140ms (Views: 62.4ms | ActiveRecord: 78.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-05-02 10:27:58 -0300
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/area.css?body=1" for 127.0.0.1 at 2013-05-02 10:27:58 -0300
+Served asset /area.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap.css?body=1" for 127.0.0.1 at 2013-05-02 10:27:58 -0300
+Served asset /bootstrap.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap.min.css?body=1" for 127.0.0.1 at 2013-05-02 10:27:58 -0300
+Served asset /bootstrap.min.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-05-02 10:27:58 -0300
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-05-02 10:27:58 -0300
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/area.js?body=1" for 127.0.0.1 at 2013-05-02 10:27:58 -0300
+Served asset /area.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-05-02 10:27:58 -0300
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/dashboard" for 127.0.0.1 at 2013-05-02 10:28:01 -0300
+Processing by DashboardController#index as HTML
+  Parameters: {"authenticity_token"=>"bxTc/rx5rskh21GNHnSRJxSOARQ9KroLoNPfu1axGJ8="}
+  [1m[35mUsuario Load (15.6ms)[0m  SELECT `usuarios`.* FROM `usuarios` WHERE `usuarios`.`id` = 140 LIMIT 1
+  [1m[36mCargo Load (15.6ms)[0m  [1mSELECT `cargos`.* FROM `cargos` WHERE `cargos`.`id` = 3 LIMIT 1[0m
+  [1m[35mArea Load (15.6ms)[0m  SELECT `areas`.* FROM `areas` WHERE `areas`.`id` = 7 LIMIT 1
+  Rendered dashboard/index.html.erb within layouts/application (171.6ms)
+Completed 200 OK in 250ms (Views: 62.4ms | ActiveRecord: 171.6ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-05-02 10:28:01 -0300
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/area.css?body=1" for 127.0.0.1 at 2013-05-02 10:28:01 -0300
+Served asset /area.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap.css?body=1" for 127.0.0.1 at 2013-05-02 10:28:01 -0300
+Served asset /bootstrap.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap.min.css?body=1" for 127.0.0.1 at 2013-05-02 10:28:01 -0300
+Served asset /bootstrap.min.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-05-02 10:28:01 -0300
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-05-02 10:28:01 -0300
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/area.js?body=1" for 127.0.0.1 at 2013-05-02 10:28:01 -0300
+Served asset /area.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-05-02 10:28:01 -0300
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/questionario_competencias/instrucoes" for 127.0.0.1 at 2013-05-02 10:28:02 -0300
+Processing by QuestionarioCompetenciasController#instrucoes as HTML
+  Parameters: {"authenticity_token"=>"bxTc/rx5rskh21GNHnSRJxSOARQ9KroLoNPfu1axGJ8="}
+  [1m[36mUsuario Load (62.4ms)[0m  [1mSELECT `usuarios`.* FROM `usuarios` WHERE `usuarios`.`id` = 140 LIMIT 1[0m
+  Rendered questionario_competencias/instrucoes.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 94ms (Views: 31.2ms | ActiveRecord: 62.4ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-05-02 10:28:03 -0300
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/area.css?body=1" for 127.0.0.1 at 2013-05-02 10:28:03 -0300
+Served asset /area.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap.css?body=1" for 127.0.0.1 at 2013-05-02 10:28:03 -0300
+Served asset /bootstrap.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap.min.css?body=1" for 127.0.0.1 at 2013-05-02 10:28:03 -0300
+Served asset /bootstrap.min.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-05-02 10:28:03 -0300
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-05-02 10:28:03 -0300
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/area.js?body=1" for 127.0.0.1 at 2013-05-02 10:28:03 -0300
+Served asset /area.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-05-02 10:28:03 -0300
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/questionario_competencias/prox_pergunta" for 127.0.0.1 at 2013-05-02 10:28:06 -0300
+Processing by QuestionarioCompetenciasController#prox_pergunta as HTML
+  Parameters: {"authenticity_token"=>"bxTc/rx5rskh21GNHnSRJxSOARQ9KroLoNPfu1axGJ8="}
+  [1m[35mUsuario Load (31.2ms)[0m  SELECT `usuarios`.* FROM `usuarios` WHERE `usuarios`.`id` = 140 LIMIT 1
+  [1m[36m (15.6ms)[0m  [1mSELECT `cargo_comp`.`competencia_id` FROM `cargo_comp` WHERE `cargo_comp`.`area_id` = 7[0m
+  [1m[35m (31.2ms)[0m  BEGIN
+  [1m[36m (15.6ms)[0m  [1mUPDATE `usuarios` SET `pergunta_atual_competencias` = 1, `turno_competencias` = 4 WHERE `usuarios`.`id` = 140[0m
+  [1m[35m (31.2ms)[0m  COMMIT
+  [1m[36mCompetencia Load (15.6ms)[0m  [1mSELECT `competencias`.* FROM `competencias` WHERE `competencias`.`id` = 1 LIMIT 1[0m
+  Rendered questionario_competencias/prox_pergunta.html.erb within layouts/application (15.6ms)
+Completed 200 OK in 156ms (Views: 15.6ms | ActiveRecord: 140.4ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-05-02 10:28:06 -0300
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/area.css?body=1" for 127.0.0.1 at 2013-05-02 10:28:06 -0300
+Served asset /area.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap.css?body=1" for 127.0.0.1 at 2013-05-02 10:28:06 -0300
+Served asset /bootstrap.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap.min.css?body=1" for 127.0.0.1 at 2013-05-02 10:28:06 -0300
+Served asset /bootstrap.min.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-05-02 10:28:06 -0300
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-05-02 10:28:06 -0300
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/area.js?body=1" for 127.0.0.1 at 2013-05-02 10:28:06 -0300
+Served asset /area.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-05-02 10:28:06 -0300
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started POST "/questionario_competencias/registrar_resposta" for 127.0.0.1 at 2013-05-02 10:28:08 -0300
+Processing by QuestionarioCompetenciasController#registrar_resposta as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"bxTc/rx5rskh21GNHnSRJxSOARQ9KroLoNPfu1axGJ8=", "nivel"=>"4", "commit"=>"Submeter"}
+  [1m[35mUsuario Load (78.0ms)[0m  SELECT `usuarios`.* FROM `usuarios` WHERE `usuarios`.`id` = 140 LIMIT 1
+  [1m[36m (78.0ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (62.4ms)[0m  INSERT INTO `comp_usuarios` (`competencia_id`, `data`, `nivel`, `turno`, `usuario_id`) VALUES (1, NULL, 4, 4, 140)
+  [1m[36m (78.0ms)[0m  [1mCOMMIT[0m
+  [1m[35m (62.4ms)[0m  BEGIN
+  [1m[36m (62.4ms)[0m  [1mUPDATE `usuarios` SET `pergunta_atual_competencias` = 2 WHERE `usuarios`.`id` = 140[0m
+  [1m[35m (93.6ms)[0m  COMMIT
+Redirected to http://localhost:3000/questionario_competencias/prox_pergunta
+Completed 302 Found in 546ms (ActiveRecord: 514.8ms)
+
+
+Started GET "/questionario_competencias/prox_pergunta" for 127.0.0.1 at 2013-05-02 10:28:09 -0300
+Processing by QuestionarioCompetenciasController#prox_pergunta as HTML
+  [1m[36mUsuario Load (78.0ms)[0m  [1mSELECT `usuarios`.* FROM `usuarios` WHERE `usuarios`.`id` = 140 LIMIT 1[0m
+  [1m[35mCompetencia Load (78.0ms)[0m  SELECT `competencias`.* FROM `competencias` WHERE `competencias`.`id` = 2 LIMIT 1
+  Rendered questionario_competencias/prox_pergunta.html.erb within layouts/application (15.6ms)
+Completed 200 OK in 187ms (Views: 31.2ms | ActiveRecord: 156.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-05-02 10:28:09 -0300
+Served asset /application.css - 304 Not Modified (15ms)
+
+
+Started GET "/assets/area.css?body=1" for 127.0.0.1 at 2013-05-02 10:28:09 -0300
+Served asset /area.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap.css?body=1" for 127.0.0.1 at 2013-05-02 10:28:09 -0300
+Served asset /bootstrap.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap.min.css?body=1" for 127.0.0.1 at 2013-05-02 10:28:09 -0300
+Served asset /bootstrap.min.css - 304 Not Modified (15ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-05-02 10:28:09 -0300
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-05-02 10:28:09 -0300
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/area.js?body=1" for 127.0.0.1 at 2013-05-02 10:28:09 -0300
+Served asset /area.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-05-02 10:28:10 -0300
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/edit" for 127.0.0.1 at 2013-05-02 10:30:35 -0300
+Processing by Devise::RegistrationsController#edit as HTML
+  Parameters: {"authenticity_token"=>"bxTc/rx5rskh21GNHnSRJxSOARQ9KroLoNPfu1axGJ8="}
+  [1m[36mUsuario Load (78.0ms)[0m  [1mSELECT `usuarios`.* FROM `usuarios` WHERE `usuarios`.`id` = 140 LIMIT 1[0m
+  Rendered devise/registrations/edit.html.erb within layouts/application (46.8ms)
+Completed 200 OK in 172ms (Views: 93.6ms | ActiveRecord: 78.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-05-02 10:30:35 -0300
+Served asset /application.css - 304 Not Modified (15ms)
+
+
+Started GET "/assets/area.css?body=1" for 127.0.0.1 at 2013-05-02 10:30:36 -0300
+Served asset /area.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap.css?body=1" for 127.0.0.1 at 2013-05-02 10:30:36 -0300
+Served asset /bootstrap.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap.min.css?body=1" for 127.0.0.1 at 2013-05-02 10:30:36 -0300
+Served asset /bootstrap.min.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-05-02 10:30:36 -0300
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-05-02 10:30:36 -0300
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/area.js?body=1" for 127.0.0.1 at 2013-05-02 10:30:36 -0300
+Served asset /area.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-05-02 10:30:36 -0300
+Served asset /application.js - 304 Not Modified (0ms)
