@@ -31,7 +31,7 @@ class QuestionarioCompetenciasController < ApplicationController
     if current_usuario.pergunta_atual_competencias
       if [1,2,3,4,5].include?(params[:nivel].to_i)
         atualiza_session_com_competencias
-        CompUsuario.registrar_resposta current_usuario.id, current_usuario.pergunta_atual_competencias, params[:nivel], current_usuario.turno_competencias
+        CompUsuario.registrar_resposta current_usuario.id, current_usuario.pergunta_atual_competencias, params[:nivel].to_i, current_usuario.turno_competencias
         posicao_atual = usuario_session["lista_competencias"].index(current_usuario.pergunta_atual_competencias)
         unless posicao_atual == 0
           current_usuario.pergunta_atual_competencias = usuario_session["lista_competencias"][posicao_atual - 1]
@@ -54,13 +54,17 @@ class QuestionarioCompetenciasController < ApplicationController
   end
 
   def resultados
-
+    unless current_usuario.pergunta_atual_competencias
+      #TODO
+    else
+      flash[:alert] = "Você precisa terminar o questionário para colher os resultados."
+      redirect_to :action => "prox_pergunta"
+    end
   end
 
   def atualiza_session_com_competencias
     unless usuario_session["lista_competencias"]
-      lista = CargoComp.lista_competencias_por_area(current_usuario.area_id)
-      usuario_session["lista_competencias"] = lista
+      usuario_session["lista_competencias"] = CargoComp.lista_competencias_por_area(current_usuario.area_id)
     end
   end
 

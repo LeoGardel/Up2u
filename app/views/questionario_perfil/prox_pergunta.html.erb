@@ -1,0 +1,31 @@
+<h1> Questionário de Perfil </h1>
+
+<section>
+
+
+    <div class="progress progress-info progress-striped active" style="margin-bottom: 9px; width: 50%">  
+        <div class="bar" style="<%= "width: " + (@respondidos*100/ @total).to_s + "%" %>"></div>  
+      </div>
+
+      <hr>  
+
+<%= @pergunta %>.<br />
+Essa frase é adequada ao seu perfil?
+	<%= form_tag(questionario_perfil_registrar_resposta_path) do %>
+
+		<%= radio_button_tag(:resposta, "2") %>
+		<%= label_tag(:nivel_2, @nivel_2) %><br />
+		<%= radio_button_tag(:resposta, "1") %>
+		<%= label_tag(:nivel_1, @nivel_1) %><br />
+		<%= radio_button_tag(:resposta, "0") %>
+		<%= label_tag(:nivel_0, @nivel_0) %><br />
+		<%= radio_button_tag(:resposta, "-1") %>
+		<%= label_tag(:nivel_m1, @nivel_m1) %><br />
+		<%= radio_button_tag(:resposta, "-2") %>
+		<%= label_tag(:nivel_m2, @nivel_m2) %><br />
+
+	  <div><%= submit_tag("Submeter") %></div>
+	<% end %>
+
+	<br/><%= link_to "Continuar mais tarde", dashboard_index_path, :method => :get %>
+</section>

@@ -20,6 +20,7 @@ Up2u::Application.routes.draw do
   resources :dashboard, only: [:index]
   match "dashboard/editar_cargo_area" => "dashboard#editar_cargo_area", as: :dashboard_editar_cargo_area, via: :get
   match "dashboard/editar_cargo_area" => "dashboard#salvar_cargo_area", as: :dashboard_salvar_cargo_area, via: :post
+  
   match "questionario_competencias/instrucoes" => "questionario_competencias#instrucoes",
    as: :questionario_competencias_instrucoes, via: :get
   match "questionario_competencias/prox_pergunta" => "questionario_competencias#prox_pergunta",
@@ -28,4 +29,13 @@ Up2u::Application.routes.draw do
    as: :questionario_competencias_registrar_resposta, via: :post
   match "questionario_competencias/resultados" => "questionario_competencias#resultados",
    as: :questionario_competencias_resultados, via: :get
+
+  match "questionario_perfil/instrucoes" => "questionario_perfil#instrucoes",
+   as: :questionario_perfil_instrucoes, via: :get
+  match "questionario_perfil/prox_pergunta" => "questionario_perfil#prox_pergunta",
+   as: :questionario_perfil_prox_pergunta, via: :get
+  match "questionario_perfil/registrar_resposta" => "questionario_perfil#registrar_resposta",
+   as: :questionario_perfil_registrar_resposta, via: :post
+  match "questionario_perfil/resultados" => "questionario_perfil#resultados",
+   as: :questionario_perfil_resultados, via: :get
 end

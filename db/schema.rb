@@ -82,9 +82,11 @@ ActiveRecord::Schema.define(:version => 20130426050852) do
   end
 
   create_table "myers_respostas", :force => true do |t|
-    t.integer "usuario_id",        :null => false
-    t.integer "myers_pergunta_id", :null => false
-    t.integer "resposta",          :null => false
+    t.integer   "usuario_id",        :null => false
+    t.integer   "myers_pergunta_id", :null => false
+    t.integer   "resposta",          :null => false
+    t.integer   "turno",             :null => false
+    t.timestamp "data",              :null => false
   end
 
   create_table "myers_tipos", :force => true do |t|
@@ -123,6 +125,8 @@ ActiveRecord::Schema.define(:version => 20130426050852) do
     t.text     "porque"
     t.integer  "pergunta_atual_competencias"
     t.integer  "turno_competencias",                              :default => 0,  :null => false
+    t.integer  "pergunta_atual_perfil"
+    t.integer  "turno_perfil",                                    :default => 0,  :null => false
     t.string   "encrypted_password",                              :default => "", :null => false
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
