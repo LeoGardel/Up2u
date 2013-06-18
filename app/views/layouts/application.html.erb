@@ -1,18 +1,15 @@
-<!DOCTYPE html>
 <html>
 <head>
-  <title>Up2u</title>
+  <title>Up2U<%= yield(:title) %></title>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
+
+  <%= yield(:stylesheet) %>
+  <%= yield(:javascript) %>
 </head>
-<body>
-
-<p class="notice"><%= notice %></p>
-<p class="alert"><%= alert %></p>
-
-<%= link_to "Sair", destroy_usuario_session_path, :method => :get %> | 
-<%= link_to "Alterar configurações de segurança", edit_usuario_registration_path, :method => :get %>
+<body style="<%= yield(:body_style) %>">
 
 <%= yield %>
 

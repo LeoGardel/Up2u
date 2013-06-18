@@ -1,0 +1,109 @@
+//setar as imagens de "hover" da barra de passos
+$("#barra_passos")
+.mouseover(function() {<% binding.pry %>
+  $("#img_rodape_up").attr("src", "#{Rails.root}/app/assets/pagina_inicial/rodape_passos_up_ativo.jpg");
+  $("#img_rodape_down").attr("src", "#{Rails.root}/app/assets/pagina_inicial/rodape_passos_down_ativo.jpg");})
+.mouseout(function() {
+  $("#img_rodape_up").attr("src", "<%= asset_path('rodape_passos_up.jpg') %>");
+  $("#img_rodape_down").attr("src", "<%= asset_path('rodape_passos_down.jpg') %>");});
+//////
+
+
+//movimento das caixas ao clikar em entrar ou registrar
+var slidingEntrarRegistrar = false;
+var velocidadeEntrarRegistrar = 500;
+
+function botaoEntrarClicado() {
+  if (!(slidingEntrarRegistrar)){
+    slidingEntrarRegistrar = true;
+
+    $('#caixa_registrar').slideUp(velocidadeEntrarRegistrar, function(){
+      $('#caixa_entrar').slideToggle(velocidadeEntrarRegistrar, function(){slidingEntrarRegistrar = false;});
+    });
+
+  }
+}
+
+function botaoRegistrarClicado() {
+  if (!(slidingEntrarRegistrar)){
+    slidingEntrarRegistrar = true;
+
+    $('#caixa_entrar').slideUp(velocidadeEntrarRegistrar, function(){
+      $('#caixa_registrar').slideToggle(velocidadeEntrarRegistrar, function(){slidingEntrarRegistrar = false;});
+    });
+
+  }
+}
+//////
+
+
+//movimento ao clikar na barra de passos
+var slidingPassos = false;
+var velocidadeBarraPassos = 1000;
+
+function barraPassosClicada() {
+  if (!(slidingPassos)){
+    slidingPassos = true;
+    if (document.getElementById('img_rodape_up').style.visibility == "visible") {
+      document.getElementById('img_rodape_up').style.visibility = "hidden";
+      document.getElementById('img_rodape_down').style.visibility = "visible";
+      
+      var alturaJanela = $(document).height();
+
+      //não reescala com a janela
+      $('#painel_passos').css("height",alturaJanela - 53);
+      $('#painel_passos').slideDown(velocidadeBarraPassos, function(){slidingPassos = false;});
+    }
+    else {
+      document.getElementById('img_rodape_up').style.visibility = "visible";
+      document.getElementById('img_rodape_down').style.visibility = "hidden";
+
+      $('#painel_passos').slideUp(velocidadeBarraPassos, function(){slidingPassos = false;});
+    }
+  }
+}
+//////
+
+
+//movimento ao clikar no botao de Entrar no rodapé da página, abaixo do painel de passos
+function entrarRodapeClicado() {
+  if (!(slidingPassos)){
+    if (!(slidingEntrarRegistrar)){
+      slidingEntrarRegistrar = true;
+      $('#caixa_registrar').slideUp(velocidadeEntrarRegistrar, function(){
+        $('#caixa_entrar').slideDown(velocidadeEntrarRegistrar, function(){slidingEntrarRegistrar = false;});
+      });
+    }
+  }
+  barraPassosClicada();
+}
+//////
+
+
+//movimento ao clikar no botao de Registrar no rodapé da página, abaixo do painel de passos
+function registrarRodapeClicado() {
+  if (!(slidingPassos)){
+    if (!(slidingEntrarRegistrar)){
+      slidingEntrarRegistrar = true;
+      $('#caixa_entrar').slideUp(velocidadeEntrarRegistrar, function(){
+        $('#caixa_registrar').slideDown(velocidadeEntrarRegistrar, function(){slidingEntrarRegistrar = false;});
+      });
+    }
+  }
+  barraPassosClicada();
+}
+//////
+
+
+//reescalar o painel de passos ao reescalar a janela, caso ele esteja aberto
+window.onresize = function()
+{
+  if (document.getElementById('img_rodape_up').style.visibility == "hidden") {
+    
+    var alturaJanela = $(document).height();
+
+    //não reescala com a janela
+    $('#painel_passos').css("height",alturaJanela - 53);
+  }
+}
+//////

@@ -1,0 +1,36 @@
+.rodape_label {
+color: #dae4e9;
+font-family: "nexa-bold", Arial, Helvetica, sans-serif;
+font-size: 12pt;
+text-shadow:-1px 0px 2px #88949A;
+
+position: absolute;
+width: 100%;
+bottom: 8px;
+}
+
+.titulo {
+color: #474a4c;
+font-family: "nexa-bold", Arial, Helvetica, sans-serif;
+font-size: 32pt;
+
+position: relative;
+}
+
+.texto_principal{
+color: #474a4c;
+font-family: "nexa-light", Arial, Helvetica, sans-serif;
+font-size: 20pt;
+
+position: relative;
+}
+
+input[type=text], input[type=password], input[type=email] {
+width: 279px;
+height: 28px;
+}
+
+.botoes_forms {
+margin-top: 6px;
+height: 22px;
+}

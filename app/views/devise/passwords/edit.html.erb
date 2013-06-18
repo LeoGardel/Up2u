@@ -1,16 +1,36 @@
-<h2>Mudança de Senha</h2>
+<%= stylesheet "header_nao_logado", "bootstrap.min", "devise_pages" %>
+<%= bodyStyle "min-height: 480px; min-width: 930px; overflow: auto; position: absolute; margin: 0px; height: 100%; width: 100% ;background-image:url('" + (image_path "background_azul.jpg") + "'); background-repeat:repeat; text-align: center" %>
+
+
+<div id="bg_header_pag_inicial" class="header" style="opacity: 0.4; filter: alpha(opacity=40); background-color: #000000;width: 100%; position: absolute; top: 0; left: 0"></div>
+
+
+<div id="header_pag_inicial" class="header" style="width: 100%; position: absolute; top: 0; left: 0; display: table">
+
+<div id="header_link_container" style="display: table-cell; vertical-align: middle; valign: middle">
+
+<%= link_to "Página Inicial", new_session_path(:usuario), :method => :get, :class => "headerLinks" %>
+
+</div>
+
+<img src="<%= image_path "pagina_inicial/logo_up2u.jpg" %>" style="position: absolute; left: 0; height:100%">
+
+</div>
+
+<div style="width: 100%; text-align: center; position: absolute; top: 80px; margin-left: auto; margin-right: auto;">
+
+<p class="titulo">Redefinição de senha</p>
+
+<p class="texto_principal">Escolha sua nova senha.</p>
 
 <%= form_for(resource, :as => resource_name, :url => password_path(resource_name), :html => { :method => :put }) do |f| %>
   <%= devise_error_messages! %>
   <%= f.hidden_field :reset_password_token %>
-
-  <div><%= f.label :password, "Nova senha" %><br />
-  <%= f.password_field :password, :autofocus => true %></div>
-
-  <div><%= f.label :password_confirmation, "Confirme a nova senha" %><br />
-  <%= f.password_field :password_confirmation %></div>
-
-  <div><%= f.submit "Atualizar" %></div>
+  <%= f.password_field :password, :autofocus => true, :class => "texto_email_senha", :placeholder => "Nova senha" %><br/>
+  <%= f.password_field :password_confirmation, :class => "texto_email_senha", :placeholder => "Confirme a nova senha" %><br/>
+  <%= f.submit "Confirmar", :class => "botoes_forms btn btn-mini" %>
 <% end %>
 
-<%= render "devise/shared/links" %>
+</div>
+
+<div class="rodape_label">Up to You 2013</div>

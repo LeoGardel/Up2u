@@ -2,10 +2,10 @@ Up2u::Application.routes.draw do
   devise_for :usuarios, 
   :path => "", 
   :path_names => { 
-    :sign_in => "home", 
+    :sign_in => "inicio", 
     :sign_out => "sair", 
-    :sign_up => "home",
-    :password => 'dadosPessoais',
+    :sign_up => "inicio",
+    :password => 'senha',
     :confirmation => 'confirmacao'
   },
   :controllers => { :omniauth_callbacks => "usuarios/omniauth_callbacks"}
@@ -14,7 +14,7 @@ Up2u::Application.routes.draw do
     root to: "dashboard#index"
   end
   unauthenticated :usuario do
-    root to: redirect("/home")
+    root to: redirect("/inicio")
   end
 
   resources :dashboard, only: [:index]
@@ -38,4 +38,7 @@ Up2u::Application.routes.draw do
    as: :questionario_perfil_registrar_resposta, via: :post
   match "questionario_perfil/resultados" => "questionario_perfil#resultados",
    as: :questionario_perfil_resultados, via: :get
+
+  match "sobre_nos" => "static_pages#sobre_nos",
+   as: :sobre_nos, via: :get
 end
