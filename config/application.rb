@@ -59,8 +59,6 @@ module Up2u
     # Version of your assets, change this if you want to expire all your assets
     config.assets.version = '1.0'
 
-    config.assets.precompile = true
-
-    config.assets.initialize_on_precompile = false
+    config.assets.initialize_on_precompile = true
   end
 end
