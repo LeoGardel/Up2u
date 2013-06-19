@@ -11,7 +11,7 @@
 </head>
 <body style="<%= yield(:body_style) %>">
 
-<%= yield %>
+<%= content_for?(:header_logado) ? yield(:header_logado) : yield %>
 
 </body>
 </html>

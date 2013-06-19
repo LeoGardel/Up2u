@@ -1,0 +1,46 @@
+<% content_for :header_logado do %>
+	<%= bodyStyle "min-height: 480px; min-width: 930px; overflow: auto; position: absolute; margin: 0px; height: 100%; width: 100% ;background-image:url('" + (image_path "background_azul.jpg") + "'); background-repeat:repeat; text-align: center" %>
+	<%= stylesheet "header_logado" %>
+
+	<div id="bg_header_logado" class="header bg_header"></div>
+
+
+	<div id="header_logado" class="header" style="position: absolute; top: 0; left: 0">
+
+	<img src="<%= image_path "pagina_inicial/logo_up2u.jpg" %>" style="position: relative; height:100%; float: left">
+
+	<div style="position: relative; float: left; height: 100%; display: table; margin-left: 50px">
+
+	<div id="header_logado_container" style="display: table-cell; vertical-align: middle; valign: middle; left: 100px">
+
+		<%= link_to "Dashboard", :dashboard_index, :method => :get, :class => "headerLinks headerLinksElement" %>
+		<span id="separator" class="headerLinksElement">|</span>
+		<%= link_to "Dashboard", :dashboard_index, :method => :get, :class => "headerLinks headerLinksElement" %>
+		<span id="separator" class="headerLinksElement">|</span>
+		<%= link_to "Dashboard", :dashboard_index, :method => :get, :class => "headerLinks headerLinksElement" %>
+
+	</div>
+
+	</div>
+
+	<div style="position: relative; float: right; height: 100%; display: table; margin-right: 15px">
+
+		<span class="headerUsuarioNome"><%= current_usuario.nome + " " + current_usuario.sobrenome %></span>
+		<div style="display: table-cell; vertical-align: middle;">
+			<img src="<%= image_path 'header_logado/dropdownArrow.png' %>" style="height: 7px;">
+		</div>
+		<% if current_usuario.imagem %>
+		<div style="display: table-cell; vertical-align: middle; padding-left: 7px;">
+			<img src="<%= asset_path (current_usuario.imagem) %>" style="height: 40px;">
+		</div>
+		<% end %>
+
+	</div>
+
+	</div>
+
+<% end %>
+
+<%= render :template => 'layouts/application' %>
+
+<%= yield %>

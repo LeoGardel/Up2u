@@ -1,5 +1,4 @@
-class DashboardController < ApplicationController
-  before_filter :authenticate_usuario!
+class DashboardController < LogadoController
   def index
 	
   end

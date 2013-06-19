@@ -1,6 +1,6 @@
 # -*- encoding : utf-8 -*-
 
-class QuestionarioCompetenciasController < ApplicationController
+class QuestionarioCompetenciasController < LogadoController
   before_filter :authenticate_usuario!, :possui_cargo_area?
   helper_method :atualiza_session_com_competencias, :inicializa_pergunta_atual
 

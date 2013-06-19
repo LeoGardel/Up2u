@@ -1,0 +1,40 @@
+.header{
+height: 66px;
+width: 100%;
+}
+
+.bg_header{
+background-color: #000000;
+position: relative;
+margin: 0px;
+top: 0;
+left: 0;
+opacity: 0.68;
+filter: alpha(opacity=68);
+}
+
+.headerLinksElement {
+margin-right: 12px;
+}
+
+.headerLinks {
+color: #dbdbdb;
+text-decoration: none;
+font-family: "nexa-light", Arial, Helvetica, sans-serif;
+font-size: 12pt;
+position: relative;
+}
+
+.headerLinks:hover {
+font-family: "nexa-bold", Arial	, Helvetica, sans-serif;
+}
+
+.headerUsuarioNome {
+color: #dbdbdb;
+font-family: "nexa-bold", Arial, Helvetica, sans-serif;
+font-size: 12.3pt;
+vertical-align: middle;
+margin: 4px;
+padding-right: 7px;
+display: table-cell;
+}

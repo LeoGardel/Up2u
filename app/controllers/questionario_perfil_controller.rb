@@ -1,6 +1,6 @@
 # -*- encoding : utf-8 -*-
 
-class QuestionarioPerfilController < ApplicationController
+class QuestionarioPerfilController < LogadoController
   before_filter :authenticate_usuario!
   helper_method :atualiza_session_com_perguntas_id, :inicializa_pergunta_atual
 
