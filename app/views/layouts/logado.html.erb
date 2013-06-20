@@ -1,6 +1,7 @@
 <% content_for :header_logado do %>
 	<%= bodyStyle "min-height: 480px; min-width: 930px; overflow: auto; position: absolute; margin: 0px; height: 100%; width: 100% ;background-image:url('" + (image_path "background_azul.jpg") + "'); background-repeat:repeat; text-align: center" %>
-	<%= stylesheet "header_logado" %>
+	<%= stylesheet "header_logado", "bootstrap.min" %>
+	<%= javascript "bootstrap.min" %>
 
 	<div id="bg_header_logado" class="header bg_header"></div>
 
@@ -25,10 +26,21 @@
 
 	<div style="position: relative; float: right; height: 100%; display: table; margin-right: 15px">
 
-		<span class="headerUsuarioNome"><%= current_usuario.nome + " " + current_usuario.sobrenome %></span>
-		<div style="display: table-cell; vertical-align: middle;">
-			<img src="<%= image_path 'header_logado/dropdownArrow.png' %>" style="height: 7px;">
+		<div class="btn-group" style="display: table-cell; vertical-align: middle;">
+			<div id="buttonGroupDropdown" data-toggle="dropdown" >
+				<span class="headerUsuarioNome" ><%= current_usuario.nome + " " + current_usuario.sobrenome %></span>
+				<div style="display: table-cell; vertical-align: middle;">
+			  		<img src="<%= image_path 'header_logado/dropdownArrow.png' %>" style="height: 7px;">
+			  	</div>
+			</div>
+			<ul class="dropdown-menu pull-right">
+		        <li><%= link_to "Minha Conta", :edit_usuario_registration, :method => :get, :class => "headerDropdownLinks" %></li>
+		        <li><%= link_to "Editar Meta", :dashboard_editar_cargo_area, :method => :get, :class => "headerDropdownLinks" %></li>
+		        <li class="divider"></li>
+		        <li><%= link_to "Sair", :destroy_usuario_session, :method => :get, :class => "headerDropdownLinks" %></li>
+		    </ul>
 		</div>
+
 		<% if current_usuario.imagem %>
 		<div style="display: table-cell; vertical-align: middle; padding-left: 7px;">
 			<img src="<%= asset_path (current_usuario.imagem) %>" style="height: 40px;">
