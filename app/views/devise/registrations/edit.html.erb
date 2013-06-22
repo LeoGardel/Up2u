@@ -1,23 +1,23 @@
 <%= stylesheet "devise_pages" %>
 
-<%= devise_error_messages! %>
 
-<div style="width: 650px; height: 480px; display: inline-block; margin-top: 20px; text-align: center;">
+
+<div style="width: 650px; display: inline-block; margin-top: 20px; text-align: center;">
 
   <span class="titulo">Minha Conta</span><br/>
 
   <span class="texto_principal">Preencha apenas aquilo que deseja alterar</span><br/>
 
-  <div style="width: 500px; height: 80px; display: inline-block; margin-top: 20px; background-color: #c0c0c0">
+  <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :method => :put }) do |f| %>
 
-    <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :method => :put }) do |f| %>
+  <div style="width: 500px; height: 60px; display: inline-block; margin-top: 20px;">
 
-    <div style="width: 30%; height:100%; float: left; display: table; background-color: #a0a0a0;">
+    <div style="width: 30%; height:100%; float: left; display: table;">
       <span class="titulo" style="display: table-cell; vertical-align: middle; font-size: 19pt;">E-mail</span>
     </div>
 
-    <div style="width: 70%; height:100%; float: right; display: table; background-color: #909090">
-      <%= f.email_field :email, :autofocus => true, :class => "caixa_texto_vertical_middle" %>
+    <div style="width: 70%; height:100%; float: right; display: table;">
+      <div class="caixa_texto_vertical_middle"><%= f.email_field :email %></div>
     </div>
 
   </div>
@@ -26,25 +26,25 @@
   <div style="width: 500px; display: inline-block;">
     <% if resource.pending_reconfirmation? %>
       <hr>
-      <span class="texto_principal">Aguardando confirmação para: <%= resource.unconfirmed_email %></span>
+      <span class="texto_principal" style="color: red">Aguardando confirmação para: <%= resource.unconfirmed_email %></span>
     <% end %>
     <hr>
   </div>
 
 
-  <div style="width: 500px; height: 120px; display: inline-block; background-color: #c0c0c0">
+  <div style="width: 500px; height: 100px; display: inline-block;">
 
 
-    <div style="width: 30%; height:100%; float: left; display: table; background-color: #a0a0a0">
+    <div style="width: 30%; height:100%; float: left; display: table;">
       <span class="titulo" style="display: table-cell; vertical-align: middle; font-size: 19pt;">Senha</span>
     </div>
 
-    <div style="width: 70%; height:50%; float: right; display: table; background-color: #909090">
-      <%= f.password_field :password, :autocomplete => "off", :placeHolder => "Nova senha" %>
+    <div style="width: 70%; height:50%; float: right; display: table;">
+      <div class="caixa_texto_vertical_middle"><%= f.password_field :password, :autocomplete => "off", :placeHolder => "Nova senha" %></div>
     </div>
 
-    <div style="width: 70%; height:50%; float: right; display: table; background-color: #909090">
-      <%= f.password_field :password_confirmation, :placeHolder => "Confirmar nova senha" %>
+    <div style="width: 70%; height:50%; float: right; display: table;">
+      <div class="caixa_texto_vertical_middle"><%= f.password_field :password_confirmation, :placeHolder => "Confirmar nova senha" %></div>
     </div>
 
   </div>
@@ -53,15 +53,15 @@
 
   <span class="texto_principal">Para confirmar a mudança, digite sua senha atual</span><br/>
 
-  <div style="width: 500px; height: 80px; display: inline-block; background-color: #c0c0c0">
+  <div style="width: 500px; height: 60px; display: inline-block; margin-top: 10px">
 
 
-    <div style="width: 30%; height:100%; float: left; display: table; background-color: #a0a0a0">
+    <div style="width: 30%; height:100%; float: left; display: table;">
       <span class="titulo" style="display: table-cell; vertical-align: middle; font-size: 19pt;">Senha atual</span>
     </div>
 
-    <div style="width: 70%; height:100%; float: right; display: table; background-color: #909090">
-      <%= f.password_field :current_password, :class => "caixa_texto_vertical_middle" %>
+    <div style="width: 70%; height:100%; float: right; display: table;">
+      <div class="caixa_texto_vertical_middle"><%= f.password_field :current_password %></div>
     </div>
 
   </div><br>
