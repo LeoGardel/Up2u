@@ -1,29 +1,73 @@
-<h2>Editar <%= resource_name.to_s.humanize %></h2>
+<%= stylesheet "devise_pages" %>
 
-<%= form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :method => :put }) do |f| %>
-  <%= devise_error_messages! %>
+<%= devise_error_messages! %>
 
-  <div><%= f.label :email %><br />
-  <%= f.email_field :email, :autofocus => true %></div>
+<div style="width: 650px; height: 480px; display: inline-block; margin-top: 20px; text-align: center;">
 
-  <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-    <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
+  <span class="titulo">Minha Conta</span><br/>
+
+  <span class="texto_principal">Preencha apenas aquilo que deseja alterar</span><br/>
+
+  <div style="width: 500px; height: 80px; display: inline-block; margin-top: 20px; background-color: #c0c0c0">
+
+    <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :method => :put }) do |f| %>
+
+    <div style="width: 30%; height:100%; float: left; display: table; background-color: #a0a0a0;">
+      <span class="titulo" style="display: table-cell; vertical-align: middle; font-size: 19pt;">E-mail</span>
+    </div>
+
+    <div style="width: 70%; height:100%; float: right; display: table; background-color: #909090">
+      <%= f.email_field :email, :autofocus => true, :class => "caixa_texto_vertical_middle" %>
+    </div>
+
+  </div>
+
+
+  <div style="width: 500px; display: inline-block;">
+    <% if resource.pending_reconfirmation? %>
+      <hr>
+      <span class="texto_principal">Aguardando confirmação para: <%= resource.unconfirmed_email %></span>
+    <% end %>
+    <hr>
+  </div>
+
+
+  <div style="width: 500px; height: 120px; display: inline-block; background-color: #c0c0c0">
+
+
+    <div style="width: 30%; height:100%; float: left; display: table; background-color: #a0a0a0">
+      <span class="titulo" style="display: table-cell; vertical-align: middle; font-size: 19pt;">Senha</span>
+    </div>
+
+    <div style="width: 70%; height:50%; float: right; display: table; background-color: #909090">
+      <%= f.password_field :password, :autocomplete => "off", :placeHolder => "Nova senha" %>
+    </div>
+
+    <div style="width: 70%; height:50%; float: right; display: table; background-color: #909090">
+      <%= f.password_field :password_confirmation, :placeHolder => "Confirmar nova senha" %>
+    </div>
+
+  </div>
+
+  <hr>
+
+  <span class="texto_principal">Para confirmar a mudança, digite sua senha atual</span><br/>
+
+  <div style="width: 500px; height: 80px; display: inline-block; background-color: #c0c0c0">
+
+
+    <div style="width: 30%; height:100%; float: left; display: table; background-color: #a0a0a0">
+      <span class="titulo" style="display: table-cell; vertical-align: middle; font-size: 19pt;">Senha atual</span>
+    </div>
+
+    <div style="width: 70%; height:100%; float: right; display: table; background-color: #909090">
+      <%= f.password_field :current_password, :class => "caixa_texto_vertical_middle" %>
+    </div>
+
+  </div><br>
+
+  <%= f.submit "Alterar", :class => "btn" %>
+
   <% end %>
 
-  <div><%= f.label :password, "Senha"  %> <i>(deixe em branco caso não queira mudar)</i><br />
-  <%= f.password_field :password, :autocomplete => "off" %></div>
-
-  <div><%= f.label :password_confirmation, "Confirme a nova senha"  %><br />
-  <%= f.password_field :password_confirmation %></div>
-
-  <div><%= f.label :current_password, "Senha atual"  %> <i>(precisamos da sua senha atual para efetuar a operação)</i><br />
-  <%= f.password_field :current_password %></div>
-
-  <div><%= f.submit "Atualizar" %></div>
-<% end %>
-
-<h3>Cancelar minha conta</h3>
-
-<p>Está insatisfeito? <%= button_to "Cancelar minha conta", registration_path(resource_name), :data => { :confirm => "Tem certeza?" }, :method => :delete %>.</p>
-
-<%= link_to "Voltar", :back %>
+</div>

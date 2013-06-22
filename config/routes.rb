@@ -1,14 +1,25 @@
 Up2u::Application.routes.draw do
-  devise_for :usuarios, 
+  devise_for :usuarios, skip: :registrations,
   :path => "", 
   :path_names => { 
     :sign_in => "inicio", 
     :sign_out => "sair", 
-    :sign_up => "inicio",
     :password => 'senha',
     :confirmation => 'confirmacao'
   },
   :controllers => { :omniauth_callbacks => "usuarios/omniauth_callbacks"}
+
+  devise_scope :usuario do
+    resource :registration,
+      only: [:new, :create, :update],
+      path: "",
+      path_names: { new: 'inicio' },
+      controller: 'registrations',
+      as: :usuario_registration do
+        get :cancel
+      end
+    match 'edit' => 'registrations#edit', :via => :get, :as => :edit_usuario_registration
+  end
 
   authenticated :usuario do
     root to: "dashboard#index"
