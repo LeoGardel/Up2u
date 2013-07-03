@@ -98,11 +98,24 @@ window.onresize = function()
 //////
 
 //pré carregar as imagens de "hover"
-$(window).load(function(){
-  $('<img/>')[0].src = "<%= image_path 'pagina_inicial/botao_facebook_ativo.jpg' %>";
-  $('<img/>')[0].src = "<%= image_path 'pagina_inicial/botao_linkedin_ativo.jpg' %>";
-  $('<img/>')[0].src = "<%= image_path 'pagina_inicial/rodape_passos_up_ativo.jpg' %>";
-  $('<img/>')[0].src = "<%= image_path 'pagina_inicial/rodape_passos_down.jpg' %>";
-  $('<img/>')[0].src = "<%= image_path 'pagina_inicial/rodape_passos_down_ativo.jpg' %>";
-});
+(function($) {
+  var cache = [];
+  // Arguments are image paths relative to the current page.
+  $.preLoadImages = function() {
+    var args_len = arguments.length;
+    for (var i = args_len; i--;) {
+      var cacheImage = document.createElement('img');
+      cacheImage.src = arguments[i];
+      cache.push(cacheImage);
+    }
+  }
+})(jQuery)
+
+jQuery.preLoadImages(
+  "<%= image_path 'pagina_inicial/botao_facebook_ativo.jpg' %>",
+  "<%= image_path 'pagina_inicial/botao_linkedin_ativo.jpg'  %>",
+  "<%= image_path 'pagina_inicial/rodape_passos_up_ativo.jpg'  %>",
+  "<%= image_path 'pagina_inicial/rodape_passos_down.jpg' %>",
+  "<%= image_path 'pagina_inicial/rodape_passos_down_ativo.jpg' %>"
+);
 //////
