@@ -99,10 +99,15 @@ window.onresize = function()
 
 //pré carregar as imagens de "hover"
 $(window).load(function(){
-  $('<img/>')[0].src = "<%= image_path 'pagina_inicial/botao_facebook_ativo.jpg' %>";
-  $('<img/>')[0].src = "<%= image_path 'pagina_inicial/botao_linkedin_ativo.jpg' %>";
-  $('<img/>')[0].src = "<%= image_path 'pagina_inicial/rodape_passos_up_ativo.jpg' %>";
-  $('<img/>')[0].src = "<%= image_path 'pagina_inicial/rodape_passos_down.jpg' %>";
-  $('<img/>')[0].src = "<%= image_path 'pagina_inicial/rodape_passos_down_ativo.jpg' %>";
+  var img1 = new Image();
+  img1.src = "<%= image_path 'pagina_inicial/botao_facebook_ativo.jpg' %>";
+  var img2 = new Image();
+  img2.src = "<%= image_path 'pagina_inicial/botao_linkedin_ativo.jpg' %>";
+  var img3 = new Image();
+  img3.src = "<%= image_path 'pagina_inicial/rodape_passos_up_ativo.jpg' %>";
+  var img4 = new Image();
+  img4.src = "<%= image_path 'pagina_inicial/rodape_passos_down.jpg' %>";
+  var img5 = new Image();
+  img5.src = "<%= image_path 'pagina_inicial/rodape_passos_down_ativo.jpg' %>";
 });
 //////
