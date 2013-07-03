@@ -98,16 +98,11 @@ window.onresize = function()
 //////
 
 //pré carregar as imagens de "hover"
-$.fn.preload = function() {
-    this.each(function(){
-        $('<img/>')[0].src = "<%= image_path 'pagina_inicial' %>/" + this;
-    });
-}
 $(window).load(function(){
-  $(['botao_facebook_ativo.jpg',
-    'botao_linkedin_ativo.jpg',
-    'rodape_passos_up_ativo.jpg',
-    'rodape_passos_down.jpg',
-    'rodape_passos_down_ativo.jpg']).preload();
+  $('<img/>')[0].src = "<%= image_path 'pagina_inicial/botao_facebook_ativo.jpg' %>";
+  $('<img/>')[0].src = "<%= image_path 'pagina_inicial/botao_linkedin_ativo.jpg' %>";
+  $('<img/>')[0].src = "<%= image_path 'pagina_inicial/rodape_passos_up_ativo.jpg' %>";
+  $('<img/>')[0].src = "<%= image_path 'pagina_inicial/rodape_passos_down.jpg' %>";
+  $('<img/>')[0].src = "<%= image_path 'pagina_inicial/rodape_passos_down_ativo.jpg' %>";
 });
 //////
