@@ -1,14 +1,3 @@
-//setar as imagens de "hover" da barra de passos
-$("#barra_passos")
-.mouseover(function() {
-  $("#img_rodape_up").attr("src", "#{Rails.root}/app/assets/pagina_inicial/rodape_passos_up_ativo.jpg");
-  $("#img_rodape_down").attr("src", "#{Rails.root}/app/assets/pagina_inicial/rodape_passos_down_ativo.jpg");})
-.mouseout(function() {
-  $("#img_rodape_up").attr("src", "<%= asset_path('rodape_passos_up.jpg') %>");
-  $("#img_rodape_down").attr("src", "<%= asset_path('rodape_passos_down.jpg') %>");});
-//////
-
-
 //movimento das caixas ao clikar em entrar ou registrar
 var slidingEntrarRegistrar = false;
 var velocidadeEntrarRegistrar = 500;
@@ -44,9 +33,9 @@ var velocidadeBarraPassos = 1000;
 function barraPassosClicada() {
   if (!(slidingPassos)){
     slidingPassos = true;
-    if (document.getElementById('img_rodape_up').style.visibility == "visible") {
-      document.getElementById('img_rodape_up').style.visibility = "hidden";
-      document.getElementById('img_rodape_down').style.visibility = "visible";
+    if (document.getElementById('barra_passos_down_container').style.display === "none") {
+      document.getElementById('barra_passos_down_container').style.display = "inline";
+      document.getElementById('barra_passos_up_container').style.display = "none";
       
       var alturaJanela = $(document).height();
 
@@ -55,8 +44,8 @@ function barraPassosClicada() {
       $('#painel_passos').slideDown(velocidadeBarraPassos, function(){slidingPassos = false;});
     }
     else {
-      document.getElementById('img_rodape_up').style.visibility = "visible";
-      document.getElementById('img_rodape_down').style.visibility = "hidden";
+      document.getElementById('barra_passos_down_container').style.display = "none";
+      document.getElementById('barra_passos_up_container').style.display = "inline";
 
       $('#painel_passos').slideUp(velocidadeBarraPassos, function(){slidingPassos = false;});
     }
@@ -98,7 +87,7 @@ function registrarRodapeClicado() {
 //reescalar o painel de passos ao reescalar a janela, caso ele esteja aberto
 window.onresize = function()
 {
-  if (document.getElementById('img_rodape_up').style.visibility == "hidden") {
+  if (document.getElementById('barra_passos_up_container').style.display == "none") {
     
     var alturaJanela = $(document).height();
 

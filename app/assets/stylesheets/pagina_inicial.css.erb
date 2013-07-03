@@ -6,20 +6,45 @@ bottom: 0;
 left: 0;
 }
 
-#barra_passos {
+.barras_passos {
 width: 100%;
 height: 53px;
 position: relative;
 display: table;
 cursor: pointer;
+background-size: 100% 100%;
+background-repeat: no-repeat;
 }
 
-#barra_passos img {
-width: 100%;
-height: 100%;
-position: absolute;
-top: 0;
-left: 0
+#barra_passos_down {
+background-image: url(<%= image_path "pagina_inicial/rodape_passos_down.jpg" %>);
+}
+
+#barra_passos_down:hover {
+background-image: url(<%= image_path "pagina_inicial/rodape_passos_down_ativo.jpg" %>);
+}
+
+#barra_passos_up {
+background-image: url(<%= image_path "pagina_inicial/rodape_passos_up.jpg" %>);
+}
+
+#barra_passos_up:hover {
+background-image: url(<%= image_path "pagina_inicial/rodape_passos_up_ativo.jpg" %>);
+}
+
+#barra_passos_up div, #barra_passos_down div {
+color: black;
+font-family: "nexa-bold", Arial, Helvetica, sans-serif;
+font-size: 22pt;
+display: table-cell;
+vertical-align: middle;
+text-align: center;
+position: relative;
+width: 25%;
+-moz-user-select: none; 
+-khtml-user-select: none; 
+-webkit-user-select: none; 
+-o-user-select: none; 
 }
 
 #painel_passos {
@@ -65,26 +90,6 @@ color: white;
 font-family: "nexa-light", Arial, Helvetica, sans-serif;
 font-size: 15pt;
 position: relative;
-}
-
-#container_passos div {
-color: black;
-font-family: "nexa-bold", Arial, Helvetica, sans-serif;
-font-size: 22pt;
-display: table-cell;
-vertical-align: middle;
-text-align: center;
-position: relative;
-width: 25%;
--moz-user-select: none; 
--khtml-user-select: none; 
--webkit-user-select: none; 
--o-user-select: none; 
-}
-
-#container_passos {
-display: table-row;
-vertical-align: middle;
 }
 
 .rodape_up2u {
