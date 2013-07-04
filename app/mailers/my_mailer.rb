@@ -1,7 +1,7 @@
 # -*- encoding : utf-8 -*-
 
 class MyMailer < Devise::Mailer
-	default :from => "carreiraup2u@gmail.com"
+	default :from => "\"Up2U Support\" <carreiraup2u@gmail.com>"
 	
 	def password_generation(user, password, provider)
 	  @nome = user.nome

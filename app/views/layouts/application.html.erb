@@ -14,5 +14,19 @@
 
 <%= content_for?(:header_logado) ? yield(:header_logado) : yield %>
 
+<% flash_errors if defined? resource %>
+
+<div style="position: absolute; top: 75px;">
+  <% flash.each do |type, msg| %>
+    <% if msg.is_a?(String) %>
+      <div class="alert alert-<%= flash_class(type) %>">
+        <a class="close" data-dismiss="alert" style="float: right">&#215;</a>
+        <%= msg %>
+      </div>
+    <% end %>
+  <% end %>
+  <% flash %>
+</div>
+
 </body>
 </html>
