@@ -1,0 +1,19 @@
+@font-face {
+font-family: "nexa-light";
+src: asset-url('nexa-light.eot', font) format("embedded-opentype");
+src: asset-url('nexa-light.otf', font) format('opentype'),
+asset-url('nexa-light.ttf', font) format('truetype'),
+asset-url('nexa-light.eot?#iefix', font) format("embedded-opentype"),
+asset-url('nexa-light.woff', font) format('woff'),
+asset-url('nexa-light.svg#font', font) format('svg');
+} 
+
+@font-face {
+font-family: "nexa-bold";
+src: asset-url('nexa-bold.eot', font) format("embedded-opentype");
+src: asset-url('nexa-bold.otf', font) format('opentype'),
+asset-url('nexa-bold.ttf', font) format('truetype'),
+asset-url('nexa-bold.eot?#iefix', font) format("embedded-opentype"),
+asset-url('nexa-bold.woff', font) format('woff'),
+asset-url('nexa-bold.svg#font', font) format('svg');
+}
