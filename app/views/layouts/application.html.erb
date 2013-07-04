@@ -12,21 +12,32 @@
 </head>
 <body style="<%= yield(:body_style) %>">
 
-<%= content_for?(:header_logado) ? yield(:header_logado) : yield %>
+<% if content_for?(:header_logado) %>
+  <%= yield(:header_logado) %>
+<% end %>
 
-<% flash_errors if defined? resource %>
+<% if content_for?(:header) %>
+  <%= yield(:header) %>
+<% end %>
 
-<div style="position: absolute; top: 75px;">
-  <% flash.each do |type, msg| %>
-    <% if msg.is_a?(String) %>
-      <div class="alert alert-<%= flash_class(type) %>">
-        <a class="close" data-dismiss="alert" style="float: right">&#215;</a>
-        <%= msg %>
-      </div>
-    <% end %>
-  <% end %>
-  <% flash %>
-</div>
+<% flash_devise_errors if defined? resource %>
+
+<% unless flash.empty? %>
+  <div style="position: relative; margin-top: 10px" class="row-fluid">
+    <div class="span4 offset4 container">
+      <% flash.each do |type, msg| %>
+        <% if msg.is_a?(String) %>
+          <div class="alert alert-<%= flash_class(type) %>" style="text-align: center; margin-bottom: 4px">
+            <a class="close" data-dismiss="alert" style="float: right">&#215;</a>
+            <%= msg %>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+<% end %>
+
+<%= yield %>
 
 </body>
 </html>
