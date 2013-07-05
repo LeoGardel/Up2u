@@ -1,7 +1,6 @@
 <%= stylesheet "bootstrap.min", "devise_pages" %>
 <%= bodyStyle "min-height: 480px; min-width: 930px; overflow: auto; position: absolute; margin: 0px; height: 100%; width: 100% ;background-image:url('" + (image_path "background_azul.jpg") + "'); background-repeat:repeat; text-align: center" %>
 
-
 <%= render :partial => "devise/shared/header_nao_logado", :locals => {:link => (link_to "Página Inicial", new_session_path(:usuario), :method => :get, :class => "headerLinks")} %>
 
 

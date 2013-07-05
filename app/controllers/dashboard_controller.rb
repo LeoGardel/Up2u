@@ -4,8 +4,10 @@ class DashboardController < LogadoController
   end
   
   def editar_cargo_area
-	@areas = Area.all
-	@cargos = Cargo.all
+	  @areas = Area.all
+	  @cargos = Cargo.all
+    @descrAreas = Area.all.map { |e| e[:descr] }
+    @descrCargos = Cargo.all.map { |e| e[:descr] }
   end
 
   def salvar_cargo_area
