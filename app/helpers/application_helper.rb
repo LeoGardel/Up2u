@@ -20,10 +20,10 @@ module ApplicationHelper
     case level
       when :notice then "alert alert-info"
       when :success then "alert alert-success"
-	  when :error then "alert alert-error"
-	  when :alert then "alert alert-error"
-	  else "alert alert-error"
-	end
+  	  when :error then "alert alert-error"
+  	  when :alert then "alert alert-error"
+      else "alert alert-error"
+    end
   end
 
   def flash_devise_errors

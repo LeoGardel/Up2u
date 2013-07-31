@@ -22,6 +22,10 @@
 
 <% flash_devise_errors if defined? resource %>
 
+<% if content_for?(:absolute_content) %>
+  <%= yield(:absolute_content) %>
+<% end %>
+
 <% unless flash.empty? %>
   <div style="position: relative; margin-top: 10px" class="row-fluid">
     <div class="span4 offset4 container">

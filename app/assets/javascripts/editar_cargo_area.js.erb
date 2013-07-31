@@ -1,9 +1,15 @@
 function areaAlterada(i) {
-  document.getElementById("area_descr").innerHTML = areas[i]["descr"];
-  document.getElementById("area_adj").innerHTML = areas[i]["nome_adjetivo"];
+  if (i == -1){
+  	document.getElementById("area_descr").innerHTML = "";
+  }else{
+  	document.getElementById("area_descr").innerHTML = areas[i]["descr"];
+  }
 }
 
 function cargoAlterado(i) {
-  document.getElementById("cargo_descr").innerHTML = cargos[i]["descr"];
-  document.getElementById("cargo").innerHTML = cargos[i]["nome"];
+  if (i == -1){
+  	document.getElementById("cargo_descr").innerHTML = "";
+  }else{
+    document.getElementById("cargo_descr").innerHTML = cargos[i]["descr"];
+  }
 }

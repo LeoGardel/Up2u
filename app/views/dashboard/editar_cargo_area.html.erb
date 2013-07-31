@@ -11,7 +11,7 @@
       <% if current_usuario.area %>
         <%= collection_select(:area, :area_id, @areas, :id, :nome, {:selected => current_usuario.area.id}, {:onChange => 'areaAlterada(this.selectedIndex)'}) %>
       <% else %>
-        <%= collection_select(:area, :area_id, @areas, :id, :nome, {:prompt => "-Selecione"}, {:onChange => 'areaAlterada(this.selectedIndex)'}) %>
+        <%= collection_select(:area, :area_id, @areas, :id, :nome, {:prompt => "-Selecione"}, {:onChange => 'areaAlterada(this.selectedIndex - 1)'}) %>
       <% end %><br>
       <div id="area_descr" style="width: 75%; margin-left: auto; margin-right: auto;">
         <% if current_usuario.area %>
@@ -27,7 +27,7 @@
       <% if current_usuario.cargo %>
         <%= collection_select(:cargo, :cargo_id, @cargos, :id, :nome, {:selected => current_usuario.cargo.id}, {:onChange => 'cargoAlterado(this.selectedIndex)'}) %>
       <% else %>
-        <%= collection_select(:cargo, :cargo_id, @cargos, :id, :nome, {:prompt => "-Selecione"}, {:onChange => 'cargoAlterado(this.selectedIndex)'}) %>
+        <%= collection_select(:cargo, :cargo_id, @cargos, :id, :nome, {:prompt => "-Selecione"}, {:onChange => 'cargoAlterado(this.selectedIndex - 1)'}) %>
       <% end %><br>
       <div id="cargo_descr" style="width: 75%; margin-left: auto; margin-right: auto;">
         <% if current_usuario.cargo %>
@@ -40,19 +40,16 @@
 </div>
 <div style="width: 800px; text-align: center; margin-left: auto; margin-right: auto;">
   <div class="texto_principal">
-    <span id="cargo">
+    <span id="cargo_area_nome">
       <% if current_usuario.area and current_usuario.cargo %>
-        <%= current_usuario.cargo.nome %>
-      <% end %>
-    </span> 
-    <span id="area_adj">
-      <% if current_usuario.area and current_usuario.cargo %>
-        <%= current_usuario.area.nome_adjetivo %>
+        <%= @cargoArea[:nome] %>
       <% end %>
     </span>
   </div>
-  <div style="width: 270px; text-align: center; margin-left: auto; margin-right: auto">
-    Area area area area area area area area area area area area area area area area area area area area area areaarea area area area area area area area area area area area area area area area area area area area area area area area area area area area area area area area area area area area area area area area area area
+  <div id="cargo_area_descr" style="width: 270px; text-align: center; margin-left: auto; margin-right: auto">
+    <% if current_usuario.area and current_usuario.cargo %>
+      <%= @cargoArea[:descr] %>
+    <% end %>
   </div>
 </div>
 
