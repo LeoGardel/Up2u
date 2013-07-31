@@ -1,0 +1,99 @@
+#dashboard_container div{
+font-size: 0;
+margin: 0;
+padding: 0;
+}
+
+#dashboard_container {
+position: absolute;
+top: 0;
+left: 0;
+margin-top: 102px;
+height: -moz-calc(100% - 102px);
+height: -webkit-calc(100% - 102px);
+height: -o-calc(100% - 102px);
+height: calc(100% - 102px);
+width: 100%;
+
+font-size: 0;
+padding: 0;
+}
+
+.largura_figura {
+width: -moz-calc(100% - 30px);
+width: -webkit-calc(100% - 30px);
+width: -o-calc(100% - 30px);
+width: calc(100% - 30px);
+}
+
+#figura_niveis {
+position: relative;
+
+height: 100%;
+background-image: url('<%= image_path 'dashboard/niveis.jpg' %>');
+background-size: 100% 100%;
+}
+
+.tracejado_vert {
+width: 2px;
+height: 100%;
+background-image: url('<%= image_path 'dashboard/tracejado_vert.jpg' %>');
+background-repeat: repeat-y;
+display: table-cell;
+}
+
+.celula_bandeira_rodape {
+display: table-cell;
+vertical-align: center; 
+}
+
+.bandeira_rodape {
+width: 52%;
+margin-top: 3px;
+margin-bottom: 15px;
+}
+
+.container_lista {
+width: 100%;
+height: 100%;
+}
+
+.palavras_niveis {
+position: absolute;
+left: 0;
+font-family: "nexa-bold", Arial, Helvetica, sans-serif;
+font-size: 13pt;
+color: #4f5557;
+}
+
+.textos_esq {
+font-family: "nexa-bold", Arial, Helvetica, sans-serif;
+font-size: 16pt;
+color: #4f5557;
+}
+
+.textos_abas {
+font-family: "nexa-bold", Arial, Helvetica, sans-serif;
+font-size: 14pt;
+color: #33b8c0;
+display: table-cell;
+vertical-align: middle;
+}
+
+#retangulo_verde_seta {
+position: absolute;
+width: 3.6%;
+right: 2.4%;
+bottom: 1px;
+height: <%= 0.8 * 100 %>%;
+
+background: #00e600; /* Old browsers */
+background: -moz-linear-gradient(top,  #00e600 0%, #00c100 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#00e600), color-stop(100%,#00c100)); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top,  #00e600 0%,#00c100 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top,  #00e600 0%,#00c100 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top,  #00e600 0%,#00c100 100%); /* IE10+ */
+background: linear-gradient(to bottom,  #00e600 0%,#00c100 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00e600', endColorstr='#00c100',GradientType=0 ); /* IE6-9 */
+
+}
