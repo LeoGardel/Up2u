@@ -1,6 +1,28 @@
+# coding: utf-8
+
 class DashboardController < LogadoController
   def index
-	  @percTotal = 100
+	  @percTotal = 50
+
+    @usuariosBasicos = 489
+    @usuariosAvancados = 215
+    @usuariosExperientes = 85
+
+    @tetoBasico = 41.25
+    @tetoAvancado = 71.25
+
+    @competenciasBasico = [["Habilidade com excel", "http://www.google.com", 31, 75], ["Conhecimento em Microsoft Access", "http://www.facebook.com", 14, 97], ["Habilidade com word", 100, 0]]
+    @competenciasAvancado = [["Sagacidade", "http://www.google.com", 23, 12], ["Análise de Custo Computacional", 10, 79], ["Raciocínio Lógico", "http://www.facebook.com", 44, 36], ["Frieza", "http://www.facebook.com", 80, 26]]
+    @competenciasExperiente = [["Html, CSS e Javascript", "http://www.google.com", 7, 88], ["Ruby, Java ou Banco de Dados", "http://www.facebook.com", 20, 66]]
+
+    if @percTotal < @tetoBasico
+      @nivel = 1
+    elsif @percTotal < @tetoAvancado
+      @nivel = 2
+    else
+      @nivel = 3
+    end
+    
   end
   
   def editar_cargo_area
