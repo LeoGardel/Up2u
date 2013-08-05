@@ -20,11 +20,19 @@
 
 					<div style="background-image: url('<%= image_path "dashboard/top_shadow_esq.jpg" %>'); background-size: auto 100%; background-repeat: repeat-x; height: 59px"></div>
 
-					<div style="background-color: #f0f0f0; height: 34px; text-align: center">
+					<div style="background-color: #f0f0f0; height: 34px">
 
-						<div style="width: 100%; height: 100%; display: table">
+						<div class="container_texto_abas">
 
-							<span class="textos_abas">Competências</span>
+							<% if @cargo_area %>
+
+							<span id="texto_aba_esq" style="font-size: <%= @cargo_area_font ? @cargo_area_font : 14 %>pt">
+
+								<%= @cargo_area %>
+
+							</span>
+
+							<% end %>
 
 						</div>
 
@@ -411,7 +419,15 @@
 
 					<div style="background-image: url('<%= image_path "dashboard/top_shadow_dir.jpg" %>'); background-size: auto 100%; background-repeat: repeat-x; height: 59px;"></div>
 
-					<div style="background-color: #eaeaea; height: 34px"></div>
+					<div style="background-color: #eaeaea; height: 34px">
+
+						<div class="container_texto_abas">
+
+							<span id="texto_aba_dir">Perfil</span>
+
+						</div>
+
+					</div>
 
 				</div>
 
