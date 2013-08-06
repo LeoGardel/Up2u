@@ -1,0 +1,146 @@
+#rodape_label {
+color: #dae4e9;
+font-family: "nexa-bold", Arial, Helvetica, sans-serif;
+font-size: 12pt;
+text-shadow:-1px 0px 2px #88949A;
+
+position: relative;
+width: 100%;
+margin-bottom: 8px;
+margin-top: 10px;
+}
+
+#titulo {
+color: #43484a;
+font-family: "nexa-bold", Arial, Helvetica, sans-serif;
+font-size: 24pt;
+padding: 0;
+position: relative;
+}
+
+#subtitulo {
+color: #43484a;
+font-family: "nexa-light", Arial, Helvetica, sans-serif;
+font-size: 14pt;
+margin: 0;
+padding: 0;
+position: relative;
+}
+
+#numero_pergunta {
+color: #474a4c;
+font-family: "nexa-bold", Arial, Helvetica, sans-serif;
+font-size: 24pt;
+position: relative;
+opacity: 0.25;
+filter: alpha(opacity=25);
+}
+
+#ret_pergunta {
+margin-left: auto;
+margin-right: auto;
+position: relative;
+-moz-box-shadow: 0px 0px 90px #cccccc;
+-webkit-box-shadow: 0px 0px 90px #cccccc;
+box-shadow: 0px 0px 90px #cccccc;
+}
+
+#bg_ret_pergunta {
+width: 100%;
+height: 100%;
+top: 0;
+left: 0;
+position: absolute;
+background-color: #b9b9b9;
+opacity: 0.12;
+border: 1px solid #000000;
+filter: alpha(opacity=12);
+}
+
+#texto_pergunta {
+color: #484848;
+font-family: "nexa-bold", Arial, Helvetica, sans-serif;
+padding: 15px 15px;
+}
+
+#container_opcoes {
+margin-top: 20px;
+padding: 0;
+font-size: 0;
+border: 0;
+display: inline-block;
+position: relative;
+}
+
+.container_opcao {
+margin: 0;
+padding: 0;
+border: 0;
+font-size: 0;
+}
+
+input[type="radio"].toggle {
+display: none;
+}
+
+input[type="radio"].toggle:checked + label {
+cursor: default;
+background: #ff8066;
+}
+
+input[type="radio"].toggle:checked + label.btn:hover {
+box-shadow: 0px 0px 8px #555555 inset;
+}
+
+input[type="radio"].toggle + label {
+position: relative;
+background-color: #e9eff1;
+color: #484848;
+border: 1px solid #71797c;
+border-radius: 10px;
+margin-top: 7px;
+margin-bottom: 7px;
+font-family: "nexa-bold", Arial, Helvetica, sans-serif;
+padding: 10px 10px;
+cursor: pointer;
+-moz-user-select: none; 
+-khtml-user-select: none; 
+-webkit-user-select: none; 
+-o-user-select: none;
+}
+
+input[type="radio"].toggle + label.btn:hover {
+background-position: 0 0;
+-webkit-transition: none;
+-moz-trainsition: none;
+transition: none;
+-moz-box-shadow: 0px 0px 8px #555555 inset;
+-webkit-box-shadow: 0px 0px 8px #555555 inset;
+box-shadow: inner 0px 0px 8px #555555;
+}
+
+label.btn {
+width: 90%;
+}
+
+.botao_continuar {
+position: relative;
+font-size: 18pt;
+background-color: #31d476;
+color: #ffffff;
+border-radius: 10px;
+margin-top: 20px;
+margin-bottom: 20px;
+font-family: "nexa-bold", Arial, Helvetica, sans-serif;
+padding: 10px 13px;
+cursor: pointer;
+display: inline-block;
+-moz-user-select: none; 
+-khtml-user-select: none; 
+-webkit-user-select: none; 
+-o-user-select: none;
+-moz-box-shadow: inset 1px 1px 2px #ffffbe, 1px 1px 2px #000000;
+-webkit-box-shadow: inset 1px 1px 2px#ffffbe, 1px 1px 2px #000000;
+box-shadow: inner 1px 1px 2px #ffffbe, 1px 1px 2px #000000;
+}
+

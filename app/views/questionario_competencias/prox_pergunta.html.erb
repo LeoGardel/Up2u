@@ -1,30 +1,85 @@
-<h1> Questionário de Competências </h1>
-
-<section>
-
-
-    <div class="progress progress-info progress-striped active" style="margin-bottom: 9px; width: 50%">  
+<!--
         <div class="bar" style="<%= "width: " + (@respondidos*100/ @total).to_s + "%" %>"></div>  
-      </div>
+-->
 
-      <hr>  
+<%= stylesheet "questionarios" %>
 
-<%= @pergunta %>:<br />
-	<%= form_tag(questionario_competencias_registrar_resposta_path) do %>
 
-		<%= radio_button_tag(:nivel, "5") %>
-		<%= label_tag(:nivel_5, @nivel_5) %><br />
-		<%= radio_button_tag(:nivel, "4") %>
-		<%= label_tag(:nivel_4, @nivel_4) %><br />
-		<%= radio_button_tag(:nivel, "3") %>
-		<%= label_tag(:nivel_3, @nivel_3) %><br />
-		<%= radio_button_tag(:nivel, "2") %>
-		<%= label_tag(:nivel_2, @nivel_2) %><br />
-		<%= radio_button_tag(:nivel, "1") %>
-		<%= label_tag(:nivel_1, @nivel_1) %><br />
+<div style="width: 75%; text-align: center; position: relative; margin-right: 25%; margin-top: 20px">
 
-	  <div><%= submit_tag("Submeter") %></div>
-	<% end %>
+	<div style="width: 33%; position: relative; height: 500px; display: inline-block; float: left; background-color: #0000ff">
 
-	<br/><%= link_to "Continuar mais tarde", dashboard_index_path, :method => :get %>
-</section>
+
+
+	</div>
+
+	<div style="width: 66%; position: relative; display: inline-block; vertical-align: top">
+
+		<p>
+			<span id="titulo">Questionário de Competências</span>
+			<br>
+			<span id="subtitulo">O <span style="font-family: 'nexa-bold'">primeiro passo</span> rumo ao <span style="font-family: 'nexa-bold'">seu objetivo</span></span>
+		</p>
+
+		<p>
+			<span id="numero_pergunta">-- <%= @respondidos + 1 %> --</span>
+		</p>
+
+		<div id="ret_pergunta">
+
+			<div id="bg_ret_pergunta"></div>
+
+			<div id="texto_pergunta" style="font-size: 22pt"><%= @pergunta %></div>
+
+		</div>
+
+		<%= form_tag(questionario_competencias_registrar_resposta_path) do %>
+
+		<div id="container_opcoes">
+
+			<div class="container_opcao">
+
+				<input id="toggle-5" class="toggle" name="nivel" value="5" type="radio">
+				<label for="toggle-5" class="btn" style="font-size: 16pt"><%= @nivel_5 %></label>
+
+			</div>
+
+			<div class="container_opcao">
+
+				<input id="toggle-4" class="toggle" name="nivel" value="4" type="radio">
+				<label for="toggle-4" class="btn" style="font-size: 16pt"><%= @nivel_4 %></label>
+
+			</div>
+
+			<div class="container_opcao">
+
+				<input id="toggle-3" class="toggle" name="nivel" value="3" type="radio">
+				<label for="toggle-3" class="btn" style="font-size: 16pt"><%= @nivel_3 %></label>
+
+			</div>
+
+			<div class="container_opcao">
+
+				<input id="toggle-2" class="toggle" name="nivel" value="2" type="radio">
+				<label for="toggle-2" class="btn" style="font-size: 16pt"><%= @nivel_2 %></label>
+
+			</div>
+
+			<div class="container_opcao">
+
+				<input id="toggle-1" class="toggle" name="nivel" value="1" type="radio">
+				<label for="toggle-1" class="btn" style="font-size: 16pt"><%= @nivel_1 %></label>
+
+			</div>
+
+		</div><br>
+
+		<%= submit_tag "Continuar", :class => "botao_continuar" %>
+
+		<% end %>
+
+		<div id="rodape_label">Up to You 2013</div>
+
+	</div>
+
+</div>

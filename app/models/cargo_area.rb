@@ -4,7 +4,7 @@ class CargoArea < ActiveRecord::Base
   belongs_to :cargo
 
   public
-    def self.getNomeEDescr(area, cargo)
+    def self.getNomeEDescr(cargo, area)
       CargoArea.where("area_id = ? AND cargo_id = ?", area, cargo).map { |e| {:nome => e.nome, :descr => e.descr} }[0]
     end
 end

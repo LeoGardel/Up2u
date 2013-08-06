@@ -39,3 +39,8 @@ height: 22px;
 display: table-cell;
 vertical-align: middle;
 }
+
+.links {
+font-family: "nexa-light", Arial, Helvetica, sans-serif;
+font-size: 16pt;
+}

@@ -9,6 +9,7 @@ class QuestionarioCompetenciasController < LogadoController
   end
 
   def prox_pergunta
+    @num_pergunta = 2
     atualiza_session_com_competencias
     inicializa_pergunta_atual
     if current_usuario.pergunta_atual_competencias
