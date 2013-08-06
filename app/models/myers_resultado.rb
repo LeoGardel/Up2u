@@ -6,10 +6,16 @@ class MyersResultado < ActiveRecord::Base
 
   def self.salva_hash_resultados(usuario_id, hash)
     hash.each_key { |key| 
-      @resultado = MyersResultado.new(myers_tipo_id: key,
-                         usuario_id: usuario_id,
-                         fator: ( hash[key][0] + ( 2 * hash[key][1] ) ) * 100 / ( 4 * hash[key][1] ).to_f )
-      @resultado.save
+      @resultado = MyersResultado.where(usuario_id: usuario_id).where(myers_tipo_id: key)[0]
+      if @resultado
+        @resultado[:fator] = ( hash[key][0] + ( 2 * hash[key][1] ) ) * 100 / ( 4 * hash[key][1] ).to_f
+        @resultado.save
+      else
+        @resultado = MyersResultado.new(myers_tipo_id: key,
+                           usuario_id: usuario_id,
+                           fator: ( hash[key][0] + ( 2 * hash[key][1] ) ) * 100 / ( 4 * hash[key][1] ).to_f )
+        @resultado.save
+      end
     }
   end
 end
