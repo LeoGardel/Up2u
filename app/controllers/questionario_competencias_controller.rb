@@ -22,6 +22,16 @@ class QuestionarioCompetenciasController < LogadoController
       @nivel_5 = competencia[:nivel_5]
       @total = usuario_session["lista_competencias"].length
       @respondidos = @total - usuario_session["lista_competencias"].index(current_usuario.pergunta_atual_competencias) - 1
+
+      @porcentagem = @respondidos * 100 / @total
+
+      @barras_cheias = @porcentagem * 7 / 100
+      @altura_barra_parcial =  (@porcentagem * 7) % 100
+      @barras_vazias = 7 - @barras_cheias
+      if @altura_barra_parcial != 0
+        @barras_vazias = @barras_vazias - 1
+      end
+
     else
       usuario_session.delete("lista_competencias")
       redirect_to :action => "resultados"
@@ -30,7 +40,7 @@ class QuestionarioCompetenciasController < LogadoController
 
   def registrar_resposta
     if current_usuario.pergunta_atual_competencias
-      if [1,2,3,4,5].include?(params[:nivel].to_i)
+      if params[:nivel] && [1,2,3,4,5].include?(params[:nivel].to_i)
         atualiza_session_com_competencias
         CompUsuario.registrar_resposta current_usuario.id, current_usuario.pergunta_atual_competencias, params[:nivel].to_i, current_usuario.turno_competencias
         posicao_atual = usuario_session["lista_competencias"].index(current_usuario.pergunta_atual_competencias)
@@ -42,7 +52,8 @@ class QuestionarioCompetenciasController < LogadoController
           current_usuario.pergunta_atual_competencias = nil
           current_usuario.save
           usuario_session.delete("lista_competencias")
-          redirect_to :action => "resultados"
+          calcula_resultados
+          redirect_to dashboard_index_path
         end
       else
         flash[:alert] = "Você tem que escolher uma das alternativas do questionário."
@@ -54,13 +65,8 @@ class QuestionarioCompetenciasController < LogadoController
     end
   end
 
-  def resultados
-    unless current_usuario.pergunta_atual_competencias
-      #TODO
-    else
-      flash[:alert] = "Você precisa terminar o questionário para colher os resultados."
-      redirect_to :action => "prox_pergunta"
-    end
+  def calcula_resultados
+    #TODO
   end
 
   def atualiza_session_com_competencias

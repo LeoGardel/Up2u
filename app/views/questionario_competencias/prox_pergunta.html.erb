@@ -1,19 +1,75 @@
-<!--
-        <div class="bar" style="<%= "width: " + (@respondidos*100/ @total).to_s + "%" %>"></div>  
--->
-
 <%= stylesheet "questionarios" %>
 
 
-<div style="width: 75%; text-align: center; position: relative; margin-right: 25%; margin-top: 20px">
+<div style="width: 100%; text-align: center; position: relative; margin-right: auto; margin-left: auto; margin-top: 20px">
 
-	<div style="width: 33%; position: relative; height: 500px; display: inline-block; float: left; background-color: #0000ff">
+	<div style="position: absolute; right: 80%; top: 60px; height: 360px">
 
+		<div style="position: relative; height: 100%; display: table; float: left">
 
+			<div id="texto_porcentagem">
+
+				<div id="valor_porcentagem">
+
+					<%= @porcentagem %> %
+
+				</div>
+
+				<div id="palavra_porcentagem">
+
+					completo
+
+				</div>
+
+			</div>
+
+		</div>
+
+		<div style="position: relative; height: 100%; display: inline-block">
+
+			<div id="barra_porcentagem">
+				
+				<% @barras_vazias.times { %>
+
+				<div class="led_porcentagem">
+
+					<div class="led_sombra"></div>
+
+				</div>
+
+				<% } %>
+
+				<% if @altura_barra_parcial != 0 %>
+
+				<div class="led_porcentagem">
+
+					<div class="retangulo_verde_led" style="height: <%= @altura_barra_parcial %>%"></div>
+
+					<div class="led_sombra"></div>
+
+				</div>
+
+				<% end %>
+
+				<% @barras_cheias.times { %>
+
+				<div class="led_porcentagem">
+
+					<div class="retangulo_verde_led" style="height: 100%"></div>
+
+					<div class="led_sombra"></div>
+
+				</div>
+
+				<% } %>
+
+			</div>
+
+		</div>
 
 	</div>
 
-	<div style="width: 66%; position: relative; display: inline-block; vertical-align: top">
+	<div style="width: 50%; position: relative; display: inline-block; vertical-align: top">
 
 		<p>
 			<span id="titulo">Questionário de Competências</span>

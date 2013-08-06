@@ -1,31 +1,141 @@
-<h1> Questionário de Perfil </h1>
-
-<section>
+<%= stylesheet "questionarios" %>
 
 
-    <div class="progress progress-info progress-striped active" style="margin-bottom: 9px; width: 50%">  
-        <div class="bar" style="<%= "width: " + (@respondidos*100/ @total).to_s + "%" %>"></div>  
-      </div>
+<div style="width: 100%; text-align: center; position: relative; margin-right: auto; margin-left: auto; margin-top: 20px">
 
-      <hr>  
+	<div style="position: absolute; right: 80%; top: 60px; height: 360px">
 
-<%= @pergunta %>.<br />
-Essa frase é adequada ao seu perfil?
-	<%= form_tag(questionario_perfil_registrar_resposta_path) do %>
+		<div style="position: relative; height: 100%; display: table; float: left">
 
-		<%= radio_button_tag(:resposta, "2") %>
-		<%= label_tag(:nivel_2, @nivel_2) %><br />
-		<%= radio_button_tag(:resposta, "1") %>
-		<%= label_tag(:nivel_1, @nivel_1) %><br />
-		<%= radio_button_tag(:resposta, "0") %>
-		<%= label_tag(:nivel_0, @nivel_0) %><br />
-		<%= radio_button_tag(:resposta, "-1") %>
-		<%= label_tag(:nivel_m1, @nivel_m1) %><br />
-		<%= radio_button_tag(:resposta, "-2") %>
-		<%= label_tag(:nivel_m2, @nivel_m2) %><br />
+			<div id="texto_porcentagem">
 
-	  <div><%= submit_tag("Submeter") %></div>
-	<% end %>
+				<div id="valor_porcentagem">
 
-	<br/><%= link_to "Continuar mais tarde", dashboard_index_path, :method => :get %>
-</section>
+					<%= @porcentagem %> %
+
+				</div>
+
+				<div id="palavra_porcentagem">
+
+					completo
+
+				</div>
+
+			</div>
+
+		</div>
+
+		<div style="position: relative; height: 100%; display: inline-block">
+
+			<div id="barra_porcentagem">
+				
+				<% @barras_vazias.times { %>
+
+				<div class="led_porcentagem">
+
+					<div class="led_sombra"></div>
+
+				</div>
+
+				<% } %>
+
+				<% if @altura_barra_parcial != 0 %>
+
+				<div class="led_porcentagem">
+
+					<div class="retangulo_verde_led" style="height: <%= @altura_barra_parcial %>%"></div>
+
+					<div class="led_sombra"></div>
+
+				</div>
+
+				<% end %>
+
+				<% @barras_cheias.times { %>
+
+				<div class="led_porcentagem">
+
+					<div class="retangulo_verde_led" style="height: 100%"></div>
+
+					<div class="led_sombra"></div>
+
+				</div>
+
+				<% } %>
+
+			</div>
+
+		</div>
+
+	</div>
+
+	<div style="width: 50%; position: relative; display: inline-block; vertical-align: top">
+
+		<p>
+			<span id="titulo">Questionário de Perfil</span>
+			<br>
+			<span id="subtitulo">Essa frase é <span style="font-family: 'nexa-bold'">adequada</span> ao <span style="font-family: 'nexa-bold'">seu perfil</span>?</span>
+		</p>
+
+		<p>
+			<span id="numero_pergunta">-- <%= @respondidos + 1 %> --</span>
+		</p>
+
+		<div id="ret_pergunta">
+
+			<div id="bg_ret_pergunta"></div>
+
+			<div id="texto_pergunta" style="font-size: 22pt"><%= @pergunta %></div>
+
+		</div>
+
+		<%= form_tag(questionario_perfil_registrar_resposta_path) do %>
+
+		<div id="container_opcoes">
+
+			<div class="container_opcao">
+
+				<input id="toggle-5" class="toggle" name="resposta" value="2" type="radio">
+				<label for="toggle-5" class="btn" style="font-size: 16pt"><%= @nivel_2 %></label>
+
+			</div>
+
+			<div class="container_opcao">
+
+				<input id="toggle-4" class="toggle" name="resposta" value="1" type="radio">
+				<label for="toggle-4" class="btn" style="font-size: 16pt"><%= @nivel_1 %></label>
+
+			</div>
+
+			<div class="container_opcao">
+
+				<input id="toggle-3" class="toggle" name="resposta" value="0" type="radio">
+				<label for="toggle-3" class="btn" style="font-size: 16pt"><%= @nivel_0 %></label>
+
+			</div>
+
+			<div class="container_opcao">
+
+				<input id="toggle-2" class="toggle" name="resposta" value="-1" type="radio">
+				<label for="toggle-2" class="btn" style="font-size: 16pt"><%= @nivel_m1 %></label>
+
+			</div>
+
+			<div class="container_opcao">
+
+				<input id="toggle-1" class="toggle" name="resposta" value="-2" type="radio">
+				<label for="toggle-1" class="btn" style="font-size: 16pt"><%= @nivel_m2 %></label>
+
+			</div>
+
+		</div><br>
+
+		<%= submit_tag "Continuar", :class => "botao_continuar" %>
+
+		<% end %>
+
+		<div id="rodape_label">Up to You 2013</div>
+
+	</div>
+
+</div>

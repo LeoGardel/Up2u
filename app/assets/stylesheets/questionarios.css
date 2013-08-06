@@ -144,3 +144,50 @@ display: inline-block;
 box-shadow: inner 1px 1px 2px #ffffbe, 1px 1px 2px #000000;
 }
 
+#texto_porcentagem {
+display: table-cell;
+padding-right: 20px;
+vertical-align: middle;
+text-align: right;
+}
+
+#valor_porcentagem {
+font-size: 38pt;
+color: #43484a;
+font-family: "nexa-bold", Arial, Helvetica, sans-serif;
+}
+
+#palavra_porcentagem {
+font-size: 18pt;
+color: #43484a;
+font-family: "nexa-light", Arial, Helvetica, sans-serif;
+}
+
+.led_porcentagem {
+width: 7px;
+margin-top: 10px;
+margin-bottom: 10px;
+height: 40px;
+position: relative;
+background-color: #cedde2;
+}
+
+.led_sombra {
+position: absolute;
+height: 100%;
+width: 100%;
+top: 0;
+left: 0;
+-moz-box-shadow: inset 2px 2px 6px #494e51;
+-webkit-box-shadow: inset 2px 2px 6px #494e51;
+box-shadow: inner 2px 2px 6px #494e51;
+}
+
+.retangulo_verde_led {
+position: absolute;
+width: 100%;
+bottom: -1px;
+left: -1px;
+background-color: #7fd59c;
+border: 1px solid #000000;
+}
