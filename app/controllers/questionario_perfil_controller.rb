@@ -46,7 +46,7 @@ class QuestionarioPerfilController < LogadoController
           current_usuario.pergunta_atual_perfil = nil
           current_usuario.save
           usuario_session.delete("lista_perfil")
-          calcula_resultados
+          MyersResposta.agrupar_respostas_usuario(current_usuario.id, current_usuario.turno_perfil)
           redirect_to dashboard_index_path
         end
       else
@@ -57,10 +57,6 @@ class QuestionarioPerfilController < LogadoController
       flash[:alert] = "Você não está em um questionário."
       redirect_to dashboard_index_path
     end
-  end
-
-  def calcula_resultados
-    @fatores = MyersResposta.agrupar_respostas_usuario(current_usuario.id, current_usuario.turno_perfil)
   end
 
   def inicializa_pergunta_atual

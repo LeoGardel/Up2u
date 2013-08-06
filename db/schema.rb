@@ -14,17 +14,19 @@
 ActiveRecord::Schema.define(:version => 20130426050852) do
 
   create_table "areas", :force => true do |t|
-    t.string "nome",          :limit => 60, :null => false
-    t.string "nome_adjetivo", :limit => 60, :null => false
-    t.string "descr",         :limit => 60, :null => false
+    t.string "nome",          :limit => 60,  :null => false
+    t.string "nome_adjetivo", :limit => 60,  :null => false
+    t.string "descr",         :limit => 400, :null => false
   end
 
   create_table "cargo_area", :force => true do |t|
-    t.string  "nome",     :limit => 60, :null => false
-    t.string  "descr",    :limit => 60
-    t.integer "area_id",                :null => false
-    t.integer "cargo_id",               :null => false
+    t.string  "nome",     :limit => 60,  :null => false
+    t.string  "descr",    :limit => 400
+    t.integer "area_id",                 :null => false
+    t.integer "cargo_id",                :null => false
   end
+
+  add_index "cargo_area", ["area_id"], :name => "area_id"
 
   create_table "cargo_comp", :force => true do |t|
     t.integer "cargo_id",       :null => false
@@ -35,8 +37,8 @@ ActiveRecord::Schema.define(:version => 20130426050852) do
   end
 
   create_table "cargos", :force => true do |t|
-    t.string "nome",  :limit => 60, :null => false
-    t.string "descr", :limit => 60, :null => false
+    t.string "nome",  :limit => 60,  :null => false
+    t.string "descr", :limit => 400, :null => false
   end
 
   create_table "comp_usuarios", :force => true do |t|
@@ -76,9 +78,9 @@ ActiveRecord::Schema.define(:version => 20130426050852) do
   end
 
   create_table "myers_perguntas", :force => true do |t|
-    t.text    "pergunta",       :limit => 2147483647,                     :null => false
-    t.boolean "myers_tipo_id",                                            :null => false
-    t.binary  "tipo_invertido", :limit => 1,          :default => "b'0'", :null => false
+    t.text    "pergunta",       :limit => 2147483647, :null => false
+    t.integer "myers_tipo_id",                        :null => false
+    t.integer "tipo_invertido",                       :null => false
   end
 
   create_table "myers_respostas", :force => true do |t|
@@ -88,6 +90,14 @@ ActiveRecord::Schema.define(:version => 20130426050852) do
     t.integer   "turno",             :null => false
     t.timestamp "data",              :null => false
   end
+
+  create_table "myers_resultados", :force => true do |t|
+    t.integer "usuario_id",    :null => false
+    t.integer "myers_tipo_id", :null => false
+    t.float   "fator",         :null => false
+  end
+
+  add_index "myers_resultados", ["usuario_id"], :name => "usuario_id"
 
   create_table "myers_tipos", :force => true do |t|
     t.string "descr", :limit => 60, :null => false
