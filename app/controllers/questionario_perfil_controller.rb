@@ -29,7 +29,6 @@ class QuestionarioPerfilController < LogadoController
     if @altura_barra_parcial != 0
       @barras_vazias = @barras_vazias - 1
     end
-
   end
 
   def registrar_resposta

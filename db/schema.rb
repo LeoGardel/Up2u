@@ -42,22 +42,27 @@ ActiveRecord::Schema.define(:version => 20130426050852) do
   end
 
   create_table "comp_usuarios", :force => true do |t|
-    t.integer   "usuario_id",                    :null => false
-    t.integer   "competencia_id",                :null => false
-    t.integer   "nivel",                         :null => false
-    t.integer   "turno",          :default => 0, :null => false
-    t.timestamp "data",                          :null => false
+    t.integer   "usuario_id",                                  :null => false
+    t.integer   "competencia_id",                              :null => false
+    t.integer   "nivel",                                       :null => false
+    t.string    "importancia",    :limit => 12,                :null => false
+    t.integer   "turno",                        :default => 0, :null => false
+    t.timestamp "data",                                        :null => false
   end
 
+  add_index "comp_usuarios", ["usuario_id"], :name => "usuario_id"
+
   create_table "competencias", :force => true do |t|
-    t.text   "nome",                         :null => false
-    t.text   "descr"
-    t.string "caracteristica", :limit => 60, :null => false
-    t.text   "nivel_1"
-    t.text   "nivel_2"
-    t.text   "nivel_3"
-    t.text   "nivel_4"
-    t.text   "nivel_5"
+    t.text    "nome",                                              :null => false
+    t.text    "descr"
+    t.string  "caracteristica",       :limit => 60,                :null => false
+    t.text    "nivel_1"
+    t.text    "nivel_2"
+    t.text    "nivel_3"
+    t.text    "nivel_4"
+    t.text    "nivel_5"
+    t.integer "soma_notas_usuarios",                :default => 0, :null => false
+    t.integer "quant_notas_usuarios",               :default => 0, :null => false
   end
 
   create_table "educacao", :force => true do |t|

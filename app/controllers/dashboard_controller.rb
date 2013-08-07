@@ -2,30 +2,51 @@
 
 class DashboardController < LogadoController
   def index
-	  @percTotal = 50
+    @tetoBasico = 41
+    @tetoAvancado = 71
+
+	  @percTotal = current_usuario.resultado_competencias
 
     @usuariosBasicos = 489
     @usuariosAvancados = 215
     @usuariosExperientes = 85
 
-    @competenciasBasico = [["Habilidade com excel", "http://www.google.com", 31, 75], ["Conhecimento em Microsoft Access", "http://www.facebook.com", 14, 97], ["Habilidade com word", 100, 0]]
-    @competenciasAvancado = [["Sagacidade", "http://www.google.com", 23, 12], ["Análise de Custo Computacional", 10, 79], ["Raciocínio Lógico", "http://www.facebook.com", 44, 36], ["Frieza", "http://www.facebook.com", 80, 26]]
-    @competenciasExperiente = [["Html, CSS e Javascript", "http://www.google.com", 7, 88], ["Ruby, Java ou Banco de Dados", "http://www.facebook.com", 20, 66]]
+    @competenciasBasico = []
+    @competenciasAvancado = []
+    @competenciasExperiente = []
+
+    CompUsuario.respostas_turno(current_usuario.id, current_usuario.turno_competencias).each{ |resp|
+      comp_nome = Competencia.find(resp[:competencia_id])[:nome]
+      link = "http://www.emagister.com.br/web/search/?action=search&origen=buscador_principal&esBusquedaUsuario=1&q="
+      link += comp_nome.gsub(' ','+')
+      importancia = resp[:importancia]
+      pontuacao = resp[:nivel] * 20
+      pontuacao_outros = 50
+
+      lista_final = [comp_nome, link, importancia, pontuacao, pontuacao_outros]
+
+      if pontuacao < @tetoBasico
+        @competenciasBasico.push lista_final
+      elsif pontuacao < @tetoAvancado
+        @competenciasAvancado.push lista_final
+      else
+        @competenciasExperiente.push lista_final
+      end
+    }
 
     if current_usuario.cargo && current_usuario.area
       @cargo_area = CargoArea.getNomeEDescr(current_usuario.cargo.id, current_usuario.area.id)[:nome]
       @cargo_area_font = get_tamanho_fonte_aba_esquerda(@cargo_area.length)
     end
 
-    @tetoBasico = 41
-    @tetoAvancado = 71
-
-    if @percTotal < @tetoBasico
-      @nivel = 1
-    elsif @percTotal < @tetoAvancado
-      @nivel = 2
-    else
-      @nivel = 3
+    if @percTotal
+      if @percTotal < @tetoBasico
+        @nivel = 1
+      elsif @percTotal < @tetoAvancado
+        @nivel = 2
+      else
+        @nivel = 3
+      end
     end
     
   end

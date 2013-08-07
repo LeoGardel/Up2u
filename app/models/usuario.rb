@@ -81,6 +81,7 @@ class Usuario < ActiveRecord::Base
       self.area_id = area_id
       self.cargo_id = cargo_id
       self.pergunta_atual_competencias = nil
+      self.resultado_competencias = nil
       self.save
     end
   end
