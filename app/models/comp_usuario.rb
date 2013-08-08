@@ -5,9 +5,22 @@ class CompUsuario < ActiveRecord::Base
   attr_accessible :nivel, :turno, :importancia
 
   def self.registrar_resposta(id, pergunta_atual_competencias, nivel, importancia, turno)
-    comp = CompUsuario.new(nivel:nivel, turno:turno, importancia: importancia)
-    comp.usuario_id = id
-    comp.competencia_id = pergunta_atual_competencias
+    ultima_resposta = CompUsuario.where(usuario_id: id).where(competencia_id: pergunta_atual_competencias).order("data DESC").limit(1)
+
+    comp_usuario = CompUsuario.new(nivel:nivel, turno:turno, importancia: importancia)
+    comp_usuario.usuario_id = id
+    comp_usuario.competencia_id = pergunta_atual_competencias
+
+    comp = Competencia.find(pergunta_atual_competencias)
+    comp[:soma_notas_usuarios] += nivel * 20
+    if ultima_resposta && ultima_resposta.length == 1
+      comp[:soma_notas_usuarios] -= ultima_resposta[0][:nivel] * 20
+    else
+      comp[:quant_notas_usuarios] += 1
+    end
+
+    ## os 2 devem ser dentro de uma transacao
+    comp_usuario.save
     comp.save
   end
 

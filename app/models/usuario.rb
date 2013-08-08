@@ -81,8 +81,39 @@ class Usuario < ActiveRecord::Base
       self.area_id = area_id
       self.cargo_id = cargo_id
       self.pergunta_atual_competencias = nil
-      self.resultado_competencias = nil
+      self.resetar_resultado_competencias
       self.save
     end
+  end
+
+  def resetar_resultado_competencias
+    if self.resultado_competencias
+      if self.resultado_competencias < TETO_BASICO
+        nivel_usu = NivelUsuario.find(1)
+      elsif self.resultado_competencias < TETO_AVANCADO
+        nivel_usu = NivelUsuario.find(2)
+      else
+        nivel_usu = NivelUsuario.find(3)
+      end
+      nivel_usu[:quant_usuarios] -= 1
+      nivel_usu.save
+    end
+    self.resultado_competencias = nil
+    self.save
+  end
+
+  def definir_resultado_competencias(pontuacao)
+    if pontuacao < TETO_BASICO
+      nivel_usu = NivelUsuario.find(1)
+    elsif pontuacao < TETO_AVANCADO
+      nivel_usu = NivelUsuario.find(2)
+    else
+      nivel_usu = NivelUsuario.find(3)
+    end
+    nivel_usu[:quant_usuarios] += 1
+    nivel_usu.save
+    
+    self.resultado_competencias = pontuacao
+    self.save
   end
 end

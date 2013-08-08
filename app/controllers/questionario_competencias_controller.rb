@@ -44,7 +44,7 @@ class QuestionarioCompetenciasController < LogadoController
           redirect_to :action => "prox_pergunta"
         else
           current_usuario.pergunta_atual_competencias = nil
-          current_usuario.resultado_competencias = CompUsuario.calcula_pontuacao(current_usuario.id, current_usuario.turno_competencias, current_usuario.area_id)
+          current_usuario.definir_resultado_competencias CompUsuario.calcula_pontuacao(current_usuario.id, current_usuario.turno_competencias, current_usuario.area_id)
           current_usuario.save
           usuario_session.delete("lista_competencias")
           redirect_to dashboard_index_path
@@ -68,7 +68,7 @@ class QuestionarioCompetenciasController < LogadoController
   def inicializa_pergunta_atual
     current_usuario.pergunta_atual_competencias = usuario_session["lista_competencias"].last[:competencia_id]
     current_usuario.turno_competencias += 1
-    current_usuario.resultado_competencias = nil
+    current_usuario.resetar_resultado_competencias
     current_usuario.save
   end
 
