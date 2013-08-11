@@ -10,21 +10,30 @@
   <%= yield(:stylesheet) %>
   <%= yield(:javascript) %>
 </head>
-<body style="<%= yield(:body_style) %>">
+
+<% if content_for?(:body_style) %>
+  <body style="<%= yield(:body_style) %>">
+<% else %>
+  <body style='<%= "min-height: 480px; min-width: 930px; overflow: auto; position: absolute; margin: 0px; height: 100%; width: 100%; background-image:url('" + (image_path "background_azul.jpg") + "'); background-repeat: repeat; text-align: center" %>'>
+<% end %>
 
 <% if content_for?(:header_logado) %>
   <%= yield(:header_logado) %>
+<% end %>
+
+<% if content_for?(:background_banner) %>
+  <%= yield(:background_banner) %>
 <% end %>
 
 <% if content_for?(:header) %>
   <%= yield(:header) %>
 <% end %>
 
-<% flash_devise_errors if defined? resource %>
-
 <% if content_for?(:absolute_content) %>
   <%= yield(:absolute_content) %>
 <% end %>
+
+<% flash_devise_errors if defined? resource %>
 
 <% unless flash.empty? %>
   <div style="position: relative; margin-top: 10px" class="row-fluid">

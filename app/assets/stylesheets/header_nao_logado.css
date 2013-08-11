@@ -2,11 +2,35 @@
 height: 66px;
 }
 
-.headerLinks:hover {
-text-shadow:0px 0px 10px black;
+#bg_header_pag_inicial {
+opacity: 0.4;
+filter: alpha(opacity=40);
+background-color: #000000;
+width: 100%;
+position: absolute;
+top: 0;
 }
 
-.headerLinks {
+#header_pag_inicial {
+width: 100%;
+position: relative;
+margin: 0;
+display: table;
+}
+
+#header_link_container {
+display: table-cell;
+vertical-align: middle;
+valign: middle;
+}
+
+#up2u_logo {
+position: absolute;
+left: 0;
+height:100%
+}
+
+#header_link_container a{
 color: white;
 text-decoration: none;
 font-family: "nexa-light", Arial, Helvetica, sans-serif;
@@ -14,4 +38,26 @@ font-size: 18pt;
 position: relative;
 margin-right: 34px;
 float: right;
+}
+
+#header_link_container a, #header_link_container div{
+color: white;
+text-decoration: none;
+font-family: "nexa-light", Arial, Helvetica, sans-serif;
+font-size: 18pt;
+position: relative;
+margin-right: 34px;
+float: right;
+}
+
+#header_link_container a:hover, #header_link_container div:hover {
+text-shadow:0px 0px 10px black;
+}
+
+#botao_como_funciona {
+cursor: pointer;
+-moz-user-select: none;
+-khtml-user-select: none;
+-webkit-user-select: none;
+-o-user-select: none
 }

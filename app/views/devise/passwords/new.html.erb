@@ -1,21 +1,19 @@
 <%= stylesheet "bootstrap.min", "devise_pages" %>
-<%= bodyStyle "min-height: 480px; min-width: 930px; overflow: auto; position: absolute; margin: 0px; height: 100%; width: 100% ;background-image:url('" + (image_path "background_azul.jpg") + "'); background-repeat:repeat; text-align: center" %>
+
+<%= render :partial => "devise/shared/header_nao_logado", :locals => {:links => [(link_to "Página Inicial", new_session_path(:usuario), :method => :get)]} %>
 
 
-<%= render :partial => "devise/shared/header_nao_logado", :locals => {:link => (link_to "Página Inicial", new_session_path(:usuario), :method => :get, :class => "headerLinks")} %>
+<div id="page_main_container">
 
+	<p class="titulo">Redefinição de senha</p>
 
-<div style="width: 100%; text-align: center; position: relative; margin-top: 15px; margin-left: auto; margin-right: auto;">
+	<p class="texto_principal">Caso tenha perdido a sua senha de acesso ao sistema, basta preencher seu endereço de e-mail cadastrado no campo abaixo. <span style="font-family: 'nexa-bold'">Nós enviaremos um e-mail com as instruções para redefinição de senha.</span></p>
 
-<p class="titulo">Redefinção de senha</p>
+	<%= form_for(resource, :as => resource_name, :url => password_path(resource_name), :html => { :method => :post }) do |f| %>
+	  <%= f.email_field :email, :autofocus => true, :class => "texto_email_senha", :placeholder => "Email" %><br/>
+	  <%= f.submit "Envie-me as instruções", :class => "botoes_forms btn btn-mini" %>
+	<% end %>
 
-<p class="texto_principal">Caso tenha perdido a sua senha de acesso ao sistema, basta preencher seu endereço de e-mail cadastrado no campo abaixo. <span style="font-family: 'nexa-bold'">Nós enviaremos um e-mail com as instruções para redefinição de senha.</span></p>
-
-<%= form_for(resource, :as => resource_name, :url => password_path(resource_name), :html => { :method => :post }) do |f| %>
-  <%= f.email_field :email, :autofocus => true, :class => "texto_email_senha", :placeholder => "Email" %><br/>
-  <%= f.submit "Envie-me as instruções", :class => "botoes_forms btn btn-mini" %>
-<% end %>
-
+	<div class="rodape_label">Up to You 2013</div>
+	
 </div>
-
-<div class="rodape_label">Up to You 2013</div>

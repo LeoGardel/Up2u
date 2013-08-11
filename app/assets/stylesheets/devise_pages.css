@@ -6,6 +6,7 @@ text-shadow:-1px 0px 2px #88949A;
 
 position: absolute;
 width: 100%;
+height: 23px;
 bottom: 8px;
 }
 
@@ -13,6 +14,7 @@ bottom: 8px;
 color: #474a4c;
 font-family: "nexa-bold", Arial, Helvetica, sans-serif;
 font-size: 32pt;
+margin-top: 40px;
 
 position: relative;
 }
@@ -43,4 +45,17 @@ vertical-align: middle;
 .links {
 font-family: "nexa-light", Arial, Helvetica, sans-serif;
 font-size: 16pt;
+}
+
+#page_main_container {
+width: 80%;
+text-align: center;
+position: relative;
+margin-left: auto;
+margin-right: auto;
+padding-bottom: 30px;
+height: -moz-calc(100% - 136px);
+height: -webkit-calc(100% - 136px);
+height: -o-calc(100% - 136px);
+height: calc(100% - 136px);
 }

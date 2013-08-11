@@ -1,20 +1,19 @@
 <%= stylesheet "devise_pages" %>
 
+<div id="page_main_container">
 
-<div style="width: 100%; text-align: center; position: absolute; top: 80px; margin-left: auto; margin-right: auto;">
+	<p class="titulo">Questionário de Perfil</p>
 
-<p class="titulo">Questionário de Perfil</p>
+	<p class="texto_principal">Você está prestes a responder um questionário, que tem como único objetivo te orientar no entendimento do seu perfil profissional.</p>
 
-<p class="texto_principal">Você está prestes a responder um questionário, que tem como único objetivo te orientar no entendimento do seu perfil profissional.</p>
+	<p class="texto_principal">Responda as questões com verdade para que tenha o diagnóstico e o aconselhamento corretos para sua carreira. Você só tem a ganhar!</p>
 
-<p class="texto_principal">Responda as questões com verdade para que tenha o diagnóstico e o aconselhamento corretos para sua carreira. Você só tem a ganhar!</p>
+	<%- unless current_usuario.pergunta_atual_competencias %>
+		<%= link_to "Iniciar Teste", questionario_perfil_prox_pergunta_path, :method => :get, :class => "links" %><br/>
+	<%- else %>
+		<%= link_to "Continuar Teste", questionario_perfil_prox_pergunta_path, :method => :get, :class => "links" %><br/>
+	<%- end %>
 
-<%- unless current_usuario.pergunta_atual_competencias %>
-	<%= link_to "Iniciar Teste", questionario_perfil_prox_pergunta_path, :method => :get, :class => "links" %><br/>
-<%- else %>
-	<%= link_to "Continuar Teste", questionario_perfil_prox_pergunta_path, :method => :get, :class => "links" %><br/>
-<%- end %>
+	<div class="rodape_label">Up to You 2013</div>
 
 </div>
-
-<div class="rodape_label">Up to You 2013</div>
