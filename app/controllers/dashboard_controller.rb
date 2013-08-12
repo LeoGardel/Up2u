@@ -87,7 +87,18 @@ class DashboardController < LogadoController
   def atualizar_cargo_area
     area = Area.where(nome: params["areaNome"]).limit(1)[0]
     cargo = Cargo.where(nome: params["cargoNome"]).limit(1)[0]
-    cargoArea = CargoArea.getNomeEDescr(area[:id], cargo[:id])
+
+    unless area.nil? or cargo.nil?
+      cargoArea = CargoArea.getNomeEDescr(area[:id], cargo[:id])
+    else
+      if area.nil?
+        area = {}
+      end
+      if cargo.nil?
+        cargo = {}
+      end
+      cargoArea = {}
+    end
 
     resposta = {"areaDescr" => area[:descr],
      "cargoDescr" => cargo[:descr],
