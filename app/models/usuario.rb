@@ -80,14 +80,14 @@ class Usuario < ActiveRecord::Base
     if (self.area_id != area_id) or (self.cargo_id != cargo_id)
       self.area_id = area_id
       self.cargo_id = cargo_id
-      self.pergunta_atual_competencias = nil
       self.resetar_resultado_competencias
+      self.pergunta_atual_competencias = nil
       self.save
     end
   end
 
   def resetar_resultado_competencias
-    if self.resultado_competencias
+    if self.pergunta_atual_competencias.nil? and !(resultado_competencias.nil?)
       if self.resultado_competencias < TETO_BASICO
         nivel_usu = NivelUsuario.find(1)
       elsif self.resultado_competencias < TETO_AVANCADO

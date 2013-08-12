@@ -82,6 +82,18 @@
 
 				<% if @percTotal %>
 
+				<% unless current_usuario.pergunta_atual_competencias.nil? %>
+
+				<div id="quadro_aviso_figura_niveis">
+
+					<div id="quadro_aviso_figura_niveis_bg"></div>
+					
+					<div id="quadro_aviso_figura_niveis_texto">É necessário finalizar o questionário para obter a pontuação correta</div>
+
+				</div>
+
+				<% end %>
+
 				<div id="retangulo_verde_seta" style="height: <%= 0.8 * @percTotal %>%;"></div>
 
 				<div id="retangulo_suporte_porcent" style="bottom: <%= 0.8 * @percTotal %>%;">
@@ -110,13 +122,15 @@
 
 						<div class="tracejado_vert"></div>
 
+						<% 3.times{ |i| %>
+
 						<div class="container_lista">
 
 							<div class="container_absoluto_lista">
 
-								<% if @competenciasBasico %>
+								<% unless @competencias[i].empty? %>
 
-								<% @competenciasBasico.each{ |comp| %>
+								<% @competencias[i].each{ |comp| %>
 
 								<div class="celula_competencia">
 
@@ -166,130 +180,24 @@
 
 						<div class="tracejado_vert"></div>
 
-						<div class="container_lista">
-
-							<div class="container_absoluto_lista">
-
-								<% if @competenciasAvancado %>
-
-								<% @competenciasAvancado.each{ |comp| %>
-
-								<div class="celula_competencia">
-
-									<span class="texto_principal_competencia"><%= comp[0] %>
-
-								    	<div class="tooltip_competencia">
-
-								    		<div class="seta_tooltip" style="top: 17%; background-image: url('<%= image_path 'dashboard/seta_tooltip.jpg' %>')">
-
-								    			<div style="background-color: #00df00; width: <%= 0.8 * comp[-2] %>%" class="ret_colorido_seta_tooltip">
-
-								    				<%= comp[-2] %>
-
-								    			</div>
-
-								    		</div>
-
-								    		<div class="seta_tooltip" style="top: 62%; background-image: url('<%= image_path 'dashboard/seta_tooltip.jpg' %>')">
-
-								    			<div style="background-color: #61b6e4; width: <%= 0.8 * comp[-1] %>%" class="ret_colorido_seta_tooltip">
-
-								    				<%= comp[-1] %>
-
-								    			</div>
-
-								    		</div>
-
-								    		<span class="texto_tooltip">Você</span>
-
-								    		<span class="texto_tooltip" style="top: 42%">Outros Usuários</span>
-
-								    	</div>
-
-									</span><br>
-
-									<a href="<%= comp[1] %>" class="texto_secundario_competencia">procurar cursos</a>
-
-								</div>
-
-								<% } %>
-
-								<% end %>
-
-							</div>
-
-						</div>
-
-						<div class="tracejado_vert"></div>
-
-						<div class="container_lista">
-
-							<div class="container_absoluto_lista">
-
-								<% if @competenciasExperiente %>
-
-								<% @competenciasExperiente.each{ |comp| %>
-
-								<div class="celula_competencia">
-
-									<span class="texto_principal_competencia"><%= comp[0] %>
-
-								    	<div class="tooltip_competencia">
-
-								    		<div class="seta_tooltip" style="top: 17%; background-image: url('<%= image_path 'dashboard/seta_tooltip.jpg' %>')">
-
-								    			<div style="background-color: #00df00; width: <%= 0.8 * comp[-2] %>%" class="ret_colorido_seta_tooltip">
-
-								    				<%= comp[-2] %>
-
-								    			</div>
-
-								    		</div>
-
-								    		<div class="seta_tooltip" style="top: 62%; background-image: url('<%= image_path 'dashboard/seta_tooltip.jpg' %>')">
-
-								    			<div style="background-color: #61b6e4; width: <%= 0.8 * comp[-1] %>%" class="ret_colorido_seta_tooltip">
-
-								    				<%= comp[-1] %>
-
-								    			</div>
-
-								    		</div>
-
-								    		<span class="texto_tooltip">Você</span>
-
-								    		<span class="texto_tooltip" style="top: 42%">Outros Usuários</span>
-
-								    	</div>
-
-									</span><br>
-
-									<a href="<%= comp[1] %>" class="texto_secundario_competencia">procurar cursos</a>
-
-								</div>
-
-								<% } %>
-
-								<% end %>
-
-							</div>
-
-						</div>
-						
-						<div class="tracejado_vert"></div>
+						<% } %>
 
 					</div>
 
 					<div style="width: 100%; display: table; table-layout: fixed; position: absolute; bottom: 0; left: 0; background-color: #f0f0f0">
 
+						<% nomes_band = ["azul", "amar", "verm"] %>
+
+						<% 3.times{ |i| %>
+
 						<div class="celula_bandeira_rodape">
 
-							<img src="<%= image_path 'dashboard/band_azul.jpg' %>" class="bandeira_rodape"/>
+							<img src="<%= image_path ('dashboard/band_' + nomes_band[i] + '.jpg') %>" class="bandeira_rodape"/>
 
-							<% if @usuariosBasicos %>
+							<% if @usuarios[i].present? %>
 
 							<div class="cont_bandeira_sup">
-								<span class="texto_bandeira_sup"><%= @usuariosBasicos %></span>
+								<span class="texto_bandeira_sup"><%= @usuarios[i] %></span>
 							</div>
 
 							<div class="cont_bandeira_inf">
@@ -298,7 +206,7 @@
 
 							<% end %>
 
-							<% if @nivel and @nivel == 1 %>
+							<% if @nivel.present? and @nivel == i + 1 and current_usuario.pergunta_atual_competencias.nil? %>
 
 							<div id="container_voce_boneco">
 
@@ -316,73 +224,7 @@
 
 						</div>
 
-						<div class="celula_bandeira_rodape">
-
-							<img src="<%= image_path 'dashboard/band_amar.jpg' %>" class="bandeira_rodape"/>
-
-							<% if @usuariosAvancados %>
-
-							<div class="cont_bandeira_sup">
-								<span class="texto_bandeira_sup"><%= @usuariosAvancados %></span>
-							</div>
-
-							<div class="cont_bandeira_inf">
-								<span class="texto_bandeira_inf">Usuários</span>
-							</div>
-
-							<% end %>
-
-							<% if @nivel and @nivel == 2 %>
-
-							<div id="container_voce_boneco">
-
-								<div id="container_voce">
-
-									<span id="voce_boneco">Você</span>
-
-								</div>
-
-								<img src="<%= image_path 'dashboard/humano.jpg' %>" style="width: 100%"/>
-
-							</div>
-
-							<% end %>
-
-						</div>
-
-						<div class="celula_bandeira_rodape">
-
-							<img src="<%= image_path 'dashboard/band_verm.jpg' %>" class="bandeira_rodape"/>
-
-							<% if @usuariosExperientes %>
-
-							<div class="cont_bandeira_sup">
-								<span class="texto_bandeira_sup"><%= @usuariosExperientes %></span>
-							</div>
-
-							<div class="cont_bandeira_inf">
-								<span class="texto_bandeira_inf">Usuários</span>
-							</div>
-
-							<% end %>
-
-							<% if @nivel and @nivel == 3 %>
-
-							<div id="container_voce_boneco">
-
-								<div id="container_voce">
-
-									<span id="voce_boneco">Você</span>
-
-								</div>
-
-								<img src="<%= image_path 'dashboard/humano.jpg' %>" style="width: 100%"/>
-
-							</div>
-
-							<% end %>
-
-						</div>
+						<% } %>
 
 					</div>
 

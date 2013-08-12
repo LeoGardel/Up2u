@@ -4,37 +4,15 @@ class DashboardController < LogadoController
   def index
 	  @percTotal = current_usuario.resultado_competencias
 
-    @usuariosBasicos = NivelUsuario.find(1)[:quant_usuarios]
-    @usuariosAvancados = NivelUsuario.find(2)[:quant_usuarios]
-    @usuariosExperientes = NivelUsuario.find(3)[:quant_usuarios]
+    usuariosBasicos = NivelUsuario.find(1)[:quant_usuarios]
+    usuariosAvancados = NivelUsuario.find(2)[:quant_usuarios]
+    usuariosExperientes = NivelUsuario.find(3)[:quant_usuarios]
 
-    @competenciasBasico = []
-    @competenciasAvancado = []
-    @competenciasExperiente = []
+    @usuarios = [ usuariosBasicos, usuariosAvancados, usuariosExperientes ]
 
-    CompUsuario.respostas_turno(current_usuario.id, current_usuario.turno_competencias).each{ |resp|
-      comp = Competencia.find(resp[:competencia_id])
-      comp_nome = comp[:nome]
-      link = "http://www.emagister.com.br/web/search/?action=search&origen=buscador_principal&esBusquedaUsuario=1&q="
-      link += comp_nome.gsub(' ','+')
-      importancia = resp[:importancia]
-      pontuacao = resp[:nivel] * 20
-      if comp[:quant_notas_usuarios] != 0 ## Provisorio
-        pontuacao_outros = comp[:soma_notas_usuarios] / comp[:quant_notas_usuarios]
-      else
-        pontuacao_outros = 50
-      end
-
-      lista_final = [comp_nome, link, importancia, pontuacao, pontuacao_outros]
-
-      if pontuacao < TETO_BASICO
-        @competenciasBasico.push lista_final
-      elsif pontuacao < TETO_AVANCADO
-        @competenciasAvancado.push lista_final
-      else
-        @competenciasExperiente.push lista_final
-      end
-    }
+    competenciasBasico = []
+    competenciasAvancado = []
+    competenciasExperiente = []
 
     if current_usuario.cargo && current_usuario.area
       @cargo_area = CargoArea.getNomeEDescr(current_usuario.cargo.id, current_usuario.area.id)[:nome]
@@ -49,7 +27,33 @@ class DashboardController < LogadoController
       else
         @nivel = 3
       end
+
+      CompUsuario.respostas_turno(current_usuario.id, current_usuario.turno_competencias).each{ |resp|
+        comp = Competencia.find(resp[:competencia_id])
+        comp_nome = comp[:nome]
+        link = "http://www.emagister.com.br/web/search/?action=search&origen=buscador_principal&esBusquedaUsuario=1&q="
+        link += comp_nome.gsub(' ','+')
+        importancia = resp[:importancia]
+        pontuacao = resp[:nivel] * 20
+        if comp[:quant_notas_usuarios] != 0 ## Provisorio
+          pontuacao_outros = comp[:soma_notas_usuarios] / comp[:quant_notas_usuarios]
+        else
+          pontuacao_outros = 50
+        end
+
+        lista_final = [comp_nome, link, importancia, pontuacao, pontuacao_outros]
+
+        if pontuacao < TETO_BASICO
+          competenciasBasico.push lista_final
+        elsif pontuacao < TETO_AVANCADO
+          competenciasAvancado.push lista_final
+        else
+          competenciasExperiente.push lista_final
+        end
+      }
     end
+
+    @competencias = [ competenciasBasico, competenciasAvancado, competenciasExperiente ]
     
   end
   
