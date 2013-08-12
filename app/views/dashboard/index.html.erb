@@ -1,6 +1,7 @@
 # coding: utf-8
 
 <%= stylesheet "dashboard" %>
+<%= javascript "http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js" %>
 
 <% content_for :absolute_content do %>
 
@@ -102,7 +103,7 @@
 
 					<div id="retangulo_porcent_voce"><span id="voce_figura">Você</span></div>
 
-					<hr id="linha_suporte_porcent" color="#595959" width="100%">
+					<div id="linha_suporte_porcent"></div>
 
 				</div>
 
@@ -116,9 +117,9 @@
 
 			<div style="height: 100%; position: relative" class="largura_figura">
 
-				<div style="width: 82.6%; height: 100%; position: absolute; right: 10.6%">
+				<div id="container_competencias_e_bandeiras">
 
-					<div style="width: 100%; height: 100%; position: relative; display: table">
+					<div id="container_colunas_competencias">
 
 						<div class="tracejado_vert"></div>
 
@@ -184,7 +185,7 @@
 
 					</div>
 
-					<div style="width: 100%; display: table; table-layout: fixed; position: absolute; bottom: 0; left: 0; background-color: #f0f0f0">
+					<div id="container_bandeiras_rodape">
 
 						<% nomes_band = ["azul", "amar", "verm"] %>
 
