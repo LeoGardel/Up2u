@@ -31,6 +31,7 @@ Up2u::Application.routes.draw do
   resources :dashboard, only: [:index]
   match "dashboard/editar_cargo_area" => "dashboard#editar_cargo_area", as: :dashboard_editar_cargo_area, via: :get
   match "dashboard/editar_cargo_area" => "dashboard#salvar_cargo_area", as: :dashboard_salvar_cargo_area, via: :post
+  match "dashboard/atualizar_cargo_area" => "dashboard#atualizar_cargo_area", as: :dashboard_atualizar_cargo_area, via: :post
   
   match "questionario_competencias/instrucoes" => "questionario_competencias#instrucoes",
    as: :questionario_competencias_instrucoes, via: :get

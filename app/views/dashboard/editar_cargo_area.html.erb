@@ -9,9 +9,9 @@
     <div style="width: 45%; float: left; text-align: center; position: relative">
       <div class="texto_principal">Área de Interesse</div>
       <% if current_usuario.area %>
-        <%= collection_select(:area, :area_id, @areas, :id, :nome, {:selected => current_usuario.area.id}, {:onChange => 'areaAlterada(this.selectedIndex)'}) %>
+        <%= collection_select(:area, :area_id, @areas, :id, :nome, {:selected => current_usuario.area.id}, {:onChange => 'cargoAreaAlterada()'}) %>
       <% else %>
-        <%= collection_select(:area, :area_id, @areas, :id, :nome, {:prompt => "-Selecione"}, {:onChange => 'areaAlterada(this.selectedIndex - 1)'}) %>
+        <%= collection_select(:area, :area_id, @areas, :id, :nome, {:prompt => "-Selecione"}, {:onChange => 'cargoAreaAlterada()'}) %>
       <% end %><br>
       <div id="area_descr" style="width: 75%; margin-left: auto; margin-right: auto;">
         <% if current_usuario.area %>
@@ -25,9 +25,9 @@
     <div style="width: 45%; float: right; text-align: center; position: relative">
       <div class="texto_principal">Posição Almejada</div>
       <% if current_usuario.cargo %>
-        <%= collection_select(:cargo, :cargo_id, @cargos, :id, :nome, {:selected => current_usuario.cargo.id}, {:onChange => 'cargoAlterado(this.selectedIndex)'}) %>
+        <%= collection_select(:cargo, :cargo_id, @cargos, :id, :nome, {:selected => current_usuario.cargo.id}, {:onChange => 'cargoAreaAlterada()'}) %>
       <% else %>
-        <%= collection_select(:cargo, :cargo_id, @cargos, :id, :nome, {:prompt => "-Selecione"}, {:onChange => 'cargoAlterado(this.selectedIndex - 1)'}) %>
+        <%= collection_select(:cargo, :cargo_id, @cargos, :id, :nome, {:prompt => "-Selecione"}, {:onChange => 'cargoAreaAlterada()'}) %>
       <% end %><br>
       <div id="cargo_descr" style="width: 75%; margin-left: auto; margin-right: auto;">
         <% if current_usuario.cargo %>
@@ -52,8 +52,3 @@
     <% end %>
   </div>
 </div>
-
-<%= javascript_tag do %>
-  areas = <%=raw @areas.to_json %>;
-  cargos = <%=raw @cargos.to_json %>;
-<% end %>

@@ -15,7 +15,7 @@ class DashboardController < LogadoController
     competenciasExperiente = []
 
     if current_usuario.cargo && current_usuario.area
-      @cargo_area = CargoArea.getNomeEDescr(current_usuario.cargo.id, current_usuario.area.id)[:nome]
+      @cargo_area = CargoArea.getNomeEDescr(current_usuario.area.id, current_usuario.cargo.id)[:nome]
       @cargo_area_font = get_tamanho_fonte_aba_esquerda(@cargo_area.length)
     end
 
@@ -60,30 +60,43 @@ class DashboardController < LogadoController
   def editar_cargo_area
 	  @areas = Area.all
 	  @cargos = Cargo.all
-    @descrAreas = Area.all.map { |e| e[:descr] }
-    @descrCargos = Cargo.all.map { |e| e[:descr] }
 
-    if current_usuario.area
+    if current_usuario.area.present?
       @area_atual = current_usuario.area.id
     else
       @area_atual = -1
     end
 
-    if current_usuario.cargo
+    if current_usuario.cargo.present?
       @cargo_atual = current_usuario.cargo.id
     else
       @cargo_atual = -1
     end
 
-    if current_usuario.area and current_usuario.cargo
-      @cargoArea = CargoArea.getNomeEDescr(current_usuario.area, current_usuario.cargo)
+    if current_usuario.area.present? and current_usuario.cargo.present?
+      @cargoArea = CargoArea.getNomeEDescr(current_usuario.area.id, current_usuario.cargo.id)
     end
   end
 
   def salvar_cargo_area
-  	current_usuario.update_cargo_area(params["area"]["area_id"].to_i, params["cargo"]["cargo_id"].to_i)
+    current_usuario.update_cargo_area(params["area"]["area_id"].to_i, params["cargo"]["cargo_id"].to_i)
     usuario_session.delete("lista_competencias")
-  	redirect_to :action => "index"
+    redirect_to :action => "index"
+  end
+
+  def atualizar_cargo_area
+    area = Area.where(nome: params["areaNome"]).limit(1)[0]
+    cargo = Cargo.where(nome: params["cargoNome"]).limit(1)[0]
+    cargoArea = CargoArea.getNomeEDescr(area[:id], cargo[:id])
+
+    resposta = {"areaDescr" => area[:descr],
+     "cargoDescr" => cargo[:descr],
+      "cargoAreaNome" => cargoArea[:nome],
+       "cargoAreaDescr" => cargoArea[:descr]}
+
+    respond_to do |format|
+      format.json { render :json => resposta.to_json }
+    end
   end
 
   def get_tamanho_fonte_aba_esquerda(len)
