@@ -55,12 +55,23 @@ class Usuario < ActiveRecord::Base
   def save_work_history_facebook(work_list)
     if work_list
       work_list.each do |work|
-        self.trabalhos.build :empregador_facebook_uid => work.employer.id,
-          :empregador_nome => work.employer.name,
+        if work.employer.present?
+          empregador_facebook_uid = work.employer.id
+          empregador_nome = work.employer.name
+        end
+        if work.position.present?
+          cargo = work.position.name
+        end
+        if work.location.present?
+          local = work.location.name
+        end
+
+        self.trabalhos.build :empregador_facebook_uid => empregador_facebook_uid,
+          :empregador_nome => empregador_nome,
           :data_inicio => work.start_date,
           :data_fim => work.end_date,
-          :cargo => work.position.name,
-          :local => work.location.name
+          :cargo => cargo,
+          :local => local
       end
     end
   end
@@ -68,9 +79,22 @@ class Usuario < ActiveRecord::Base
   def save_education_history_facebook(education_list)
     if education_list
       education_list.each do |education|
-        self.educacoes.build :instituicao_facebook_uid => education.school.id,
-          :instituicao_nome => education.school.name,
-          :ano_conclusao => education.year.name,
+        if education.school.present?
+          instituicao_facebook_uid = education.school.id
+          instituicao_nome = education.school.name
+        else
+          instituicao_facebook_uid = nil
+          instituicao_nome = nil
+        end
+        if education.year.present?
+          ano_conclusao = education.year.name
+        else
+          ano_conclusao = nil
+        end
+
+        self.educacoes.build :instituicao_facebook_uid => instituicao_facebook_uid,
+          :instituicao_nome => instituicao_nome,
+          :ano_conclusao => ano_conclusao,
           :tipo => education.type
       end
     end
